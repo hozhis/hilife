@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="authenticator" ref="authenticator" />
+		<property name="realms">
+			<list>
+				<ref bean="realm" />
+				<ref bean="storeRealm" />
+			</list>
+		</property>
+		<property name="subjectDAO.sessionStorageEvaluator.sessionStorageEnabled"
+			value="false" />
+		<property name="subjectFactory" ref="subjectFactory" />
+		<property name="sessionManager" ref="sessionManager" />
+	</bean>
+
+	<!-- 多realm权限验证方式：取第一个验证成功的信息FirstSuccessfulStrategy -->
+	<bean id="authenticator"
+		class="com.zcckj.common.authority.shiro.MyModularRealmAuthenticator">
+		<property name="authenticationStrategy">
+			<bean class="org.apache.shiro.authc.pam.FirstSuccessfulStrategy" />
+		</property>
+	</bean>
+
+	<!-- Subject工厂 -->
+	<bean id="subjectFactory"
+		class="com.zcckj.common.authority.shiro.StatelessDefaultSubjectFactory" />
+	<!-- 会话管理器 -->
+	<bean id="sessionManager" class="org.apache.shiro.session.mgt.DefaultSessionManager">
+		<property name="sessionValidationSchedulerEnabled" value="false" />
+	</bean>
+
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="filterChainDefinitions">
+			<value>
+				/monitoring/**=anon
+				/assets/**=anon
+				/web/api-docs/**=anon
+				/web/auth/sendLoginSms=anon
+				/web/auth/login=pass
+				/web/store/**=storeAuthc
+				/web/home/anon/**=anon
+				/web/nearBy/anon/**=anon
+				/web/settings/update/anon/**=anon
+				/**=authc
+			</value>
+		</property>
+	</bean>
+
+	<bean id="authc" class="com.zcckj.common.authority.shiro.StatelessAuthcFilter" />
+
+	<bean id="pass"
+		class="org.apache.shiro.web.filter.authc.PassThruAuthenticationFilter">
+		<property name="loginUrl" value="/web/auth/login" />
+	</bean>
+
+	<!-- <bean id="realm" class="org.apache.shiro.realm.text.PropertiesRealm" 
+		/> -->
+	<bean id="realm" class="com.zcckj.common.authority.shiro.StatelessRealm">
+	</bean>
+
+	<!-- 门店访问权限验证 -->
+	<bean id="storeRealm" class="com.zcckj.authority.shiro.StoreRealm">
+	</bean>
+	<bean id="storeAuthc" class="com.zcckj.authority.shiro.StoreAuthcFilter" />
+
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor"
+		depends-on="lifecycleBeanPostProcessor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
+	<!-- captcha -->
+	<bean id="kaptchaSupport" class="com.zcckj.common.security.KaptchaSupport">
+		<constructor-arg type="java.util.Properties">
+			<props>
+				<prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.NoNoise</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+
+</beans>
