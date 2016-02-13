@@ -16,17 +16,17 @@
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<import resource="classpath:zcckj-mvc.spring.xml" />
-	<import resource="classpath:zcckj-db.spring.xml" />
-	<import resource="classpath:zcckj-security.spring.xml" />
-	<import resource="classpath:zcckj-monitor.spring.xml" />
-	<import resource="classpath:zcckj-cache.spring.xml" />
-	<import resource="classpath:zcckj.ftp.xml" />
-	<import resource="classpath:zcckj.jpush.xml" />
+	<import resource="classpath:hilife-mvc.spring.xml" />
+	<import resource="classpath:hilife-db.spring.xml" />
+	<import resource="classpath:hilife-security.spring.xml" />
+	<import resource="classpath:hilife-monitor.spring.xml" />
+	<import resource="classpath:hilife-cache.spring.xml" />
+	<import resource="classpath:hilife.ftp.xml" />
+	<import resource="classpath:hilife.jpush.xml" />
 
 	<!-- enable component scanning (beware that this does not enable mapper 
 		scanning!) -->
-	<context:component-scan base-package="com.zcckj">
+	<context:component-scan base-package="cn.dolphinsoft.hilife">
 		<context:exclude-filter type="regex"
 			expression=".*\.[^.]*Controller" />
 	</context:component-scan>

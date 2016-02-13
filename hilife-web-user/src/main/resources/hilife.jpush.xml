@@ -6,7 +6,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="com.zcckj.common.jpush.service.JpushService"
+	<bean class="cn.dolphinsoft.hilife.common.jpush.service.JpushService"
 		init-method="init" depends-on="">
 		<property name="jpuhSwitch" value="${Jpush.Switch}" />
 	</bean>

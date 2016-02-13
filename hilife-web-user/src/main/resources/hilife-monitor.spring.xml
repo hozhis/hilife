@@ -17,11 +17,11 @@
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<aop:config expose-proxy="true">
-		<aop:pointcut expression="execution(* com.zcckj..*.*Controller.*(..))" id="monitoringPointcut" />
+		<aop:pointcut expression="execution(* cn.dolphinsoft.hilife..*.*Controller.*(..))" id="monitoringPointcut" />
 		<aop:advisor advice-ref="monitoringAdvice" pointcut-ref="monitoringPointcut" />
 	</aop:config>
 
-	<bean id="monitoringAdvice" class="com.zcckj.common.monitor.MonitoringInterceptor" />
+	<bean id="monitoringAdvice" class="cn.dolphinsoft.hilife.common.monitor.MonitoringInterceptor" />
 	
 	<bean id="springDataSourceBeanPostProcessor" class="net.bull.javamelody.SpringDataSourceBeanPostProcessor" />	
 

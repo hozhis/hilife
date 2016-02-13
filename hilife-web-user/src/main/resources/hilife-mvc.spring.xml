@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
-	<context:component-scan base-package="com.zcckj"
+	<context:component-scan base-package="cn.dolphinsoft.hilife"
 		use-default-filters="false">
 		<context:include-filter type="regex"
 			expression=".*\.[^.]*Controller" />
@@ -34,7 +34,7 @@
 				class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
 			<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
 			<bean
-				class="com.zcckj.common.util.web.ContentTypeNegotiatingJsonHttpMessageConverter" />
+				class="cn.dolphinsoft.hilife.common.util.web.ContentTypeNegotiatingJsonHttpMessageConverter" />
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 
@@ -63,7 +63,7 @@
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
 
 	<!-- the controller validate exception handler for validation -->
-	<bean id="exceptionResolver" class="com.zcckj.common.exception.ExceptionResolver" />
+	<bean id="exceptionResolver" class="cn.dolphinsoft.hilife.common.exception.ExceptionResolver" />
 
 	<!-- file upload resolver, max size is 2000K -->
 	<bean id="multipartResolver"
@@ -92,6 +92,6 @@
 		</property>
 	</bean>
 
-	<bean class="com.zcckj.swagger.MySpringSwaggerConfig" />
+	<bean class="cn.dolphinsoft.hilife.swagger.MySpringSwaggerConfig" />
 
 </beans>

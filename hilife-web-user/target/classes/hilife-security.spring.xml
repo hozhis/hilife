@@ -23,7 +23,7 @@
 
 	<!-- 多realm权限验证方式：取第一个验证成功的信息FirstSuccessfulStrategy -->
 	<bean id="authenticator"
-		class="com.zcckj.common.authority.shiro.MyModularRealmAuthenticator">
+		class="cn.dolphinsoft.hilife.common.authority.shiro.MyModularRealmAuthenticator">
 		<property name="authenticationStrategy">
 			<bean class="org.apache.shiro.authc.pam.FirstSuccessfulStrategy" />
 		</property>
@@ -31,7 +31,7 @@
 
 	<!-- Subject工厂 -->
 	<bean id="subjectFactory"
-		class="com.zcckj.common.authority.shiro.StatelessDefaultSubjectFactory" />
+		class="cn.dolphinsoft.hilife.common.authority.shiro.StatelessDefaultSubjectFactory" />
 	<!-- 会话管理器 -->
 	<bean id="sessionManager" class="org.apache.shiro.session.mgt.DefaultSessionManager">
 		<property name="sessionValidationSchedulerEnabled" value="false" />
@@ -55,7 +55,7 @@
 		</property>
 	</bean>
 
-	<bean id="authc" class="com.zcckj.common.authority.shiro.StatelessAuthcFilter" />
+	<bean id="authc" class="cn.dolphinsoft.hilife.common.authority.shiro.StatelessAuthcFilter" />
 
 	<bean id="pass"
 		class="org.apache.shiro.web.filter.authc.PassThruAuthenticationFilter">
@@ -64,13 +64,13 @@
 
 	<!-- <bean id="realm" class="org.apache.shiro.realm.text.PropertiesRealm" 
 		/> -->
-	<bean id="realm" class="com.zcckj.common.authority.shiro.StatelessRealm">
+	<bean id="realm" class="cn.dolphinsoft.hilife.common.authority.shiro.StatelessRealm">
 	</bean>
 
 	<!-- 门店访问权限验证 -->
-	<bean id="storeRealm" class="com.zcckj.authority.shiro.StoreRealm">
+	<bean id="storeRealm" class="cn.dolphinsoft.hilife.authority.shiro.StoreRealm">
 	</bean>
-	<bean id="storeAuthc" class="com.zcckj.authority.shiro.StoreAuthcFilter" />
+	<bean id="storeAuthc" class="cn.dolphinsoft.hilife.authority.shiro.StoreAuthcFilter" />
 
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 	<bean
@@ -80,7 +80,7 @@
 	</bean>
 
 	<!-- captcha -->
-	<bean id="kaptchaSupport" class="com.zcckj.common.security.KaptchaSupport">
+	<bean id="kaptchaSupport" class="cn.dolphinsoft.hilife.common.security.KaptchaSupport">
 		<constructor-arg type="java.util.Properties">
 			<props>
 				<prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.NoNoise</prop>

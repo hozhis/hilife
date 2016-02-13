@@ -21,7 +21,7 @@
 	</jdbc:embedded-database>
 
 	<!-- NOTE: for JPA -->
-	<import resource="classpath:zcckj-db-jpa.spring.xml"/>
+	<import resource="classpath:hilife-db-jpa.spring.xml"/>
 	
 		<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${jdbc.driverClass}" />
