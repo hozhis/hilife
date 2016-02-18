@@ -44,12 +44,8 @@
 				/monitoring/**=anon
 				/assets/**=anon
 				/web/api-docs/**=anon
-				/web/auth/sendLoginSms=anon
 				/web/auth/login=pass
-				/web/store/**=storeAuthc
 				/web/home/anon/**=anon
-				/web/nearBy/anon/**=anon
-				/web/settings/update/anon/**=anon
 				/**=authc
 			</value>
 		</property>

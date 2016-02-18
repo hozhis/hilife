@@ -31,9 +31,8 @@
 			<groupId>cn.dolphinsoft</groupId>
 			<artifactId>hilife-dao-user</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
-			<scope>compile</scope>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>com.mangofactory</groupId>
 			<artifactId>swagger-springmvc</artifactId>
@@ -49,6 +48,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -194,16 +194,15 @@
 	<profiles>
 		<profile>
 			<id>dev</id>
-
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<properties>
 				<env>DEV</env>
 			</properties>
 		</profile>
 		<profile>
 			<id>qa</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
 			<properties>
 				<env>QA</env>
 			</properties>
