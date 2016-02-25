@@ -9,10 +9,10 @@
 		<module>hilife-common</module>
 		<module>hilife-dao-user</module>
 		<module>hilife-web-user</module>
-		
+
 		<module>hilife-dao-aunt</module>
 		<module>hilife-web-aunt</module>
-		
+
 		<module>hilife-dao-platform</module>
 		<module>hilife-web-platform</module>
 	</modules>
@@ -37,6 +37,11 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>

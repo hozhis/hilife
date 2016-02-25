@@ -25,7 +25,7 @@ public class ClearOtherMemAspect {
     @Autowired
     private OtherMemClear otherMemClear;
 
-    @AfterReturning("@annotation(com.zcckj.common.memcahced.clearOther.annotation.ClearOtherMem)")
+    @AfterReturning("@annotation(cn.dolphinsoft.hilife.common.memcached.clearOther.annotation.ClearOtherMem)")
     public void clearOtherMem(final JoinPoint joinPoint) {
         final Method method = ((MethodSignature) joinPoint.getSignature()).getMethod();
         ClearOtherMem clearOtherMem = method.getAnnotation(ClearOtherMem.class);

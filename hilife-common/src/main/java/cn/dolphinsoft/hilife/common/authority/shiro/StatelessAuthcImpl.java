@@ -64,7 +64,7 @@ public class StatelessAuthcImpl {
         return authorizationInfo;
     }
 
-    @Cacheable(value = CacheType.DEFAULT, condition = "#token instanceof T(com.zcckj.common.authority.shiro.StatelessToken)", key = "#token.getPrincipal() + '_SimpleAuthenticationInfo'")
+    @Cacheable(value = CacheType.DEFAULT, condition = "#token instanceof T(cn.dolphinsoft.hilife.common.authority.shiro.StatelessToken)", key = "#token.getPrincipal() + '_SimpleAuthenticationInfo'")
     public SimpleAuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
         String tokenStr = null;
         UserInfo userInfo = null;

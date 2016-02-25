@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class Name: BasicTypeConstant Description: 基础数据表 basic_type 常量设置
+ * Class Name: BasicTypeConstant
+ * 
+ * Description: TODO 基础数据表 basic_type 常量设置
  * 
  * @author hozhis
  *

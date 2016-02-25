@@ -7,9 +7,11 @@
 		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
 	<!-- XMemcachedClientBuilder -->
-	<beans:bean name="memcachedClientBuilder" class="cn.dolphinsoft.hilife.common.memcahced.MemClientBuilder">
+	<beans:bean name="memcachedClientBuilder"
+		class="cn.dolphinsoft.hilife.common.memcached.MemClientBuilder">
 		<beans:constructor-arg>
-			<beans:bean class="cn.dolphinsoft.hilife.common.memcahced.MemClientConfigure" />
+			<beans:bean
+				class="cn.dolphinsoft.hilife.common.memcached.MemClientConfigure" />
 		</beans:constructor-arg>
 		<beans:property name="commandFactory">
 			<beans:bean class="net.rubyeye.xmemcached.command.BinaryCommandFactory" />
@@ -29,7 +31,7 @@
 		factory-method="build" destroy-method="shutdown" />
 
 	<beans:bean id="cacheManager"
-		class="cn.dolphinsoft.hilife.common.memcahced.MemcachedCacheManager">
+		class="cn.dolphinsoft.hilife.common.memcached.MemcachedCacheManager">
 		<beans:property name="memcachedClient" ref="memcachedClient" />
 		<beans:property name="configMap">
 			<beans:map>
