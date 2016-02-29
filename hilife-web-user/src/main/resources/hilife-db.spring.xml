@@ -34,6 +34,7 @@
 		<property name="maxIdleTime" value="${connection_pools.max_idle_time}" />
 		<property name="acquireIncrement" value="${connection_pools.acquire_increment}" />
 		<property name="checkoutTimeout" value="${connection_pools.checkout_timeout}" />
+		<property name="maxStatements" value="${connection_pools.max_statements}" />
 	</bean>
 	
 </beans>

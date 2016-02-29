@@ -20,19 +20,19 @@ public class SmsMessage implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "sms_id")
+    @Column(name = "SMS_ID")
     private Integer smsId;
 
-    @Column(name = "phone")
+    @Column(name = "PHONE")
     private Long phone;
 
-    @Column(name = "status")
+    @Column(name = "STATUS")
     private String status = BaseStatus.EFFECT.getKey();
 
-    @Column(name = "message")
+    @Column(name = "MESSAGE")
     private String message;
 
-    @Column(name = "create_date")
+    @Column(name = "CREATE_DATE")
     private Date createDate;
 
     public Integer getSmsId() {
