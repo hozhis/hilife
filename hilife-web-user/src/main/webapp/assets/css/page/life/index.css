@@ -1,0 +1,256 @@
+.content-search {
+	background: #ffffff;
+	width: 100%;
+	padding: 5px 15px;
+	height: 45px;
+}
+
+.search {
+	border: 1px solid #d0d0d0;
+	border-radius: 5px 0 0 5px;
+	display: inline-block;
+	float: left;
+	height: 35px;
+	width: 90%;
+}
+
+.search-btn {
+	background: #ea0000;
+	border-color: #ea0000;
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+	border-radius: 0 5px 5px 0;
+	display: inline-block;
+	float: left;
+	height: 35px;
+	width: 10%;
+}
+
+.search-btn .fui-search {
+	color: #ffffff;
+}
+
+.content {
+	padding: 0;
+	width: 100%;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	display: block;
+	width: 100%;
+	max-height: 100%;
+	line-height: 1;
+}
+
+.carousel {
+	position: relative;
+}
+
+.carousel-inner {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	height: 100px;
+}
+
+.carousel-inner>.item {
+	position: relative;
+	display: none;
+	-webkit-transition: .6s ease-in-out left;
+	transition: .6s ease-in-out left;
+	height: 100%;
+	width: 100%;
+}
+
+.carousel-inner>.active, .carousel-inner>.next, .carousel-inner>.prev {
+	display: block;
+}
+
+.carousel-inner>.active {
+	left: 0;
+}
+
+.carousel-indicators {
+	position: absolute;
+	bottom: 5px;
+	z-index: 15;
+	right: 15px;
+	text-align: center;
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.carousel-indicators li {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	text-indent: -999px;
+	margin-left: 4px;
+	background-color: #ea0000;
+	border: 0;
+	opacity: 0.5;
+}
+
+.carousel-indicators .active {
+	width: 8px;
+	height: 8px;
+	background-color: #ea0000;
+	opacity: 1;
+}
+
+.carousel-inner>.active, .carousel-inner>.next, .carousel-inner>.prev {
+	display: block;
+}
+
+.carousel-inner>.active {
+	left: 0;
+}
+
+.carousel-inner>.next, .carousel-inner>.prev {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.carousel-inner>.next {
+	left: 100%;
+}
+
+.carousel-inner>.prev {
+	left: -100%;
+}
+
+.carousel-inner>.next.left, .carousel-inner>.prev.right {
+	left: 0;
+}
+
+.carousel-inner>.active.left {
+	left: -100%;
+}
+
+.carousel-inner>.active.right {
+	left: 100%;
+}
+
+.content-body, .content-body .products, .content-body .products .product-item,
+	.content-body .products .product-item>ul, .item-d>div, .item-d>div>img
+	{
+	width: 100%;
+}
+
+.product-item {
+	border-top: 1px solid #ea0000;
+}
+
+.product-item>ul {
+	background: #ffffff;
+	overflow: hidden;
+	padding: 5px 5px 10px;
+}
+
+.content-body .products .product-item>ul>li {
+	margin: 0 5px;
+	float: left;
+	position: relative;
+}
+
+.item-d>div {
+	padding: 5px;
+	box-shadow: 0 0 3px #e0e0e0;
+	background: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-bottom: 0;
+}
+
+.product-title {
+	border-left: 3px solid #ea0000;
+	height: 34px;
+	font-size: 16px;
+	padding: 0 10px;
+	line-height: 34px;
+}
+
+.product-title  a {
+	float: right;
+	font-size: 16px;
+	line-height: 34px;
+	color: #ea0000;
+}
+
+.product-title  a>span::before {
+	font-size: 16px;
+	line-height: 34px;
+	color: #ea0000;
+}
+
+.item-d>span {
+	padding: 0 5px 5px;
+	width: 100%;
+	font-size: 12px;
+	height: 35px;
+	position: absolute;
+	bottom: 0;
+	line-height: 1.48;
+	background: #ffffff;
+	box-shadow: 0 2px 3px #e0e0e0;
+	border: 1px solid #e0e0e0;
+	border-top: 0;
+}
+
+.category-title {
+	border-bottom: 1px solid #d0d0d0;
+	border-top: 1px solid #d0d0d0;
+	font-size: 18px;
+	font-weight: bold;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 10px;
+}
+
+.fui-list-columned::before {
+	color: #000000;
+	font-size: 17px;
+	line-height: 45px;
+	margin-right: 5px;
+}
+
+.category {
+	padding: 0 20px;
+	font-size: 16px;
+}
+
+.category ul>li {
+	height: 45px;
+	line-height: 45px;
+}
+
+.fui-cherry:before {
+	content: "\e66d";
+	color: #000000;
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+.fui-eggplant:before {
+	content: "\e66f";
+	color: #000000;
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+.fui-drink:before {
+	content: "\e670";
+	color: #000000;
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+.fui-rice:before {
+	content: "\e675";
+	color: #000000;
+	font-size: 15px;
+	margin-right: 5px;
+}
+.fui-shopping_cart::before{
+	font-size:24px;
+}

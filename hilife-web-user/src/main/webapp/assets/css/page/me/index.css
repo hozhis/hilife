@@ -1,0 +1,74 @@
+.banner {
+	width: 100%;
+	background: url("../../../img/background.jpg") no-repeat scroll 0 0/100%
+		100%;
+	position: relative;
+}
+
+.circle {
+	background: url("../../../img/avatar.png") no-repeat scroll 0 0/100%
+		100%;
+	border-radius: 1000px;
+	width: 22%;
+	position: absolute;
+	bottom: -25%;
+	margin-left: 39%;
+}
+
+.banner-gap {
+	width: 100%;
+	background: #f0f0f0;
+}
+
+.content {
+	padding: 0;
+	background: #f0f0f0;
+}
+
+.content-body ul {
+	background: #ffffff;
+	border-bottom: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
+}
+
+.content-body ul>li {
+	height: 45px;
+	padding: 0 0 0 15px;
+}
+
+.content-body ul>li div {
+	height: 45px;
+	line-height: 45px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.content-body ul>li div label {
+	font-size: 16px;
+	margin-left: 5px;
+	/* vertical-align: 0px; */
+}
+
+.content-body ul>li div span.fui-keyboard_arrow_right {
+	position: absolute;
+	right: 10px;
+}
+
+[class^="fui-"], [class*="fui-"] {
+	color: #000000;
+}
+
+.fui-person:before {
+	content: "\e7fd";
+}
+
+.fui-feedback::before, .fui-service::before {
+	font-size: 18px;
+}
+
+.fui-exit::before {
+	font-size: 18px;
+}
+
+.fui-exit {
+	color: #ea0000;
+}

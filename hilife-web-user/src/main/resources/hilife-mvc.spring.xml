@@ -63,7 +63,8 @@
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
 
 	<!-- the controller validate exception handler for validation -->
-	<bean id="exceptionResolver" class="cn.dolphinsoft.hilife.common.exception.ExceptionResolver" />
+	<bean id="exceptionResolver"
+		class="cn.dolphinsoft.hilife.common.exception.ExceptionResolver" />
 
 	<!-- file upload resolver, max size is 2000K -->
 	<bean id="multipartResolver"
@@ -90,6 +91,14 @@
 				<prop key="template_exception_handler">ignore</prop>
 			</props>
 		</property>
+	</bean>
+	<!-- freemarker视图解析器 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="suffix" value=".ftl" />
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<!-- 此变量值为pageContext.request, 页面使用方法：rc.contextPath -->
+		<property name="requestContextAttribute" value="rc" />
 	</bean>
 
 	<bean class="cn.dolphinsoft.hilife.swagger.MySpringSwaggerConfig" />

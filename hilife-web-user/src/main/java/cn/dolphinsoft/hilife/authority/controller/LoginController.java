@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,12 +39,18 @@ public class LoginController {
     @RequestMapping(value = "/sendLoginSms", method = RequestMethod.POST)
     @ResponseBody
     public ResultDto<String> sendLoginSms(@RequestBody LoginDto loginDto) {
+        Assert.notNull(loginDto.getLoginId());
         loginService.sendLoginSms(loginDto.getLoginId());
         return ResultDtoFactory.toAck("短信发送成功");
     }
 
-    @ApiOperation(value = "登陆", notes = "洪志胜 已完成")
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login")
+    public String login(Model model) {
+        return "login/login";
+    }
+
+    @ApiOperation(value = "登陆认证", notes = "洪志胜 已完成")
+    @RequestMapping(value = "/login/authc", method = RequestMethod.POST)
     @ResponseBody
     public ResultDto<LoginDto> login(@RequestBody LoginDto loginDto) {
         String tokenStr = null;
