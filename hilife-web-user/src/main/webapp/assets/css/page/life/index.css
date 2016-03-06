@@ -251,6 +251,35 @@
 	font-size: 15px;
 	margin-right: 5px;
 }
-.fui-shopping_cart::before{
-	font-size:24px;
+
+.fui-shopping_cart::before {
+	font-size: 24px;
+}
+
+.fui-oil:before {
+	content: "\e69c";
+	color: #000000;
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+.fui-food:before {
+	content: "\e672";
+	color: #000000;
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+.fui-meat:before {
+	content: "\e6eb";
+	color: #000000;
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+.fui-jiangyou:before {
+	content: "\e683";
+	color: #000000;
+	font-size: 15px;
+	margin-right: 5px;
 }

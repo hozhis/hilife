@@ -89,8 +89,12 @@
 					<ul>
 						<li><span class="fui-cherry"></span>水果</li>
 						<li><span class="fui-eggplant"></span>蔬菜</li>
-						<li><span class="fui-drink"></span>饮料</li>
-						<li><span class="fui-rice"></span>粗粮</li>
+						<li><span class="fui-drink"></span>饮品&nbsp;&&nbsp;酒</li>
+						<li><span class="fui-rice"></span>米面粗粮</li>
+						<li><span class="fui-oil"></span>食用油</li>
+						<li><span class="fui-meat"></span>鱼肉类</li>
+						<li><span class="fui-jiangyou"></span>调味品</li>
+						<li><span class="fui-food"></span>休闲食品</li>
 					</ul>
 				</div>
 			</div>

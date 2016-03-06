@@ -126,6 +126,30 @@
 	border-left: 4px solid #ff5809;
 }
 /* End of yellow */
+.service-clsfy.purple {
+	border-color: #ae57a4;
+}
+
+.service-clsfy.purple>span {
+	color: #ae57a4;
+}
+
+.service-title.purple>label {
+	border-left: 4px solid #ae57a4;
+}
+/* End of purple */
+.service-clsfy.cyan {
+	border-color: #4f9d9d;
+}
+
+.service-clsfy.cyan>span {
+	color: #4f9d9d;
+}
+
+.service-title.cyan>label {
+	border-left: 4px solid #4f9d9d;
+}
+/* End of cyan  */
 /* End ÑÕÉ«¿ØÖÆ */
 .service {
 	background: #ffffff;
@@ -153,7 +177,7 @@
 
 .fui-chuanghu:before {
 	content: "\e68a";
-	font-size: 32px;
+	font-size: 30px;
 }
 
 .fui-chufang:before {
@@ -163,7 +187,8 @@
 
 .fui-qingjieji:before {
 	content: "\f0087";
-	font-size: 32px;
+	font-size: 36px;
+	line-height: 1.8;
 }
 
 .fui-house:before {
@@ -181,49 +206,136 @@
 	font-size: 32px;
 }
 
-.fui-dianxian:before {
-	content: "\e691";
+.fui-chatou:before {
+	content: "\e69e";
 	font-size: 32px;
 }
 
 .fui-kaoxiang:before {
-	content: "\e683";
+	content: "\ec83";
 	font-size: 32px;
+	line-height: 1.2;
 }
 
 .fui-shuilongtou:before {
 	content: "\e677";
 	font-size: 32px;
-}.fui-zaotai:before {
-    content: "\e678";font-size: 32px;
-}.fui-weibolu:before {
-    content: "\e67b";font-size: 32px;
-}.fui-bingxiang:before {
-    content: "\e67e";font-size: 32px;
-}.fui-youqi:before {
-    content: "\e67d";font-size: 32px;
-}.fui-youyanji:before {
-    content: "\e688";font-size: 32px;
-}.fui-kongtiao2:before {
-    content: "\e68c";font-size: 32px;
-}.fui-xiyiji:before {
-    content: "\e690";font-size: 32px;
-}.fui-xiaoduji:before {
-    content: "\e695";font-size: 32px;
-}.fui-kaoxiang2:before {
-    content: "\e696";font-size: 32px;
-}.fui-yingshuiji:before {
-    content: "\e6c7";font-size: 32px;
-}.fui-banjia:before {
-    content: "\e687";font-size: 32px;
-}.fui-banchang:before {
-    content: "\e6d8";font-size: 32px;
-}.fui-diaoche:before {
-    content: "\e898";font-size: 32px;
-}.fui-shower2:before {
-    content: "\e685";font-size: 32px;
-}.fui-ayi:before {
-    content: "\e6dd";font-size: 32px;
-}.fui-ganxi:before {
-    content: "\e67c";font-size: 32px;
+}
+
+.fui-zaotai:before {
+	content: "\e678";
+	font-size: 48px;
+	line-height: 1;
+}
+
+.fui-weibolu:before {
+	content: "\e67b";
+	font-size: 42px;
+	line-height: 1;
+}
+
+.fui-bingxiang:before {
+	content: "\e67e";
+	font-size: 34px;
+	line-height: 1.5;
+}
+
+.fui-youqi:before {
+	content: "\e67d";
+	font-size: 32px;
+}
+
+.fui-youyanji:before {
+	content: "\e688";
+	font-size: 32px;
+}
+
+.fui-kongtiao2:before {
+	content: "\e68c";
+	font-size: 32px;
+}
+
+.fui-xiyiji2:before {
+	content: "\e6a0";
+	font-size: 32px;
+	line-height: 1.5;
+}
+
+.fui-xiaoduji:before {
+	content: "\e695";
+	font-size: 38px;
+	line-height: 1.3;
+}
+
+.fui-kaoxiang2:before {
+	content: "\e696";
+	font-size: 32px;
+}
+
+.fui-yingshuiji:before {
+	content: "\e6c7";
+	font-size: 32px;
+}
+
+.fui-banjia:before {
+	content: "\e687";
+	font-size: 32px;
+}
+
+.fui-banchang:before {
+	content: "\e6d8";
+	font-size: 32px;
+}
+
+.fui-diaoche:before {
+	content: "\e898";
+	font-size: 32px;
+}
+
+.fui-shower2:before {
+	content: "\e685";
+	font-size: 32px;
+}
+
+.fui-ayi:before {
+	content: "\e6dd";
+	font-size: 32px;
+}
+
+.fui-ganxi:before {
+	content: "\e67c";
+	font-size: 30px;
+}
+
+.fui-sofa:before {
+	content: "\e676";
+	font-size: 32px;
+}
+
+.fui-diban:before {
+	content: "\e694";
+	font-size: 32px;
+	line-height: 1.5;
+}
+
+.fui-jiaquan:before {
+	content: "\e680";
+	font-size: 30px;
+	line-height: 1.5;
+}
+
+.fui-xiashuidao:before {
+	content: "\e68f";
+	font-size: 40px;
+	line-height: 1.2;
+}
+
+.fui-matong:before {
+	content: "\e68e";
+	font-size: 32px;
+}
+
+.fui-yugang2:before {
+	content: "\e697";
+	font-size: 32px;
 }

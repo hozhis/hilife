@@ -54,7 +54,7 @@
 				<ul>
 					<li><div class="service-clsfy blue"><span class="fui-mugong"></span></div><label>木工</label></li>
 					<li><div class="service-clsfy blue"><span class="fui-shuini"></span></div><label>泥瓦工</label></li>
-					<li><div class="service-clsfy blue"><span class="fui-dianxian"></span></div><label>水电工</label></li>
+					<li><div class="service-clsfy blue"><span class="fui-chatou"></span></div><label>水电工</label></li>
 					<li><div class="service-clsfy blue"><span class="fui-kaoxiang"></span></div><label>电器</label></li>
 					<li><div class="service-clsfy blue"><span class="fui-youqi"></span></div><label>油漆工</label></li>
 				</ul>
@@ -69,10 +69,19 @@
 					<li><div class="service-clsfy green"><span class="fui-bingxiang"></span></div><label>冰箱清洗</label></li>
 					<li><div class="service-clsfy green"><span class="fui-youyanji"></span></div><label>油烟机清洗</label></li>
 					<li><div class="service-clsfy green"><span class="fui-kongtiao2"></span></div><label>空调清洗</label></li>
-					<li><div class="service-clsfy green"><span class="fui-xiyiji"></span></div><label>洗衣机清洗</label></li>
+					<li><div class="service-clsfy green"><span class="fui-xiyiji2"></span></div><label>洗衣机清洗</label></li>
 					<li><div class="service-clsfy green"><span class="fui-xiaoduji"></span></div><label>消毒柜清洗</label></li>
 					<li><div class="service-clsfy green"><span class="fui-kaoxiang2"></span></div><label>烤箱清洗</label></li>
 					<li><div class="service-clsfy green"><span class="fui-yingshuiji"></span></div><label>饮水机清洗</label></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="gap"></div>
+			<div class="service">
+				<div class="service-title purple"><label>家居保养</label></div>
+				<ul>
+					<li><div class="service-clsfy purple"><span class="fui-sofa"></span></div><label>沙发保养</label></li>
+					<li><div class="service-clsfy purple"><span class="fui-diban"></span></div><label>地板打蜡</label></li>
 				</ul>
 				<div class="clear"></div>
 			</div>
@@ -88,10 +97,21 @@
 			</div>
 			<div class="gap"></div>
 			<div class="service">
+				<div class="service-title cyan"><label>管道疏通</label></div>
+				<ul>
+					<li><div class="service-clsfy cyan"><span class="fui-xiashuidao"></span></div><label>下水道疏通</label></li>
+					<li><div class="service-clsfy cyan"><span class="fui-matong"></span></div><label>马桶疏通</label></li>
+					<li><div class="service-clsfy cyan"><span class="fui-yugang2"></span></div><label>浴缸疏通</label></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="gap"></div>
+			<div class="service">
 				<div class="service-title yellow"><label>其他服务</label></div>
 				<ul>
 					<li><div class="service-clsfy yellow"><span class="fui-ganxi"></span></div><label>衣物干洗</label></li>
 					<li><div class="service-clsfy yellow"><span class="fui-ayi"></span></div><label>保姆月嫂</label></li>
+					<li><div class="service-clsfy yellow"><span class="fui-jiaquan"></span></div><label>除甲醛</label></li>
 				</ul>
 				<div class="clear"></div>
 			</div>
