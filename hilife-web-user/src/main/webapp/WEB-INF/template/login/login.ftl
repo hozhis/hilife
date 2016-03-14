@@ -15,7 +15,8 @@
 		context : '${rc.contextPath}',
 		base_url : '${rc.contextPath}',
 		locale : 'zh_CN',
-		static_url : '${contextPath}'
+		static_url : '${contextPath}',
+		token : '${token}'
 	})
 </script>
 <script src="${contextPath}/assets/js/1.0/base.js" type="text/javascript"></script>

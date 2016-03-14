@@ -13,6 +13,12 @@ ul, li, br, img, input {
 	list-style: none;
 }
 
+a, li, div, label, span {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+}
+
 input {
 	-webkit-appearance: none;
 	font-size: 18px;
@@ -83,14 +89,14 @@ label {
 
 .left {
 	float: left;
-	width: 100px;
+	width: 20%;
 	line-height: 48px;
 	height: 100%;
 }
 
 .right {
 	float: right;
-	width: 100px;
+	width: 20%;
 	line-height: 48px;
 	height: 100%;
 }
@@ -103,9 +109,15 @@ label {
 .title {
 	color: #ffffff;
 	width: auto;
+	max-width: 60%;
 	margin: 0 auto;
 	text-align: center;
 	line-height: 50px;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	/* display: -webkit-box; */
 }
 
 .title label {
@@ -167,6 +179,11 @@ input[placeholder] {
 	color: #000000;
 	font-size: 13px;
 	line-height: 1.5;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.f-child:hover {
+	background: #ce0000;
 }
 
 .f-child a.active {

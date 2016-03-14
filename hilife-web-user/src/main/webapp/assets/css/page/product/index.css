@@ -339,3 +339,7 @@
 	content: "\e697";
 	font-size: 32px;
 }
+
+.service-clsfy:hover {
+	background: #f0f0f0;
+}

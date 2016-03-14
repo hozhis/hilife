@@ -14,7 +14,8 @@
 		context : '${rc.contextPath}',
 		base_url : '${rc.contextPath}',
 		locale : 'zh_CN',
-		static_url : '${contextPath}'
+		static_url : '${contextPath}',
+		token : '${token}'
 	})
 </script>
 <script src="${contextPath}/assets/js/1.0/base.js" type="text/javascript"></script>
@@ -51,7 +52,7 @@
 				<div id="" class="product-title">精品推荐<a href="#">更多<span class="fui-keyboard_arrow_right"></span></a></div>
 				<div class="product-item">
 					<ul>
-						<li class="item-d"><div><img src="${contextPath}/assets/img/chestnut.jpg"></div><span>板栗</span></li>
+						<li class="item-d"><div><img src="${contextPath}/assets/img/chestnut.jpg"></div><span>板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗</span></li>
 						<li class="item-d"><div><img src="${contextPath}/assets/img/jujube.jpg"></div><span>冬枣</span></li>
 						<li class="item-d"><div><img src="${contextPath}/assets/img/kiwi.jpg"></div><span>猕猴桃</span></li>
 					</ul>
