@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
+import cn.dolphinsoft.hilife.authority.service.LoginService;
 import cn.dolphinsoft.hilife.common.constant.BasicTypeConstant;
 import cn.dolphinsoft.hilife.common.domain.BasicPara;
 import cn.dolphinsoft.hilife.common.domain.SmsMessage;
@@ -32,7 +33,7 @@ import freemarker.template.Template;
  *
  */
 @Service
-public class LoginServiceImpl implements cn.dolphinsoft.hilife.authority.service.LoginService {
+public class LoginServiceImpl implements LoginService {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
 

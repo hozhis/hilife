@@ -106,7 +106,7 @@
 		<ul>
 			<li><div class="f-child"><a target="_top" href="${contextPath}/web/product/index?token=${token}"><span class="home3"></span>首页</a></div></li>
 			<li><div class="f-child"><a target="_top" class="active" href="${contextPath}/web/life/index?token=${token}"><span class="local_cafe"></span>生活</a></div></li>
-			<li><div class="f-child"><a target="_top" href="#"><span class="dns"></span>订单</a></div></li>
+			<li><div class="f-child"><a target="_top" href="${contextPath}/web/order/index?token=${token}"><span class="dns"></span>订单</a></div></li>
 			<li><div class="f-child"><a target="_top" href="${contextPath}/web/me/index?token=${token}"><span class="person"></span>我</a></div></li>
 		</ul>
 		<div class="clear"></div>

@@ -19,10 +19,12 @@
 
 .banner ul {
 	white-space: nowrap;
+	overflow: auto;
 	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
 	transition-duration: 0ms;
 	transform: translate(0px, 0px) translateZ(0px);
 	padding: 10px 0;
+	-webkit-overflow-scrolling: touch;
 }
 
 .banner ul>li {
@@ -57,95 +59,40 @@
 }
 
 .service-clsfy {
-	border: 1px solid;
-	border-radius: 50px;
+	border-radius: 5000px;
 	text-align: center;
 	width: 60%;
 	margin: 0 auto;
-	border-radius: 50px;
+	background-size: 100% 100%;
+	background-position: 0 0;
+	background-repeat: no-repeat;
 }
 
 /* Start ÑÕÉ«¿ØÖÆ */
-.service-clsfy.red {
-	border-color: #ea0000;
-}
-
-.service-clsfy.red>span {
-	color: #ea0000;
-}
-
 .service-title.red>label {
 	border-left: 4px solid #ea0000;
 }
 /* End of red */
-.service-clsfy.blue {
-	border-color: #46a3ff;
-}
-
-.service-clsfy.blue>span {
-	color: #46a3ff;
-}
-
 .service-title.blue>label {
 	border-left: 4px solid #46a3ff;
 }
 /* End of blue */
-.service-clsfy.green {
-	border-color: #02df82;
-}
-
-.service-clsfy.green>span {
-	color: #02df82;
-}
-
 .service-title.green>label {
 	border-left: 4px solid #02df82;
 }
 /* End of green */
-.service-clsfy.pink {
-	border-color: #ff79bc;
-}
-
-.service-clsfy.pink>span {
-	color: #ff79bc;
-}
-
 .service-title.pink>label {
 	border-left: 4px solid #ff79bc;
 }
 /* End of pink */
-.service-clsfy.yellow {
-	border-color: #ff5809;
-}
-
-.service-clsfy.yellow>span {
-	color: #ff5809;
-}
-
 .service-title.yellow>label {
 	border-left: 4px solid #ff5809;
 }
 /* End of yellow */
-.service-clsfy.purple {
-	border-color: #ae57a4;
-}
-
-.service-clsfy.purple>span {
-	color: #ae57a4;
-}
-
 .service-title.purple>label {
 	border-left: 4px solid #ae57a4;
 }
 /* End of purple */
-.service-clsfy.cyan {
-	border-color: #4f9d9d;
-}
-
-.service-clsfy.cyan>span {
-	color: #4f9d9d;
-}
-
 .service-title.cyan>label {
 	border-left: 4px solid #4f9d9d;
 }
@@ -338,8 +285,4 @@
 .fui-yugang2:before {
 	content: "\e697";
 	font-size: 32px;
-}
-
-.service-clsfy:hover {
-	background: #f0f0f0;
 }

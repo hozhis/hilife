@@ -38,19 +38,19 @@
 		<div class="content-title"></div>
 		<div class="content-body">
 			<ul>
-				<li><div><span class="fui-person"></span><label>个人信息</label><span class="fui-keyboard_arrow_right"></span></div></li>
-				<li><div><span class="fui-credit-card"></span><label>我的钱包</label><span class="fui-keyboard_arrow_right"></span></div></li>
-				<li><div><span class="fui-coupon"></span><label>优惠券</label><span class="fui-keyboard_arrow_right"></span></div></li>
-				<li style="height:44px;"><div><span class="fui-address"></span><label>地址管理</label><span class="fui-keyboard_arrow_right"></span></div></li>
+				<li><div><a target="_top" href=""><span class="fui-person"></span><label>个人信息</label><span class="fui-keyboard_arrow_right"></span></a></div></li>
+				<li><div><a target="_top" href="${contextPath}/web/balance/index?token=${token}"><span class="fui-credit-card"></span><label>我的钱包</label><span class="fui-keyboard_arrow_right"></span></a></div></li>
+				<li><div><a target="_top" href="${contextPath}/web/coupon/index?token=${token}"><span class="fui-coupon"></span><label>优惠券</label><span class="fui-keyboard_arrow_right"></span></a></div></li>
+				<li style="height:44px;"><div><a target="_top" href="${contextPath}/web/address/index?token=${token}"><span class="fui-address"></span><label>地址管理</label><span class="fui-keyboard_arrow_right"></span></a></div></li>
 			</ul>
 			<div class="gap"></div>
 			<ul>
-				<li><div><span class="fui-service"></span><label>在线客服</label></div></li>
-				<li style="height:44px;"><div><span class="fui-feedback"></span><label>帮助与反馈</label><span class="fui-keyboard_arrow_right"></span></div></li>
+				<li><div><a target="_top" href="tel:4000000000"><span class="fui-service"></span><label>在线客服</label><label class="svs-phone">400-000-0000</label></a></div></li>
+				<li style="height:44px;"><div><a target="_top" href="${contextPath}/web/feedback/index?token=${token}"><span class="fui-feedback"></span><label>帮助与反馈</label><span class="fui-keyboard_arrow_right"></span></a></div></li>
 			</ul>
 			<div class="gap"></div>
 			<ul>
-				<li style="height:44px;"><div><span class="fui-exit"></span><label>退出此账号</label></div></li>
+				<li style="height:44px;"><div><a id="quit" target="_top" href=""><span class="fui-exit"></span><label>退出此账号</label></a></div></li>
 			</ul>
 		</div>
 	</div>
@@ -59,7 +59,7 @@
 		<ul>
 			<li><div class="f-child"><a target="_top" href="${contextPath}/web/product/index?token=${token}"><span class="home3"></span>首页</a></div></li>
 			<li><div class="f-child"><a target="_top" href="${contextPath}/web/life/index?token=${token}"><span class="local_cafe"></span>生活</a></div></li>
-			<li><div class="f-child"><a target="_top" href="#"><span class="dns"></span>订单</a></div></li>
+			<li><div class="f-child"><a target="_top" href="${contextPath}/web/order/index?token=${token}"><span class="dns"></span>订单</a></div></li>
 			<li><div class="f-child"><a target="_top" class="active" href="${contextPath}/web/me/index?token=${token}"><span class="person"></span>我</a></div></li>
 		</ul>
 		<div class="clear"></div>

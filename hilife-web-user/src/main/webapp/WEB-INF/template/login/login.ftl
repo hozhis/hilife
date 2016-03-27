@@ -30,11 +30,12 @@
 		<div class="login-title">
 			<label class="label">登录</label>
 		</div>
+		<div class="progressbar hide"></div>
 		<div class="login-body">
 			<div id="pageone">
 				<div class="login-phone">
 					<label>输入您的手机号码</label>
-					<input data-role="none" class="phone" type="text" maxlength="11"  placeholder="输入您的手机号码" id="username" name="username" required />
+					<input data-role="none" class="phone" type="tel" maxlength="11"  placeholder="输入您的手机号码" id="username" name="username" required />
 				</div>
 				<div class="login-warn hide">请输入手机号码</div>
 				<div class="login-remark">关于账号方面的帮助？</div>

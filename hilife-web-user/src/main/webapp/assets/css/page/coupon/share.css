@@ -1,0 +1,143 @@
+body {
+	background: #ffffff;
+}
+
+.content {
+	background: #ffffff;
+	padding: 0;
+}
+
+.main-r {
+	background-image: url("/hilife-web-user/assets/img/share.png");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	display: block;
+	width: 100%;
+}
+
+.l {
+	margin-top: -40px;
+}
+
+.l>label {
+	display: block;
+	font-size: 10px;
+	letter-spacing: 0.5px;
+	line-height: 16px;
+	padding: 0 40px;
+	text-align: center;
+}
+
+.l div {
+	display: inline-block;
+	text-align: center;
+	width: 25%;
+}
+
+.l span {
+	bottom: -3px;
+	color: #5b5b5b;
+	display: block;
+	font-size: 14px;
+	line-height: 19px;
+	position: absolute;
+	text-align: center;
+	width: 20%;
+}
+
+hr {
+	border-color: #e0e0e0;
+	border-left: 0 none;
+}
+
+.inviteCode>div {
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	color: #ea0000;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 20px;
+	padding: 0 10px;
+}
+
+.invite {
+	background-color: #ea0000;
+	border-radius: 4px;
+	color: #ffffff;
+	height: 40px;
+	line-height: 40px;
+	margin: 30px auto;
+	text-align: center;
+	width: 60%;
+}
+
+.shade {
+	background: #000000;
+	height: 100%;
+	left: 0;
+	opacity: 0.5;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.share-item ul {
+	background: #ffffff;
+	bottom: 0;
+	height: 80px;
+	left: 0;
+	position: fixed;
+	width: 100%;
+}
+
+.share-item li {
+	float: left;
+	text-align: center;
+	width: 25%;
+}
+
+.share-item label {
+	display: block;
+	font-size: 14px;
+	margin-top: -10px;
+}
+
+.share-item li>span {
+	display: block;
+	height: 62px;
+}
+
+.fui-qq:before {
+	content: "\e669";
+	font-size: 36px;
+	color: #56b6e7;
+}
+
+.fui-wechat:before {
+	content: "\e66b";
+	font-size: 36px;
+	color: #7bc549;
+}
+
+.fui-weibo:before {
+	content: "\e66c";
+	font-size: 40px;
+	color: #ff763b;
+}
+
+.fui-weibo {
+	margin-top: -5px;
+}
+
+.fui-moments:before {
+	content: "\e661";
+	font-size: 40px;
+	color: black;
+	color: #fdbe3d;
+}
+
+.fui-moments {
+	margin-top: -5px;
+}

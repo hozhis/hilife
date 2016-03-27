@@ -12,16 +12,19 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 					 * 	window.location.href = global.context + "/web/product/service/" + i + "?token=" + global.token;
 					 * });
 					}*/
-					var bindTapForLi = function(counter){
+					var bindTapForLi = function(counter1,counter2){
 						//这里是一个新的scope
 						return function(){
-							window.location.href = global.context + "/web/product/service/" + counter 
-													+ "?serviceName=" + $("#service"+counter+" label").text()
-													+ "&token=" + global.token;
+							window.location.href = global.context + "/web/product/service/000" + counter1 
+													+ "s_000" +counter2 + "?token=" + global.token;
 						};
 					};
-					for(var i = 1; i <= 31; i++){
-						$("#service"+i).tap(bindTapForLi(i));
+					for(var i = 0; i < 7; i++){
+						for(var j = 0; j < 9; j++){
+							$("#service_000"+i+"s_000"+j+" div").css("background-image",
+									"url('"+global.context+"/assets/img/logo/logo_000"+i+"s_000"+j+".png')");
+							$("#service_000"+i+"s_000"+j).tap(bindTapForLi(i,j));
+						}
 					}
 				},
 				length : function(){

@@ -1,0 +1,358 @@
+.header {
+	background: #ffffff;
+	border-bottom: 1px solid #ea0000;
+}
+
+.fui-arrow-left2::before {
+	color: #ea0000;
+}
+
+.title {
+	color: #ea0000;
+}
+
+.fui-arrow-right::before {
+	font-size: 0.9rem;
+	float: right;
+}
+
+.fui-cross::before {
+	font-size: 16px;
+	line-height: 55px;
+	float: right;
+	margin-right: 10px;
+}
+
+.content {
+	padding: 0px;
+}
+
+.notice {
+	font-size: 0.9rem;
+	height: 1.5rem;
+	letter-spacing: 0.5px;
+	line-height: 1.5rem;
+	text-align: center;
+	background: #ea0000;
+	color: #ffffff;
+	height: 1.5rem;
+	letter-spacing: 0.5px;
+	line-height: 1.5rem;
+	text-align: center;
+	padding: 0 10px;
+}
+
+.form-group {
+	background: #ffffff;
+	padding: 5px 0;
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+	margin-bottom: 10px;
+}
+
+#form-address, #form-time, #form-person {
+	height: 45px;
+}
+
+.form-control {
+	border: none;
+	height: 25px;
+	line-height: 35px;
+	padding: 0 10px;
+	max-width: 80%;
+	display: -webkit-inline-box;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	color: #bebebe;
+}
+
+[class^="fui-"]::before, [class*="fui-"]::before {
+	color: #ea0000;
+}
+
+.fui-keyboard_arrow_right::before {
+	color: #d0d0d0;
+	float: right;
+	margin-right: 10px;
+	line-height: 2;
+}
+
+.fui-calendar, .fui-user, .fui-mail, .fui-new {
+	margin-left: 10px;
+}
+
+.fui-new:before {
+	content: "\e628";
+}
+
+.fui-location::before {
+	font-size: 18px;
+}
+
+hr {
+	margin: 5px 0 8px;
+	border-top: 1px solid #e0e0e0;
+	border-bottom: none;
+	padding: 0px;
+}
+
+.btn.btn-primary {
+	border: 0 none;
+	bottom: -2px;
+	position: fixed;
+	width: 100%;
+	border-radius: 0px;
+	background-color: #ea0000;
+	height: 50px;
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+
+.title- {
+	color: #ea0000;
+	line-height: 50px;
+	margin: 0 auto;
+	max-width: 60%;
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	width: auto;
+}
+
+.title->label {
+	font-size: 18px;
+}
+
+.item-icon {
+	height: auto;
+	width: 30%;
+}
+
+.service-item {
+	padding: 20px;
+	text-align: center;
+}
+
+.service-detail {
+	padding: 0 10px;
+}
+
+.service-detail label {
+	display: block;
+	font-size: 1rem;
+	height: 20px;
+}
+
+.service-item label {
+	display: block;
+	font-size: 1rem;
+	height: 25px;
+}
+
+.lb-title {
+	color: #ea0000;
+}
+
+.gap3 {
+	height: 20px;
+}
+
+.shape {
+	background: #000000;
+	height: 100%;
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	top: 0;
+	width: 100%; 
+}
+
+.ops {
+	padding: 0 10px;
+	height: 35px;
+}
+
+.confirm {
+	float: right;
+}
+
+.datetime button {
+	background: transparent;
+	color: #ea0000;
+	font-size: 16px;
+	letter-spacing: 1.5px;
+	padding: 0;
+	line-height: 35px;
+	border: none;
+}
+
+.datetime {
+	background: #ffffff;
+	bottom: -2px;
+	height: auto;
+	opacity: 1;
+	position: fixed;
+	width: 100%;
+}
+
+.time-t {
+	
+}
+
+.time-title {
+	background: #f0f0f0;
+	border-bottom: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
+	letter-spacing: 0.5px;
+	font-size: 16px;
+	padding: 5px 10px;
+	width: 100%;
+}
+
+.date {
+	border-bottom: 1px solid #e0e0e0;
+	height: 40px;
+	text-align: center;
+}
+
+.date ul {
+	display: inline-block;
+	line-height: 16px;
+	width: 80%;
+	width: 80%;
+}
+
+.date ul>li {
+	float: left;
+	width: 25%;
+}
+
+.date ul>li.active {
+	border-bottom: 2px solid #ea0000;
+}
+
+.date span {
+	display: inline-block;
+	font-size: 15px;
+}
+
+.time {
+	height: 135px;
+}
+
+.time>ul {
+	margin: 0 5px;
+}
+
+.time ul>li {
+	float: left;
+	width: 25%;
+	text-align: center;
+	margin-top: 5px;
+	padding: 5px 10px 0;
+}
+
+.time .time-item {
+	border: 1px solid #e0e0e0;
+	border-radius: 2px;
+	font-size: 14px;
+	padding: 3px 0;
+	position: relative;
+}
+
+.time-item.active {
+	border: 1px solid #ea0000;
+}
+
+.check {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style: solid;
+	border-color: #ea0000 #ea0000 transparent transparent;
+}
+
+.fui-check::before {
+	font-size: 8px;
+	color: #ffffff;
+	position: absolute;
+	top: -8px;
+	right: -10px;
+}
+
+.fui-left:before {
+	content: "\e606";
+	line-height: 40px;
+	margin-right: 5px;
+	float: left;
+	color: #d0d0d0;
+}
+
+.fui-right:before {
+	content: "\e607";
+	line-height: 40px;
+	float: right;
+	margin-right: 5px;
+	color: #d0d0d0;
+}
+
+.minus, .plus {
+	width: 25%;
+}
+
+.per-c {
+	background: #f0f0f0;
+	border-top: 1px solid #e0e0e0;
+}
+
+.t-t {
+	float: left;
+	font-size: 16px;
+	line-height: 45px;
+	padding-left: 10px;
+	width: 40%;
+}
+
+.e-o {
+	text-align: center;
+	float: left;
+	width: 60%;
+	height: 45px;
+	line-height: 45px;
+}
+
+.fui-minus:before {
+	content: "\e90d";
+	font-size: 16px;
+}
+
+.fui-plus2:before {
+	content: "\e90e";
+	font-size: 16px;
+}
+
+.num {
+	display: inline-block;
+	width: 30%;
+	/* background: #ffffff; */
+}
+
+.num>label {
+	background: #ffffff;
+	display: block;
+	height: 28px;
+	line-height: 30px;
+	margin: 5px;
+}
+
+.daterpicker {
+	z-index: 9999;
+}
+
+.form-group input {
+	color: #000000;
+}

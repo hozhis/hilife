@@ -24,7 +24,9 @@ require([ 'jquery', 'global', 'jquery.mobile', 'pnotify' ],
 							$(".login-validcode label").css("color", "#ffffff");
 						}
 					});
-					$(".nextstep").tap(function() {
+					//屏蔽双击事件，防止验证码的短时间内多次获取，避免服务器压力
+					$(".nextstep").tap(function handler(e) {
+						e.preventDefault();
 						var reg = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
 						var flag = reg.test($("#username").val());
 						if (!flag) {
@@ -32,7 +34,12 @@ require([ 'jquery', 'global', 'jquery.mobile', 'pnotify' ],
 							$("#username").css("border-color","#0072e3");
 							return;
 						}
+						$(".progressbar").removeClass("hide").addClass("loading");
 						_self.sendLoginSms();
+						$(this).unbind('tap');
+						setTimeout(function(){
+							$(".nextstep").tap(handler)
+						},1000);
 					});
 					$("#arrow-left").tap(function() {
 						$("#pagetwo").addClass("hide");
@@ -58,6 +65,7 @@ require([ 'jquery', 'global', 'jquery.mobile', 'pnotify' ],
 						contentType : "application/json; charset=utf-8",
 						success : function(msg) {
 							if (msg.code == "ACK") {
+								$(".progressbar").removeClass("loading").addClass("hide");
 								$("#pageone").addClass("hide");
 								$("#pagetwo").removeClass("hide");
 								$("#arrow-left").removeClass("hide");
@@ -88,7 +96,8 @@ require([ 'jquery', 'global', 'jquery.mobile', 'pnotify' ],
 								        layer.open({content: '你选择了取消', time: 1});
 								    }
 								});*/
-								window.location.href = global.context + "/web/product/index?token=" + msg.data.token;
+								//window.location.href = global.context + "/web/product/index?token=" + msg.data.token;
+								window.parent.location = global.context + "/web/product/index?token=" + msg.data.token;
 							}
 						}
 					});

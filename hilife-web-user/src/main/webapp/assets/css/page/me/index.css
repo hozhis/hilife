@@ -31,6 +31,11 @@
 	border-top: 1px solid #e0e0e0;
 }
 
+.content-body li>div>a{
+	display: block;
+    width: auto;
+}
+
 .content-body ul>li {
 	height: 45px;
 	padding: 0 0 0 15px;
@@ -45,7 +50,7 @@
 .content-body ul>li div label {
 	font-size: 16px;
 	margin-left: 5px;
-	/* vertical-align: 0px; */
+	color: #000000;
 }
 
 .content-body ul>li div span.fui-keyboard_arrow_right {
@@ -71,4 +76,8 @@
 
 .fui-exit {
 	color: #ea0000;
+}
+
+.svs-phone{
+	width: auto;color:#000000;float:right;line-height:45px;margin-right:15px;
 }

@@ -1,0 +1,76 @@
+body {
+	background-color: #ffffff;
+}
+
+.content {
+	padding: 0;
+}
+
+.first-child>div {
+	border-right: 1px solid #e0e0e0;
+}
+
+.q {
+	background-color: #ea0000;
+	color: #ffffff;
+	display: inline-block;
+	float: left;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	width: 50%;
+}
+
+.q span {
+	margin-right: 5px;
+}
+
+.q>div {
+	line-height: 25px;
+}
+
+.q label {
+	color: #e0e0e0;
+	line-height: 20px;
+	font-size: 14px;
+}
+
+.fui-balance:before {
+	content: "\e6a1";
+}
+
+.fui-bankcard:before {
+	content: "\e6a2";
+}
+
+.content-title {
+	color: #5b5b5b;
+	font-size: 14px;
+	margin: 5px 15px;
+}
+
+.deal-duration {
+	background-color: #ffffff;
+	padding: 10px 15px;
+}
+
+.border {
+	border: 1px solid #4f4f4f;
+	border-radius: 4px;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+}
+
+.border>div {
+	border-right: 1px solid #4f4f4f;
+	float: left;
+	font-size: 14px;
+	text-align: center;
+	width: 33.3%;
+}
+
+.border>div.active {
+	background-color: #4f4f4f;
+	color: #ffffff;
+}

@@ -20,4 +20,7 @@ public interface ICustUserInfoRepository
     @Modifying
     void clearToken(String token);
 
+    @Query("update CustUserInfo c set c.addressId = ?2 where c.token = ?1")
+    @Modifying
+    void saveServiceAddress(String token, Integer addressId);
 }

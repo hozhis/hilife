@@ -35,14 +35,25 @@ public class CustUserInfo extends UserInfo {
     @Column(name = "DEF_CAR_ID")
     private Integer defCarId;
 
-    @Column(name = "LOTTERY_TIME")
-    private Integer lotteryTime = 0;
-
     @Column(name = "SEX")
     private String sex = "0";
 
     @Column(name = "REGION_ID")
     private Integer regionId;
+
+    @Column(name = "ADDRESS_ID")
+    private Integer addressId;
+
+    @Column(name = "USERNAME")
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Integer getUserId() {
         return userId;
@@ -92,14 +103,6 @@ public class CustUserInfo extends UserInfo {
         this.defCarId = defCarId;
     }
 
-    public Integer getLotteryTime() {
-        return lotteryTime;
-    }
-
-    public void setLotteryTime(Integer lotteryTime) {
-        this.lotteryTime = lotteryTime;
-    }
-
     public String getSex() {
         return sex;
     }
@@ -114,6 +117,14 @@ public class CustUserInfo extends UserInfo {
 
     public void setRegionId(Integer regionId) {
         this.regionId = regionId;
+    }
+
+    public Integer getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
     }
 
 }

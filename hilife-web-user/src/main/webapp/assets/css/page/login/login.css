@@ -86,3 +86,32 @@ button {
 input[placeholder] {
 	color: #7b7b7b;
 }
+
+@keyframes loading {
+	0% {right:100%;}
+	20%{right:80%;}
+	40%{right:60%;}
+	60%{right:40%;}
+	80%{right:20%;}
+	100% {right:0;}
+}
+
+@-webkit-keyframes loading {
+	0% {right:100%;}
+	20%{right:80%;}
+	40%{right:60%;}
+	60%{right:40%;}
+	80%{right:20%;}
+	100% {right:0;}
+}
+.progressbar.loading{
+	-webkit-animation: loading 1s 1 linear;
+	animation: loading 1s 1 linear;
+}
+
+.progressbar {
+    background: #ce0000;
+    height: 5px;
+    position: absolute;
+    width: 100%;
+}
