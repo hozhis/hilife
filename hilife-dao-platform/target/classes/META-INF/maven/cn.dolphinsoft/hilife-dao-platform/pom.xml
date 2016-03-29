@@ -8,12 +8,6 @@
 	</parent>
 	<artifactId>hilife-dao-platform</artifactId>
 	<dependencies>
-		<dependency>
-			<groupId>cn.dolphinsoft</groupId>
-			<artifactId>hilife-common</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
 
 		<!-- Test -->
 		<dependency>
@@ -46,6 +40,11 @@
 			<artifactId>mockito-core</artifactId>
 			<version>1.9.5</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>cn.dolphinsoft</groupId>
+			<artifactId>hilife-common</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>

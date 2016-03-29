@@ -27,7 +27,7 @@
 		<div class="right"></div>
 		<div class="title"><label>我</label></div>
 	</div>
-	<div>
+	<div style="margin-top:50px;">
 		<div class="banner">
 			<div class="circle"></div>
 		</div>

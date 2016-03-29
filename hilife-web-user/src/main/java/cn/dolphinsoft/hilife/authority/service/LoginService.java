@@ -6,6 +6,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.dolphinsoft.hilife.common.dto.ResultDto;
 import cn.dolphinsoft.hilife.common.memcached.constant.CacheType;
 
 /**
@@ -51,4 +52,12 @@ public interface LoginService {
     @Transactional(propagation = Propagation.REQUIRED)
     void clearToken(String token);
 
+    /**
+     * 
+     * Description: 检测用户是否第一次登录
+     *
+     * @param loginId
+     * @return
+     */
+    ResultDto<String> checkUser(String loginId);
 }

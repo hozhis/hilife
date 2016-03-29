@@ -31,7 +31,7 @@
 			<div class="main-r"></div>
 			<div class="l">
 				<div style="width:100%;height: 19px;position: relative;"><div><hr></div><div style="width:20%;"><span>邀请码</span></div><div><hr></div></div>
-				<div class="inviteCode" style="width: 100%;"><div>7AD85S</div></div>
+				<div class="inviteCode" style="width: 100%;"><div>${inviteCode}</div></div>
 				<label>有福同享，邀请您的朋友下载APP并注册成功后在 [我-优惠券-兑换优惠券] 输入您的邀请码。一旦您的朋友兑换成功，您的朋友会获得总价值￥60元的优惠券（限新注册用户），您也将获得一张价值￥20元的优惠券。优惠券会自动存入您的账号。</label>
 			</div>
 			<div class="invite">邀请好友</div>

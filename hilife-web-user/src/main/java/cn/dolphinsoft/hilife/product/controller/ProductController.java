@@ -37,11 +37,11 @@ public class ProductController {
         ProductDto dto = producrService.getProductDetail(id);
         if (dto != null) {
             model.addAttribute("serviceName", dto.getProductName());
-            model.addAttribute("minHours", dto.getMinHours());
+            model.addAttribute("minHours", dto.getMount());
             model.addAttribute("price", dto.getPrice());
-            model.addAttribute("detail", dto.getDetail());
+            model.addAttribute("detail", dto.getIntroduction());
             model.addAttribute("remark", dto.getRemark());
-            model.addAttribute("logo", dto.getLogo());
+            model.addAttribute("logo", dto.getImage());
             model.addAttribute("serviceId", id);
         }
         String serviceAddress = addressService.getServiceAddress(AuthorityContext.getCurrentToken());

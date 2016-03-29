@@ -10,6 +10,9 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 					$(this).addClass("active");
 					$(this).parent("li").siblings().children().removeClass("active");
 				});
+				/*$(".content-body").swipeUp(function(){
+					$(".header").hide();
+				});*/
 			},
 			init : function(){
 				var _self = this;

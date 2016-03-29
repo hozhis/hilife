@@ -13,4 +13,14 @@ public class BalanceController {
     public String index(Model model) {
         return "balance/index";
     }
+    
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+    public String balanceDetail(Model model) {
+        return "balance/detail";
+    }
+    
+    @RequestMapping(value = "/bank/index", method = RequestMethod.GET)
+    public String bank(Model model) {
+        return "balance/bank";
+    }
 }

@@ -1,12 +1,12 @@
 .banner {
 	width: 100%;
-	background: url("../../../img/background.jpg") no-repeat scroll 0 0/100%
+	background: url("/hilife-web-user/assets/img/background.jpg") no-repeat scroll 0 0/100%
 		100%;
 	position: relative;
 }
 
 .circle {
-	background: url("../../../img/avatar.png") no-repeat scroll 0 0/100%
+	background: url("/hilife-web-user/assets/img/avatar.png") no-repeat scroll 0 0/100%
 		100%;
 	border-radius: 1000px;
 	width: 22%;
@@ -23,6 +23,7 @@
 .content {
 	padding: 0;
 	background: #f0f0f0;
+	margin-top:0;
 }
 
 .content-body ul {

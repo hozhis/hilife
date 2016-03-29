@@ -1,0 +1,43 @@
+body {
+	background: #ffffff;
+}
+
+.content {
+	background-color: #ffffff;
+}
+
+.content>div {
+	background-image:
+		url("/hilife-web-user/assets/img/icon_balancedefault.png");
+	background-position: 50% center;
+	background-repeat: no-repeat;
+	background-size: 30% auto;
+	width: 100%;
+	min-height: 180px;
+	background-color: #ffffff;
+}
+
+.content>label {
+	display: block;
+	font-size: 30px;
+	margin-top: -30px;
+	text-align: center;
+	width: 100%;
+}
+
+.content button {
+	background-color: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	font-size: 18px;
+	height: 40px;
+	letter-spacing: 1px;
+	margin-top: 15px;
+	width: 100%;
+}
+
+.content button.default {
+	background-color: #ea0000;
+	border: 1px solid #ea0000;
+	color: #ffffff;
+}

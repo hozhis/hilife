@@ -8,5 +8,5 @@ import cn.dolphinsoft.hilife.common.domain.Product;
 
 public interface IProductRepository extends JpaRepository<Product, Serializable> {
 
-    Product findByLogo(String logo);
+    Product findByImage(String image);
 }

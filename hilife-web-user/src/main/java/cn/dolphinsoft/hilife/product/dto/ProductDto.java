@@ -1,6 +1,7 @@
 package cn.dolphinsoft.hilife.product.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 
@@ -19,15 +20,19 @@ public class ProductDto implements Serializable {
 
     private String productName;
 
-    private String logo;
+    private String image;
 
     private Integer typeId;
 
-    private String detail;
+    private String introduction;
 
     private Integer price;
 
-    private Integer minHours;
+    private Integer mount;
+
+    private Date createDate;
+
+    private Date modifyDate;
 
     private String remark;
 
@@ -49,14 +54,6 @@ public class ProductDto implements Serializable {
         this.productName = productName;
     }
 
-    public String getLogo() {
-        return logo;
-    }
-
-    public void setLogo(String logo) {
-        this.logo = logo;
-    }
-
     public Integer getTypeId() {
         return typeId;
     }
@@ -65,28 +62,12 @@ public class ProductDto implements Serializable {
         this.typeId = typeId;
     }
 
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
     public Integer getPrice() {
         return price;
     }
 
     public void setPrice(Integer price) {
         this.price = price;
-    }
-
-    public Integer getMinHours() {
-        return minHours;
-    }
-
-    public void setMinHours(Integer minHours) {
-        this.minHours = minHours;
     }
 
     public String getRemark() {
@@ -103,6 +84,46 @@ public class ProductDto implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
+
+    public Integer getMount() {
+        return mount;
+    }
+
+    public void setMount(Integer mount) {
+        this.mount = mount;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(Date modifyDate) {
+        this.modifyDate = modifyDate;
     }
 
 }

@@ -16,7 +16,7 @@ public class CustUserInfoDto extends RequestDto {
 
     private String custName;
 
-    private Integer defCarId;
+    private String inviteCode;;
 
     private String sex = "0";
 
@@ -74,12 +74,12 @@ public class CustUserInfoDto extends RequestDto {
         this.custName = custName;
     }
 
-    public Integer getDefCarId() {
-        return defCarId;
+    public String getInviteCode() {
+        return inviteCode;
     }
 
-    public void setDefCarId(Integer defCarId) {
-        this.defCarId = defCarId;
+    public void setInviteCode(String inviteCode) {
+        this.inviteCode = inviteCode;
     }
 
     public String getSex() {

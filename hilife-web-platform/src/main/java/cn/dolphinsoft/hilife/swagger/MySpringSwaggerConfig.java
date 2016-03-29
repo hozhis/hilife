@@ -42,7 +42,7 @@ public class MySpringSwaggerConfig extends SpringSwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo("智慧生活API", "用户端  后台API文档", "index.html", "hozhis@vip.qq.com", "My License", "");
+        ApiInfo apiInfo = new ApiInfo("智慧生活API", "平台  后台API文档", "index.html", "hozhis@vip.qq.com", "My License", "");
         return apiInfo;
     }
 

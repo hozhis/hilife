@@ -1,24 +1,34 @@
 .content {
 	margin-top: 0px;
-	padding: 0px;
+	padding: 50px 0 0;
+	background: #ffffff;
+	height: 100%;
+}
+
+body{
 	background: #ffffff;
 }
 
 .login-title {
-	height: 120px;
+	height: 25%;
 	background: #ea0000;
 }
 
 .login-title .label {
 	color: white;
 	margin-left: 15px;
-	margin-top: 70px;
+	margin-top: 20%;
 	font-size: 20px;
 	position: absolute;
 }
 
 .login-body {
 	padding: 0 15px;
+	height: 70%;
+}
+
+#pageone, #pagetwo {
+    height: 75%;
 }
 
 .page {
@@ -62,7 +72,7 @@
 	margin: 0;
 }
 
-.login-remark {
+.login-remark,.login-remark a{
 	color: #ea0000;
 	font-size: 14px;
 }
@@ -114,4 +124,16 @@ input[placeholder] {
     height: 5px;
     position: absolute;
     width: 100%;
+}
+
+.logo, .company {
+    text-align: center;
+}
+
+.logo img {
+    width: 25%;
+}
+
+.company > img {
+    width: 50%;
 }

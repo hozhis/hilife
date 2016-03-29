@@ -3,7 +3,8 @@ body {
 }
 
 .content {
-	padding: 0;
+	padding: 50px 0 0;
+	background-color: #ffffff;
 }
 
 .first-child>div {
@@ -44,14 +45,15 @@ body {
 }
 
 .content-title {
-	color: #5b5b5b;
-	font-size: 14px;
-	margin: 5px 15px;
+	background-color: #f0f0f0;
+    color: #5b5b5b;
+    font-size: 14px;
+    padding: 5px 15px;
 }
 
 .deal-duration {
 	background-color: #ffffff;
-	padding: 10px 15px;
+	padding: 10px 0;
 }
 
 .border {
@@ -60,6 +62,7 @@ body {
 	height: 30px;
 	line-height: 30px;
 	overflow: hidden;
+	margin: 0 15px;
 }
 
 .border>div {
@@ -73,4 +76,63 @@ body {
 .border>div.active {
 	background-color: #4f4f4f;
 	color: #ffffff;
+}
+
+.deal-duration li {
+	padding: 5px 15px 5px 0;
+	overflow: hidden;
+	margin-left: 15px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.deal-duration>ul>li:last-child {
+	border-bottom: 0;
+}
+
+.d-left {
+	display: inline-block;
+	float: left;
+	width: 70%;
+}
+
+.d-left>label {
+	display: block;
+	width: 100%;
+}
+
+.d-right {
+	display: inline-block;
+	float: left;
+	width: 30%;
+	text-align: right;
+}
+
+.d-right>label {
+	display: block;
+	width: 100%;
+}
+
+.d-balance {
+	color: #5b5b5b;
+	font-size: 14px;
+	line-height: 10px;
+}
+
+.d-time {
+	color: #5b5b5b;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.d-money {
+	font-size: 14px;
+	line-height: 25px;
+}
+
+.d-money.consume {
+	color: #ff8000;
+}
+
+.d-money.deposit {
+	color: #02c874;
 }

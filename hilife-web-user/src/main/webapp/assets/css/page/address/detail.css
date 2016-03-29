@@ -1,6 +1,5 @@
 .content {
-	padding: 0;
-	background: #ffffff;
+	padding: 50px 0 0;
 	width: 100%;
 }
 
@@ -124,7 +123,7 @@ i.marker-shadow {
     text-align: center;
 }
 
-@-webkit-keyframes spin {
+/* @-webkit-keyframes spin {
   0% {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -165,4 +164,4 @@ i.marker-shadow {
 .fui-spin4:before {
     content: "\e800";
     color: #ea0000;
-}
+} */

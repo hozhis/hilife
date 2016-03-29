@@ -10,29 +10,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import cn.dolphinsoft.hilife.common.enumeration.BaseStatus;
-
 @Entity
 @Table(name = "SMS_MESSAGE")
 public class SmsMessage implements Serializable {
 
-    private static final long serialVersionUID = 851821233904308854L;
+    private static final long serialVersionUID = 5040119381328324484L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "SMS_ID")
+    @Column(name = "sms_id")
     private Integer smsId;
 
-    @Column(name = "PHONE")
+    @Column(name = "phone")
     private Long phone;
 
-    @Column(name = "STATUS")
-    private String status = BaseStatus.EFFECT.getKey();
+    @Column(name = "status")
+    private String status;
 
-    @Column(name = "MESSAGE")
+    @Column(name = "message")
     private String message;
 
-    @Column(name = "CREATE_DATE")
+    @Column(name = "create_date")
     private Date createDate;
 
     public Integer getSmsId() {

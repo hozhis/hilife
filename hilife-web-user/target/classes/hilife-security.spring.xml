@@ -44,6 +44,8 @@
 				/assets/**=anon
 				/web/api-docs/**=anon
 				/web/auth/login=anon
+				/web/auth/checkUser=anon
+				/web/auth/login/QA=anon
 				/web/auth/login/authc=pass
 				/web/auth/sendLoginSms=anon
 				/web/**=authc

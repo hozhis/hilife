@@ -26,8 +26,8 @@ public class ProductServiceImpl implements ProductService {
     private IProductRepository productRepository;
 
     @Override
-    public ProductDto getProductDetail(String logo) {
-        Product product = productRepository.findByLogo(logo);
+    public ProductDto getProductDetail(String image) {
+        Product product = productRepository.findByImage(image);
         // 如果product查不到，则业务上有问题
         Assert.notNull(product);
         return ConverterService.convert(product, ProductDto.class);

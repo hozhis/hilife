@@ -2,6 +2,7 @@ package cn.dolphinsoft.hilife.authority.service.impl;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,6 +58,7 @@ public class AuthorityServiceImpl implements AuthorityService {
             if (userInfo == null) {
                 userInfo = new CustUserInfo();
                 userInfo.setLoginId(loginId);
+                userInfo.setInviteCode(generateInviteCode(loginId));
             }
             return userInfo;
         }
@@ -107,6 +109,22 @@ public class AuthorityServiceImpl implements AuthorityService {
     @Override
     public Map<String, Integer> getPages() {
         return null;
+    }
+
+    private String generateInviteCode(String loginId) {
+        String base = "abcdefghjklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < 6; i++) {
+            int number = random.nextInt(base.length());
+            sb.append(base.charAt(number));
+        }
+        String inviteCode = sb.toString().toUpperCase();
+        CustUserInfo custUserInfo = custUserInfoRepository.findByInviteCode(inviteCode);
+        if (custUserInfo != null) {
+            generateInviteCode(loginId);
+        }
+        return inviteCode;
     }
 
 }

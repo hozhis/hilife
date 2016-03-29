@@ -5,12 +5,6 @@
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
-        <dependent-module archiveName="hilife-dao-user-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hilife-dao-user/hilife-dao-user">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="hilife-common-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hilife-common/hilife-common">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="hilife-web-user"/>
         <property name="java-output-path" value="/hilife-web-user/target/classes"/>
     </wb-module>

@@ -1,0 +1,60 @@
+.ul-bankcard-list li {
+	background-color: #ffffff;
+	border-radius: 4px;
+	margin-top: 15px;
+	height: 90px;
+	padding: 10px 0;
+}
+
+.bank-logo {
+	background-image: url("/hilife-web-user/assets/img/bank/CCB.png");
+	background-position: 60% -25%;
+	background-repeat: no-repeat;
+	background-size: 85% auto;
+	display: inline-block;
+	float: left;
+	height: 100%;
+	min-width: 60px;
+}
+
+.ul-bankcard-list {
+	margin-top: 15px;
+}
+
+.bank-name {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: bold;
+}
+
+.card-type {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.card-no {
+	font-size: 20px;
+	padding-right: 10px;
+	text-align: right;
+	line-height: 45px;
+	font-family: "ºÚÌå";
+}
+
+.content button {
+	border: 1px dashed #d0d0d0;
+	border-radius: 4px;
+	height: 40px;
+	margin-top: 15px;
+	font-size: 16px;
+	width: 100%;
+	color: #5b5b5b;
+}
+
+.fui-plus {
+	color: #5b5b5b;
+	margin-right: 5px;
+}
+
+.fui-plus::before {
+	font-size: 14px;
+}

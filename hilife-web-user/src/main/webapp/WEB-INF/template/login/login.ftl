@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>智慧生活服务平台</title>
+<title>智慧生活服务平台-登录</title>
 <meta charset="utf-8" >
 <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" >
 <meta content="telephone=no,email=no,adress=no" name="format-detection" >
@@ -34,11 +34,11 @@
 		<div class="login-body">
 			<div id="pageone">
 				<div class="login-phone">
-					<label>输入您的手机号码</label>
-					<input data-role="none" class="phone" type="tel" maxlength="11"  placeholder="输入您的手机号码" id="username" name="username" required />
+					<label>输入您的手机号</label>
+					<input data-role="none" class="phone" type="tel" maxlength="11"  placeholder="输入您的手机号（无需注册）" id="username" name="username" required />
 				</div>
 				<div class="login-warn hide">请输入手机号码</div>
-				<div class="login-remark">关于账号方面的帮助？</div>
+				<div class="login-remark"><a target="_top" href="${contextPath}/web/auth/login/QA">关于账号方面的帮助？</a></div>
 				<div class="login-btn"><button class="nextstep">下一步</button></div>
 				<div class="clear"></div>
 			</div>
@@ -47,10 +47,14 @@
 					<label>输入您的验证码</label>
 					<input class="validcode" type="text" maxlength="6"  placeholder="输入您的验证码" id="validcode" name="validcode"/>
 				</div>
+				<div class="login-warn hide">请输入验证码</div>
 				<div class="login-remark">未收到验证码？</div>
 				<div class="login-btn"><button class="submit">登录</button></div>
 				<div class="clear"></div>
 			</div>
+			<div class="logo"><img src="${contextPath}/assets/img/logo1.png"></div>
+			<div class="company"><img src="${contextPath}/assets/img/domainname.png"></div>
+			<div class="firstlogin"></div>
 		</div>
 	</div>
 	<div class="clear"></div>

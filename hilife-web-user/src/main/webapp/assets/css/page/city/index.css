@@ -1,0 +1,74 @@
+.content {
+	padding: 50px 0 0;
+}
+
+.location, .hot-city {
+	margin: 10px 10px 0;
+}
+
+.loc-title, .hot-city>div, .city-clsy {
+	color: #5b5b5b;
+	font-size: 14px;
+}
+
+.loc-city, .hot-city li {
+	width: 33.3%;
+	padding-right: 10px;
+}
+
+.loc-city>label, .hot-city label {
+	background-color: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	display: block;
+	font-size: 14px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	width: 100%;
+	margin: 5px 0;
+}
+
+.hot-city>ul {
+	overflow: hidden;
+}
+
+.hot-city li {
+	float: left;
+}
+
+.city-clsy {
+	border-bottom: 1px solid #e0e0e0;
+	border-top: 1px solid #e0e0e0;
+	padding-left: 10px;
+}
+
+.city-list {
+	margin-top: 5px;
+}
+
+.city-list>ul {
+	background-color: #ffffff;
+	padding-left: 10px;
+}
+
+.city-list li {
+	border-bottom: 1px solid #e0e0e0;
+	font-size: 14px;
+	height: 36px;
+	line-height: 36px;
+}
+
+.city-list li:last-child {
+	border: 0 none;
+}
+
+.alphabet {
+	font-size: 10px;
+	position: fixed;
+	right: 3px;
+	text-align: center;
+	z-index: 9;
+	color: #ea0000;
+	font-weight: bold;
+}

@@ -6,11 +6,11 @@ public interface ProductService {
 
     /**
      * 
-     * Description: 根据logo获取家政服务商品详情
+     * Description: 根据image获取家政服务商品详情
      *
      * @return
      */
-    ProductDto getProductDetail(String logo);
+    ProductDto getProductDetail(String image);
 
     /**
      * 

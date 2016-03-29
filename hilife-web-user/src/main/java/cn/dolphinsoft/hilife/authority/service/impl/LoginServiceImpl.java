@@ -18,7 +18,10 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import cn.dolphinsoft.hilife.authority.service.LoginService;
 import cn.dolphinsoft.hilife.common.constant.BasicTypeConstant;
 import cn.dolphinsoft.hilife.common.domain.BasicPara;
+import cn.dolphinsoft.hilife.common.domain.CustUserInfo;
 import cn.dolphinsoft.hilife.common.domain.SmsMessage;
+import cn.dolphinsoft.hilife.common.dto.ResultDto;
+import cn.dolphinsoft.hilife.common.dto.ResultDtoFactory;
 import cn.dolphinsoft.hilife.common.repository.ICustUserInfoRepository;
 import cn.dolphinsoft.hilife.common.repository.ISmsMessageRepository;
 import cn.dolphinsoft.hilife.common.service.CacheService;
@@ -55,7 +58,7 @@ public class LoginServiceImpl implements LoginService {
         String code = "123456";
         // 模板数据库取
         List<BasicPara> list = cacheService.findBasicParaByTypeId(BasicTypeConstant.USER_SMS_TEMPLATE_GET_CAPTCHA);
-        String template = "${name}您的验证码为${code}，该验证码将在15分钟后过期。";
+        String template = "您好！您的用户名为${name}，验证码为${code}，有效期15分钟。";
         if (!list.isEmpty()) {
             template = list.get(0).getParaValue1();
         }
@@ -104,6 +107,15 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public void clearToken(String token) {
         custUserInfoRepository.clearToken(token);
+    }
+
+    @Override
+    public ResultDto<String> checkUser(String loginId) {
+        CustUserInfo custUserInfo = custUserInfoRepository.findByLoginId(loginId);
+        if (custUserInfo != null) {
+            return ResultDtoFactory.toAck("用户存在");
+        }
+        return ResultDtoFactory.toNack("用户不存在");
     }
 
 }

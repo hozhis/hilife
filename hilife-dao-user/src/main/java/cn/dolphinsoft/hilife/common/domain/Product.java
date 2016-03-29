@@ -1,6 +1,7 @@
 package cn.dolphinsoft.hilife.common.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,26 +33,72 @@ public class Product implements Serializable {
     @Column(name = "PRODUCT_NAME")
     private String productName;
 
-    @Column(name = "LOGO")
-    private String logo;
+    @Column(name = "image")
+    private String image;
 
     @Column(name = "TYPE_ID")
     private Integer typeId;
 
-    @Column(name = "DETAIL")
-    private String detail;
+    @Column(name = "INTRODUCTION")
+    private String introduction;
 
     @Column(name = "PRICE")
     private Integer price;
 
-    @Column(name = "MIN_HOURS")
-    private Integer minHours;
+    @Column(name = "MOUNT")
+    private Integer mount;
+
+    @Column(name = "CREATE_DATE")
+    private Date createDate;
+
+    @Column(name = "MODIFY_DATE")
+    private Date modifyDate;
 
     @Column(name = "REMARK")
     private String remark;
 
     @Column(name = "STATUS")
     private String status;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
+
+    public Integer getMount() {
+        return mount;
+    }
+
+    public void setMount(Integer mount) {
+        this.mount = mount;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(Date modifyDate) {
+        this.modifyDate = modifyDate;
+    }
 
     public Integer getProductId() {
         return productId;
@@ -69,14 +116,6 @@ public class Product implements Serializable {
         this.productName = productName;
     }
 
-    public String getLogo() {
-        return logo;
-    }
-
-    public void setLogo(String logo) {
-        this.logo = logo;
-    }
-
     public Integer getTypeId() {
         return typeId;
     }
@@ -85,28 +124,12 @@ public class Product implements Serializable {
         this.typeId = typeId;
     }
 
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
     public Integer getPrice() {
         return price;
     }
 
     public void setPrice(Integer price) {
         this.price = price;
-    }
-
-    public Integer getMinHours() {
-        return minHours;
-    }
-
-    public void setMinHours(Integer minHours) {
-        this.minHours = minHours;
     }
 
     public String getRemark() {

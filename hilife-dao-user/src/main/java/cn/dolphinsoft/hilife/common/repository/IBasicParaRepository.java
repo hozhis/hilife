@@ -28,15 +28,6 @@ public interface IBasicParaRepository extends JpaRepository<BasicPara, Integer>,
     List<BasicPara> findByParaName(String paraName);
 
     /**
-     * Description: 查询抽奖的奖项
-     * 
-     * @param trophy
-     * @return
-     */
-    @Query(value = "select * from BASIC_PARA where TYPE_ID = ?1 order by para_value2 asc", nativeQuery = true)
-    List<BasicPara> findAward(Integer typeId);
-
-    /**
      * Description: 根据paraName查询paraValue1
      * 
      * @param paraName

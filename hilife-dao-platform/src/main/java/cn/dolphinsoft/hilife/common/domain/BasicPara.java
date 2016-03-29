@@ -10,7 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Class Name: BasicPara Description: 基本参数表关系映射对象
+ * Class Name: BasicPara
+ * 
+ * Description: 基本参数表关系映射对象
  * 
  * @author hozhis
  */
@@ -19,9 +21,6 @@ import javax.persistence.Table;
 @Table(name = "BASIC_PARA")
 public class BasicPara implements Serializable {
 
-    /**
-     * Variables Name: serialVersionUID Description: TODO Value Description: TODO
-     */
     private static final long serialVersionUID = 1L;
 
     @Id

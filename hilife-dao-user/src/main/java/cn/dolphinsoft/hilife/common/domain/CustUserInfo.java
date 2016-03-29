@@ -26,14 +26,14 @@ public class CustUserInfo extends UserInfo {
     @Column(name = "TOKEN")
     private String token;
 
+    @Column(name = "USERNAME")
+    private String username;
+
     @Column(name = "CUST_IMAGE")
     private String custImage;
 
     @Column(name = "CUST_NAME")
     private String custName;
-
-    @Column(name = "DEF_CAR_ID")
-    private Integer defCarId;
 
     @Column(name = "SEX")
     private String sex = "0";
@@ -44,8 +44,16 @@ public class CustUserInfo extends UserInfo {
     @Column(name = "ADDRESS_ID")
     private Integer addressId;
 
-    @Column(name = "USERNAME")
-    private String username;
+    @Column(name="INVITE_CODE")
+    private String inviteCode;
+    
+    public String getInviteCode() {
+        return inviteCode;
+    }
+
+    public void setInviteCode(String inviteCode) {
+        this.inviteCode = inviteCode;
+    }
 
     public String getUsername() {
         return username;
@@ -93,14 +101,6 @@ public class CustUserInfo extends UserInfo {
 
     public void setCustName(String custName) {
         this.custName = custName;
-    }
-
-    public Integer getDefCarId() {
-        return defCarId;
-    }
-
-    public void setDefCarId(Integer defCarId) {
-        this.defCarId = defCarId;
     }
 
     public String getSex() {

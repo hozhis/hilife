@@ -1,75 +1,181 @@
 package cn.dolphinsoft.hilife.authority.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.shiro.authc.CredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
-
 import cn.dolphinsoft.hilife.authority.dto.LoginDto;
-import cn.dolphinsoft.hilife.authority.service.LoginService;
+import cn.dolphinsoft.hilife.authority.dto.upstream.PlatformLoginUpdatePwDto;
+import cn.dolphinsoft.hilife.authority.service.PlatformLoginService;
 import cn.dolphinsoft.hilife.common.authority.AuthorityContext;
+import cn.dolphinsoft.hilife.common.domain.PlatformUserInfo;
 import cn.dolphinsoft.hilife.common.dto.ResultDto;
 import cn.dolphinsoft.hilife.common.dto.ResultDtoFactory;
+import cn.dolphinsoft.hilife.common.enumeration.BaseStatus;
+import cn.dolphinsoft.hilife.common.repository.PlatformUserInfoRepository;
+import cn.dolphinsoft.hilife.common.security.KaptchaSupport;
+import cn.dolphinsoft.hilife.common.util.HiLifeUtil;
 
 /**
- * Class Name: LoginController Description: 登陆验证Controller
+ * Class Name: LoginController
+ * 
+ * Description: 平台登陆Controller
  * 
  * @author hozhis
  *
  */
-@Api(value = "login-controller", description = "登陆相关接口", position = 1)
-@RequestMapping(value = "/auth")
 @Controller
+@RequestMapping(value = "/auth")
 public class LoginController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
-    private LoginService loginService;
+    private KaptchaSupport kaptchaSupport;
 
-    @ApiOperation(value = "发送登陆验证短信", notes = "洪志胜 已完成")
-    @RequestMapping(value = "/sendLoginSms", method = RequestMethod.POST)
-    @ResponseBody
-    public ResultDto<String> sendLoginSms(@RequestBody LoginDto loginDto) {
-        Assert.notNull(loginDto.getLoginId());
-        loginService.sendLoginSms(loginDto.getLoginId());
-        return ResultDtoFactory.toAck("短信发送成功");
-    }
+    @Autowired
+    private PlatformLoginService loginService;
 
-    @RequestMapping(value = "/login")
-    public String login(Model model) {
+    @Autowired
+    private PlatformUserInfoRepository platformUserInfoRepository;
+
+    @RequestMapping("/login")
+    public String productInfoView(Model model) {
         return "login/login";
     }
 
-    @ApiOperation(value = "登陆认证", notes = "洪志胜 已完成")
-    @RequestMapping(value = "/login/authc", method = RequestMethod.POST)
+    @RequestMapping("/validate")
+    public void validate() {
+    }
+
+    @RequestMapping("/login/authc")
     @ResponseBody
-    public ResultDto<LoginDto> login(@RequestBody LoginDto loginDto) {
+    public Object login(@RequestBody LoginDto loginDto) {
+        if (!kaptchaSupport.validateCaptcha(loginDto.getCaptcha(), loginDto.getKey())) {
+            return new ResultDto<String>("other", "验证码错误", null);
+        }
+        PlatformUserInfo userInfo = platformUserInfoRepository.findByLoginId(loginDto.getLoginId(),
+                BaseStatus.EFFECT.getKey());
+        if (userInfo == null) {
+            return ResultDtoFactory.toNack("用户名不存在", null);
+        }
         String tokenStr = null;
         try {
             tokenStr = AuthorityContext.login(loginDto.getLoginId(), loginDto.getPassword());
-        } catch (Exception e) {
-            LOGGER.info(e.getMessage());
-            return ResultDtoFactory.toNack("登录失败");
+        } catch (UnknownAccountException e) {
+            return ResultDtoFactory.toNack("用户名不存在", null);
+        } catch (CredentialsException e) {
+            return ResultDtoFactory.toNack("用户名或密码错误", null);
         }
         loginDto.setToken(tokenStr);
-        return ResultDtoFactory.toAck("登录成功", loginDto);
+        return ResultDtoFactory.toAck("登陆成功", loginDto);
     }
 
-    @ApiOperation(value = "注销", notes = "洪志胜 已完成")
+    @RequestMapping("/index")
+    public String index(Model model) {
+        return "index/index";
+    }
+
+    /**
+     * Description: render captcha
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    @RequestMapping("/captcha")
+    public void captcha(@RequestParam String key, HttpServletResponse response) throws ServletException, IOException {
+        kaptchaSupport.captcha(key, response);
+    }
+
+    /**
+     * 
+     * Description: 退出
+     *
+     * @param token
+     * @return
+     */
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ResponseBody
-    public ResultDto<String> logout(@RequestBody LoginDto loginDto) {
-        AuthorityContext.logout(loginDto.getToken());
-        loginService.clearToken(loginDto.getToken());
-        return ResultDtoFactory.toAck("登出成功");
+    public ResultDto<String> logout(@RequestParam String token) {
+        loginService.clearToken(AuthorityContext.getCurrentUser().getUserId());
+        AuthorityContext.logout(token);
+        return ResultDtoFactory.toAck("");
+    }
+
+    /**
+     * 
+     * Description: 跳转至忘记密码
+     *
+     * @return
+     */
+    @RequestMapping(value = "/forget")
+    public String forgetPw() {
+        return "accountMgt/passwordEdit";
+    }
+
+    /**
+     * 
+     * Description: get code 获取验证码
+     *
+     * @param phone
+     * @return
+     */
+    @RequestMapping(value = "/getCode")
+    @ResponseBody
+    public ResultDto<String> getCode(@RequestBody PlatformLoginUpdatePwDto dto) {
+        Long phone = dto.getPhone();
+        if (HiLifeUtil.isEmpty(String.valueOf(phone))) {
+            return ResultDtoFactory.toNack("请输入手机号码！");
+        }
+        PlatformUserInfo info = platformUserInfoRepository.findByPhone(phone, BaseStatus.EFFECT.getKey());
+        if (info == null || BaseStatus.INVALID.getKey().equals(info.getStatus())) {
+            return ResultDtoFactory.toNack("账户不存在！");
+        }
+        String catpcha = loginService.getCatpchaByLoginId(phone);
+        loginService.saveMessage(catpcha, phone);
+        return ResultDtoFactory.toAck("");
+    }
+
+    /**
+     * 
+     * Description: get code 验证验证码
+     *
+     * @param phone
+     * @return
+     */
+    @RequestMapping(value = "/checkCode")
+    @ResponseBody
+    public ResultDto<String> checkCode(@RequestBody PlatformLoginUpdatePwDto dto) {
+        String catpcha = loginService.getCatpchaByLoginId(dto.getPhone());
+        if (catpcha.equals(dto.getCode())) {
+            return ResultDtoFactory.toAck("");
+        }
+        return ResultDtoFactory.toNack("验证码错误！");
+    }
+
+    /**
+     * 
+     * Description: 修改密码
+     *
+     * @param dto
+     * @return
+     */
+    @RequestMapping(value = "/submitPw")
+    @ResponseBody
+    public ResultDto<String> submit(@RequestBody PlatformLoginUpdatePwDto dto) {
+        ResultDto<String> msg = loginService.updatePw(dto);
+        return msg;
     }
 }

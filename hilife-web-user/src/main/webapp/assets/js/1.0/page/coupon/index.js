@@ -9,6 +9,7 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 				});
 				$(".fui-arrow-left3").tap(function(){
 					$(".exchangeCoupon").addClass("hide");
+					$(".main-wrapper .header").show();
 					$(".fui-arrow-left2").unbind('tap');
 					setTimeout(function(){
 						$(".fui-arrow-left2").tap(function(){
@@ -17,6 +18,7 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 					},1000);
 				});
 				$(".options div:first-child").tap(function(){
+					$(".main-wrapper .header").hide();
 					$(".exchangeCoupon").removeClass("hide");
 				});
 				$(".options div:last-child").tap(function(){

@@ -26,7 +26,8 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 						_self.setServiceAddress($(this).attr("id"),url);
 					}
 				});
-				$(".li-default").tap(function(){
+				$(".li-default").tap(function handler(){
+					$(this).unbind("tap");
 					var data = {
 							token : global.token,
 							addressId : $(this).parents().find("div.behind").siblings(".front.slide").attr("id")
@@ -44,6 +45,9 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 							}
 						}
 					});
+					setTimeout(function(){
+						$(this).tap(handler);
+					},1000);
 				});
 				$(".li-delete").tap(function(){
 					var data = {

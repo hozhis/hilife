@@ -34,6 +34,7 @@ require([ 'jquery',
 						window.location.href = global.context + "/web/product/index?token=" + global.token;
 					});
 					$(".notice").tap(function(){
+						$(".main-wrapper .header").hide();
 						layer.open({
 						    type: 1,
 						    content: $(".notice-detail").html(),
@@ -41,6 +42,7 @@ require([ 'jquery',
 						});
 						$(".fui-cross").tap(function(){
 							layer.closeAll();
+							$(".main-wrapper .header").show();
 						});
 					});
 					$(".time-item").tap(function(){

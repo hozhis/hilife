@@ -9,6 +9,7 @@ import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.wordnik.swagger.annotations.Api;
@@ -44,7 +45,7 @@ public class LoginController {
         return ResultDtoFactory.toAck("短信发送成功");
     }
 
-    @RequestMapping(value = "/login")
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model) {
         return "login/login";
     }
@@ -71,5 +72,16 @@ public class LoginController {
         AuthorityContext.logout(loginDto.getToken());
         loginService.clearToken(loginDto.getToken());
         return ResultDtoFactory.toAck("登出成功");
+    }
+
+    @RequestMapping(value = "/login/QA", method = RequestMethod.GET)
+    public String QA(Model model) {
+        return "login/loginQA";
+    }
+
+    @RequestMapping(value = "/checkUser", method = RequestMethod.GET)
+    @ResponseBody
+    public ResultDto<String> checkUserExist(@RequestParam String loginId) {
+        return loginService.checkUser(loginId);
     }
 }
