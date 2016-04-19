@@ -1,0 +1,231 @@
+/**
+分页样式    ----------start-----------------
+**/
+.page-pre_gray {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 14px;
+	margin: 0 2px;
+	cursor: auto;
+	vertical-align: text-top;
+	background-image: url("../../../img/pagenation.png");
+	background-position: -1px -1px;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.page-pre_red {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 14px;
+	margin: 0 2px;
+	cursor: pointer;
+	vertical-align: text-top;
+	background-image: url("../../../img/pagenation.png");
+	background-position: -31px -1px;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.page-next_red {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 14px;
+	margin: 0 2px;
+	cursor: pointer;
+	vertical-align: text-top;
+	background-image: url("../../../img/pagenation.png");
+	background-position: -31px -31px;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.page-next_gray {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 14px;
+	margin: 0 2px;
+	cursor: auto;
+	vertical-align: text-top;
+	background-image: url("../../../img/pagenation.png");
+	background-position: -1px -31px;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.ep-pages {
+	padding: 10px 12px 50px 12px;
+	clear: both;
+	text-align: center;
+	font-family: Arial, "\5B8B\4F53", sans-serif;
+	font-size: 12px;
+	vertical-align: top;
+}
+
+.ep-pages a {
+	display: inline-block;
+	height: 23px;
+	line-height: 23px;
+	padding: 0 8px;
+	margin: 8px 1px 1px 1px;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	overflow: hidden;
+	vertical-align: top
+}
+
+.ep-pages span, .ep-pages select {
+	display: inline-block;
+	height: 23px;
+	line-height: 23px;
+	padding: 0 0px;
+	margin: 0px 2px;
+	background: #fff;
+	overflow: hidden;
+	vertical-align: top
+}
+
+.firstPage_red {
+	background-image: url("../../../img/pagnicon.png");
+	height: 30px;
+	width: 100px;
+	margin: 0 3px;
+	background-position: -101px -31px;
+	border-radius: 2px;
+}
+
+.firstPage_red:hover {
+	cursor: pointer;
+}
+
+.firstPage_gray {
+	background-image: url("../../../img/pagnicon.png");
+	height: 30px;
+	width: 100px;
+	margin: 0 3px;
+	background-position: -1px -31px;
+	border-radius: 2px;
+}
+
+.lastPage_red {
+	background-image: url("../../../img/pagnicon.png");
+	height: 30px;
+	width: 100px;
+	margin: 0 3px;
+	background-position: -101px -1px;
+	border-radius: 2px;
+}
+
+.lastPage_red:hover {
+	cursor: pointer;
+}
+
+.lastPage_gray {
+	background-image: url("../../../img/pagnicon.png");
+	height: 30px;
+	width: 100px;
+	margin: 0 3px;
+	background-position: -1px -1px;
+	border-radius: 2px;
+}
+
+.ep-pages .selbox {
+	-moz-appearance: none;
+	background: white url("../../../img/arrow.png") no-repeat scroll right
+		center;
+	border: 1px solid #c9c6c6;
+	border-radius: 3px;
+	cursor: pointer;
+	display: block;
+	font-style: normal;
+	height: 30px;
+	padding-left: 4px;
+	padding-right: 0;
+	padding-top: 2px;
+	width: 42px;
+}
+
+.pageInput {
+	width: 40px;
+	height: 23px;
+	padding: 1px 1px;
+	font-size: 12px;
+}
+
+.pageBtn:hover {
+	background: #cc1b1b;
+	border: 1px solid #cc1b1b;
+	text-decoration: none;
+	color: #fff
+}
+
+.ep-pages a:hover {
+	background: #cc1b1b;
+	border: 1px solid #cc1b1b;
+	text-decoration: none
+}
+
+.ep-pages a, .ep-pages a:visited {
+	color: #252525
+}
+
+.ep-pages a:hover, .ep-pages a:active {
+	color: #ffffff
+}
+
+.ep-pages .current {
+	background: #cc1b1b;
+	border: 1px solid #cc1b1b;
+	color: #fff
+}
+
+.ep-pages a.current, .ep-pages a.current:visited {
+	color: #ffffff
+}
+
+.ep-pages a.current:hover, .ep-pages a.current:active {
+	color: #ffffff
+}
+
+.ep-pages-ctrl {
+	font-family: "\5B8B\4F53", sans-serif;
+	font-weight: bold;
+	font-size: 16px
+}
+
+.ep-pages-e5e5e5 {
+	color: #e5e5e5
+}
+
+.ep-pages-all {
+	font-size: 12px;
+	vertical-align: top
+}
+
+.btn-i {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+/**
+分页样式    ----------end-----------------
+**/
