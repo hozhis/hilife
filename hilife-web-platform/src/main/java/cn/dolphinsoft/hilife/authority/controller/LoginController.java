@@ -49,16 +49,16 @@ public class LoginController {
     @Autowired
     private PlatformUserInfoRepository platformUserInfoRepository;
 
-    @RequestMapping("/login")
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String productInfoView(Model model) {
         return "login/login";
     }
 
-    @RequestMapping("/validate")
-    public void validate() {
-    }
+    /*
+     * @RequestMapping("/validate") public void validate() { }
+     */
 
-    @RequestMapping("/login/authc")
+    @RequestMapping(value = "/login/authc", method = RequestMethod.POST)
     @ResponseBody
     public Object login(@RequestBody LoginDto loginDto) {
         if (!kaptchaSupport.validateCaptcha(loginDto.getCaptcha(), loginDto.getKey())) {
@@ -81,7 +81,7 @@ public class LoginController {
         return ResultDtoFactory.toAck("登陆成功", loginDto);
     }
 
-    @RequestMapping("/index")
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(Model model) {
         return "index/index";
     }
@@ -94,7 +94,7 @@ public class LoginController {
      * @throws ServletException
      * @throws IOException
      */
-    @RequestMapping("/captcha")
+    @RequestMapping(value = "/captcha", method = RequestMethod.GET)
     public void captcha(@RequestParam String key, HttpServletResponse response) throws ServletException, IOException {
         kaptchaSupport.captcha(key, response);
     }
@@ -120,9 +120,9 @@ public class LoginController {
      *
      * @return
      */
-    @RequestMapping(value = "/forget")
+    @RequestMapping(value = "/forget", method = RequestMethod.GET)
     public String forgetPw() {
-        return "accountMgt/passwordEdit";
+        return "login/forget";
     }
 
     /**
@@ -132,7 +132,7 @@ public class LoginController {
      * @param phone
      * @return
      */
-    @RequestMapping(value = "/getCode")
+    @RequestMapping(value = "/getCode", method = RequestMethod.POST)
     @ResponseBody
     public ResultDto<String> getCode(@RequestBody PlatformLoginUpdatePwDto dto) {
         Long phone = dto.getPhone();
@@ -155,7 +155,7 @@ public class LoginController {
      * @param phone
      * @return
      */
-    @RequestMapping(value = "/checkCode")
+    @RequestMapping(value = "/checkCode", method = RequestMethod.POST)
     @ResponseBody
     public ResultDto<String> checkCode(@RequestBody PlatformLoginUpdatePwDto dto) {
         String catpcha = loginService.getCatpchaByLoginId(dto.getPhone());
@@ -172,7 +172,7 @@ public class LoginController {
      * @param dto
      * @return
      */
-    @RequestMapping(value = "/submitPw")
+    @RequestMapping(value = "/submitPw", method = RequestMethod.POST)
     @ResponseBody
     public ResultDto<String> submit(@RequestBody PlatformLoginUpdatePwDto dto) {
         ResultDto<String> msg = loginService.updatePw(dto);

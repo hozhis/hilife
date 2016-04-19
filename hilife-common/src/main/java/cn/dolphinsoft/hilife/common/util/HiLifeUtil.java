@@ -11,7 +11,7 @@ import cn.dolphinsoft.hilife.common.util.web.WebUtil;
 import sun.misc.BASE64Decoder;
 
 /**
- * Class Name: ZCUtil Description: 中策项目工具类
+ * Class Name: HLUtil Description: 中策项目工具类
  * 
  * @author hozhis
  *

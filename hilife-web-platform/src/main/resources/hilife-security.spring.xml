@@ -40,12 +40,16 @@
 		<property name="securityManager" ref="securityManager" />
 		<property name="filterChainDefinitions">
 			<value>
-				/monitoring/**=anon
+				/=anon
 				/assets/**=anon
-				/web/api-docs/**=anon
+				/web/auth/captcha=anon
 				/web/auth/login=anon
 				/web/auth/login/authc=pass
-				/web/auth/sendLoginSms=anon
+				/web/auth/forget=anon
+				/web/auth/getCode=anon
+				/web/auth/submitPw=anon
+				/web/auth/checkCode=anon
+				/web/api-docs/**=anon
 				/web/**=authc
 			</value>
 		</property>

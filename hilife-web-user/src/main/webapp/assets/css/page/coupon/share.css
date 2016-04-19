@@ -8,7 +8,7 @@ body {
 }
 
 .main-r {
-	background-image: url("/hilife-web-user/assets/img/share.png");
+	background-image: url("../../../img/share.png");
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	display: block;

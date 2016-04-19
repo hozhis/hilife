@@ -61,7 +61,7 @@
 
 .div-coupon {
 	background-color: #ffffff;
-	background-image: url("/hilife-web-user/assets/img/coupon.png");
+	background-image: url("../../../img/coupon.png");
 	background-size: 100% auto;
 	border-radius: 4px;
 	height: 100px;
@@ -93,7 +93,7 @@
 }
 
 .c-detail {
-	background-image: url("/hilife-web-user/assets/img/dotter.png");
+	background-image: url("../../../img/dotter.png");
 	background-position: 0 10px;
 	background-repeat: no-repeat;
 	background-size: 100% 85%;

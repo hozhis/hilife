@@ -60,7 +60,8 @@ public class PlatformLoginServiceImpl implements PlatformLoginService {
     @Override
     @Transactional(value = "jpaTransactionManager")
     public void saveMessage(String catpcha, Long phone) {
-        String message = basicParaRepository.findParaValue1ByTypeId(BasicTypeConstant.USER_SMS_TEMPLATE_GET_CAPTCHA);
+        String message = basicParaRepository
+                .findParaValue1ByTypeId(BasicTypeConstant.PLATFORM_SMS_TEMPLATE_GET_CAPTCHA);
         Configuration configuration = freeMarkerConfigurer.getConfiguration();
         Map<String, Object> dataMap = new HashMap<String, Object>();
         dataMap.put("name", phone);

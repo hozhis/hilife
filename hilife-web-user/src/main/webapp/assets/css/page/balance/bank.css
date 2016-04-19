@@ -7,7 +7,7 @@
 }
 
 .bank-logo {
-	background-image: url("/hilife-web-user/assets/img/bank/CCB.png");
+	background-image: url("../../../img/bank/CCB.png");
 	background-position: 60% -25%;
 	background-repeat: no-repeat;
 	background-size: 85% auto;

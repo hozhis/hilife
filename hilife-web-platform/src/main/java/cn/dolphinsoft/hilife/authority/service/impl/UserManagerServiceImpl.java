@@ -78,7 +78,7 @@ public class UserManagerServiceImpl implements UserManagerService {
     private BasicParaRepository basicParaRepository;
 
     @Autowired
-    private SmsMessageRepository iSmsMessageRepository;
+    private SmsMessageRepository smsMessageRepository;
 
     @Override
     public void search(final PlatformUserInfoSearchDto dto) {
@@ -178,7 +178,7 @@ public class UserManagerServiceImpl implements UserManagerService {
         // int password = random.nextInt(899999)+100000;
         int password = 123456;
         // 对密码保存到短信模板中
-        String smsDx = basicParaRepository.findParaValue1ByTypeId(BasicTypeConstant.REGISTER_SMS_TEMPLATE_PLATFORM);
+        String smsDx = basicParaRepository.findParaValue1ByTypeId(BasicTypeConstant.PLATFORM_SMS_TEMPLATE_GET_CAPTCHA);
         Configuration configuration = freeMarkerConfigurer.getConfiguration();
         Map<String, Object> dataMap = new HashMap<String, Object>();
         dataMap.put("name_platform", dto.getLoginId());
@@ -196,7 +196,7 @@ public class UserManagerServiceImpl implements UserManagerService {
         smess.setCreateDate(new Date());
         smess.setStatus(BaseStatus.EFFECT.getKey());
         smess.setMessage(smsDx);
-        iSmsMessageRepository.save(smess);
+        smsMessageRepository.save(smess);
 
         // 对密码进行2次加密
         String password1 = EncryptUtil.encryptMd5(String.valueOf(password));

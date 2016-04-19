@@ -8,7 +8,7 @@ body {
 
 .content>div {
 	background-image:
-		url("/hilife-web-user/assets/img/icon_balancedefault.png");
+		url("../../../img/icon_balancedefault.png");
 	background-position: 50% center;
 	background-repeat: no-repeat;
 	background-size: 30% auto;

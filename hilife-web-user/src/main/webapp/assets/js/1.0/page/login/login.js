@@ -67,7 +67,7 @@ require([ 'jquery', 'global', 'jquery.mobile', 'pnotify' ],
 						success : function(msg) {
 							if (msg.code == "NACK") {
 								layer.open({
-									content: '您的手机号尚未注册，点击<span style="color:#ea0000;">注册</span>即表示您同意我们的<span style="color:#ea0000;">服务条款</span>，系统将自动为您创建账号',
+									content: '您的手机号尚未注册，点击<span style="color:#ea0000;">注册</span>即表示您同意我们的<span style="color:#ea0000;">服务条款</span>，系统将自动为您创建账号！',
 									btn: ['注册', '取消'],
 									shadeClose: false,
 									yes: function(){

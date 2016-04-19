@@ -98,7 +98,7 @@
 }
 
 i.marker {
-	background: url("/hilife-web-user/assets/img/anchor.png") no-repeat scroll 0 0 / 100% 100%;
+	background: url("../../../img/anchor.png") no-repeat scroll 0 0 / 100% 100%;
 	bottom: 30%;
     left: 45%;
     position: absolute;
@@ -106,7 +106,7 @@ i.marker {
 }
 
 i.marker-shadow {
-	background: url("/hilife-web-user/assets/img/anchor_shadow.png") no-repeat scroll 0 0 / 100% 100%;
+	background: url("../../../img/anchor_shadow.png") no-repeat scroll 0 0 / 100% 100%;
 	bottom: 30%;
     left: 45%;
     position: absolute;

@@ -55,8 +55,11 @@ public class KaptchaSupport extends KaptchaExtend {
     private Properties createDefaultConfigProps() {
         Properties props = new Properties();
         props.put("kaptcha.border", "no");
-        props.put("kaptcha.textproducer.font.color", "black");
+        props.put("kaptcha.textproducer.font.color", "234,86,154");
         props.put("kaptcha.textproducer.char.space", "5");
+        props.put("kaptcha.obscurificator.impl", "com.google.code.kaptcha.impl.WaterRipple");
+        props.put("kaptcha.background.clear.from", "120,139,179");
+        props.put("kaptcha.background.clear.to", "90,105,146");
         return props;
     }
 
