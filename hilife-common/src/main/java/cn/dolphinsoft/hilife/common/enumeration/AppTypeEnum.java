@@ -1,7 +1,7 @@
 package cn.dolphinsoft.hilife.common.enumeration;
 
 public enum AppTypeEnum {
-    CUSTOMER("0", "客户端"), STORE("1", "门店端");
+    CUSTOMER("0", "客户端"), AUNT("1", "阿姨端");
 
     private String key;
 

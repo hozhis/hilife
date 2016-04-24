@@ -7,6 +7,14 @@
 	color: #ea0000;
 }
 
+.arrow-back:before {
+	content: "\e900";
+	color: #ffffff;
+	line-height: 50px;
+	font-family: flat-ui-icons;
+	margin-left: 10px;
+}
+
 .title {
 	color: #ea0000;
 }
@@ -78,8 +86,29 @@
 	line-height: 2;
 }
 
-.fui-calendar, .fui-user, .fui-mail, .fui-new {
+.fui-calendar, .fui-user, .fui-mail, .fui-new, .fui-list, .fui-sofa,
+	.fui-binxiang, .fui-floor, .fui-kongtiao, .fui-xyj {
 	margin-left: 10px;
+}
+
+.fui-xyj:before {
+	content: "\e6a0";
+}
+
+.fui-kongtiao:before {
+	content: "\e68c";
+}
+
+.fui-binxiang:before {
+	content: "\e67e";
+}
+
+.fui-floor:before {
+	content: "\e694";
+}
+
+.fui-sofa:before {
+	content: "\e676";
 }
 
 .fui-new:before {
@@ -88,6 +117,10 @@
 
 .fui-location::before {
 	font-size: 18px;
+}
+
+.fui-list:before {
+	content: "\e61a";
 }
 
 hr {
@@ -165,7 +198,7 @@ hr {
 	opacity: 0.5;
 	position: absolute;
 	top: 0;
-	width: 100%; 
+	width: 100%;
 }
 
 .ops {
@@ -234,7 +267,7 @@ hr {
 
 .date span {
 	display: inline-block;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 .time {
@@ -355,4 +388,90 @@ hr {
 
 .form-group input {
 	color: #000000;
+	/* width: 100%; */
+}
+
+.item-ul {
+	background-color: #ffffff;
+	border-bottom: 1px solid #e0e0e0;
+	padding-left: 50px;
+	position: absolute;
+	width: 100%;
+	z-index: 999;
+	margin-top: 6px;
+}
+
+.item-ul li {
+	font-size: 15px;
+	font-weight: 400;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.item-ul li:last-child {
+	border: 0;
+}
+
+.form-control::-moz-placeholder, .form-control input[placeholder] {
+	color: #bebebe;
+}
+
+@keyframes right-in {
+    from {left: 100%;}
+	to {left: 0;}
+}
+
+.servicer-right-in{
+	animation: right-in .2s 1 forwards;
+}
+
+@keyframes right-out {
+    from {left: 0;}
+	to {left: 100%;}
+}
+
+.servicer-right-out{
+	animation: right-out .2s 1 forwards;
+}
+
+.servicer {
+	background-color: #f0f0f0;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.servicer .content{
+}
+
+.hder{
+	height: 50px;
+    width: 100%;
+    position: fixed;
+    background:#ea0000;
+}
+
+.lft {
+    display: inline-block;
+    width: 20%;
+}
+
+.tle {
+    width: 60%;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+}
+
+.tle label{
+	font-size: 18px;
+}
+
+.rgt {
+    display: inline-block;
+    width: 20%;
 }

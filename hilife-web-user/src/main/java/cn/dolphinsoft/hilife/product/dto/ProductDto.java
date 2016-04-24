@@ -20,6 +20,8 @@ public class ProductDto implements Serializable {
 
     private String productName;
 
+    private Integer brandId;
+
     private String image;
 
     private Integer typeId;
@@ -37,6 +39,24 @@ public class ProductDto implements Serializable {
     private String remark;
 
     private String status;
+
+    private Integer flagId;
+
+    public Integer getBrandId() {
+        return brandId;
+    }
+
+    public void setBrandId(Integer brandId) {
+        this.brandId = brandId;
+    }
+
+    public Integer getFlagId() {
+        return flagId;
+    }
+
+    public void setFlagId(Integer flagId) {
+        this.flagId = flagId;
+    }
 
     public Integer getProductId() {
         return productId;

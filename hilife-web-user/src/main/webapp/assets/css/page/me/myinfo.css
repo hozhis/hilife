@@ -1,0 +1,192 @@
+.header {
+	background-color: #ea0000;
+}
+
+.content {
+	padding-top: 50px;
+	margin-top: 0;
+}
+
+.fui-arrow-left2::before {
+	color: #ffffff;
+}
+
+.svs-right, .svs-rght {
+	float: right;
+	line-height: 45px;
+	width: auto;
+	color: #7b7b7b;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+
+.svs-right {
+	margin-right: 15px;
+}
+
+.svs-rght {
+	margin-right: 33px;
+}
+
+.content-body ul>li div img {
+	float: right;
+	height: 70px;
+	width: 70px;
+	margin: 10px 33px 10px 0;
+	border-radius: 5px;
+	border: 1px solid #e0e0e0;
+}
+
+.content-body ul li>ul li {
+	font-size: 16px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0;
+	text-align: center;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.content-body ul li>ul li:last-child {
+	border-bottom: 0;
+}
+
+.sex-ul {
+	position: absolute;
+	right: 0;
+	width: 40%;
+	z-index: 10;
+	border-left: 1px solid #e0e0e0;
+}
+
+.btn-save {
+	background-color: transparent;
+	border: 0 none;
+	color: #ffffff;
+	font-size: 16px;
+	height: 100%;
+	letter-spacing: 1px;
+	width: 100%;
+}
+
+#china_citys {
+	background-color: #f0f0f0;
+	bottom: 0;
+	height: 45%;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+}
+
+#province-ul, #city-ul {
+	background-color: transparent;
+	height: 100%;
+	overflow-y: scroll;
+	text-align: center;
+	width: 50%;
+	display: inline-block;
+	float: left;
+	border: 0;
+	padding: 18% 0;
+}
+
+#province-ul>li, #city-ul>li {
+	height: 40px;
+	line-height: 40px;
+}
+
+#select {
+	height: 85%;
+	width: 100%;
+	padding: 8% 0 5% 0;
+}
+
+#city-shade-up, #city-shade-down {
+	background-color: #f0f0f0;
+	height: 35%;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 199;
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+#city-shade-up {
+	top: 15%;
+	border-bottom: 1px solid #d0d0d0;
+}
+
+#city-shade-down {
+	bottom: 0;
+	border-top: 1px solid #d0d0d0;
+}
+
+.content-body.fixed {
+	position: fixed;
+	width: 100%;
+}
+
+#city-shade {
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+#city-shade-auto {
+	height: 16%;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	pointer-events: none;
+	border: 0;
+}
+
+#city-tip {
+	background-color: #e0e0e0;
+	border: 0;
+	height: 15%;
+	padding-left: 20px;
+}
+
+#city-tip>span {
+	display: inline-block;
+	text-align: left;
+}
+
+#update-name {
+	background-color: #ffffff;
+	border-bottom: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	border-right: 1px solid #e0e0e0;
+	height: auto;
+	position: absolute;
+	right: 0;
+	width: 80%;
+	z-index: 100;
+	padding: 12px 0 12px 10px;
+	line-height: 30px;
+}
+
+#update-name input {
+	border: 1px solid #d0d0d0;
+	border-radius: 5px;
+	height: 30px;
+	width: 80%;
+	padding: 0 10px;
+	font-size: 16px;
+	float: left;
+}
+
+#update-name>button {
+	background-color: transparent;
+    border: 0 none;
+    float: right;
+    font-size: 16px;
+    height: 30px;
+    padding: 0 10px 0 0;
+    width: 20%;
+    color: #ea0000;
+}

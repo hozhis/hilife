@@ -16,9 +16,9 @@ public class CustUserInfoDto extends RequestDto {
 
     private String custName;
 
-    private String inviteCode;;
+    private String inviteCode;
 
-    private String sex = "0";
+    private String sex = "0"; //0 默认为 0--男
 
     private Integer regionId;
 

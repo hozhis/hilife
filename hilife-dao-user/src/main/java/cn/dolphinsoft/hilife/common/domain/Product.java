@@ -1,6 +1,5 @@
 package cn.dolphinsoft.hilife.common.domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -21,9 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PRODUCT")
-public class Product implements Serializable {
-
-    private static final long serialVersionUID = -2575833586449739397L;
+public class Product{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +29,9 @@ public class Product implements Serializable {
 
     @Column(name = "PRODUCT_NAME")
     private String productName;
+
+    @Column(name = "BRAND_ID")
+    private Integer brandId;
 
     @Column(name = "image")
     private String image;
@@ -59,6 +59,9 @@ public class Product implements Serializable {
 
     @Column(name = "STATUS")
     private String status;
+
+    @Column(name = "FLAG_ID")
+    private Integer flagId;
 
     public String getImage() {
         return image;
@@ -146,5 +149,21 @@ public class Product implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getFlagId() {
+        return flagId;
+    }
+
+    public void setFlagId(Integer flagId) {
+        this.flagId = flagId;
+    }
+
+    public Integer getBrandId() {
+        return brandId;
+    }
+
+    public void setBrandId(Integer brandId) {
+        this.brandId = brandId;
     }
 }

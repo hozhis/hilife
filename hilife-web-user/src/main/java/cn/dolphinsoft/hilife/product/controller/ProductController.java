@@ -43,6 +43,7 @@ public class ProductController {
             model.addAttribute("remark", dto.getRemark());
             model.addAttribute("logo", dto.getImage());
             model.addAttribute("serviceId", id);
+            model.addAttribute("flagId",dto.getFlagId());
         }
         String serviceAddress = addressService.getServiceAddress(AuthorityContext.getCurrentToken());
         if (!HiLifeUtil.isEmpty(serviceAddress)) {

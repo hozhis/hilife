@@ -60,6 +60,10 @@ public final class BasicTypeConstant {
 
     public static final Integer AUNT_SETTING_PLATFORM = 33;
 
+    public static final String USER_LIFE = "7";
+
+    public static final Integer USER_LIFE_CAROUSEL = 34;
+
     public static List<Integer> getList(String type) {
         List<Integer> list = new ArrayList<Integer>();
 
@@ -95,6 +99,10 @@ public final class BasicTypeConstant {
             list.add(PLATFORM_SETTING_PLATFORM);
             list.add(USER_SETTING_PLATFORM);
             list.add(AUNT_SETTING_PLATFORM);
+        }
+
+        else if (USER_LIFE.equals(type)) {
+            list.add(USER_LIFE_CAROUSEL);
         }
 
         return list;

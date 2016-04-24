@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/page/city/index.css"/>
 <script src="${contextPath}/assets/js/1.0/require.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5d69be9174089404ae8f61e384470cfc"></script>
 <script type="text/javascript">
 	define('global',{
 		context : '${rc.contextPath}',
@@ -30,7 +31,7 @@
 		<div class="content">
 			<div class="location">
 				<div class="loc-title">当前城市</div>
-				<div class="loc-city"><label>南通市</label></div>
+				<div class="loc-city"><label></label></div>
 			</div>
 			<div class="hot-city">
 				<div>热门城市</div>
@@ -45,43 +46,22 @@
 				</ul>
 			</div>
 			<div class="city-list">
-				<div class="city-clsy">A</div>
+				<!-- <div class="city-clsy">A</div>
 				<ul>
 					<li><label>安吉市</label></li>
 					<li><label>安吉市</label></li>
 					<li><label>安吉市</label></li>
 					<li><label>安吉市</label></li>
-				</ul>
-				<div class="city-clsy">B</div>
-				<ul>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-				</ul>
-				<div class="city-clsy">C</div>
-				<ul>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-				</ul>
-				<div class="city-clsy">D</div>
-				<ul>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-					<li><label>安吉市</label></li>
-				</ul>
+				</ul> -->
 			</div>
 			<div class="">
 				<ul class="alphabet">
-					<li>#</li><li>$</li><li>A</li><li>B</li>
+					<!-- <li>#</li><li>$</li><li>A</li><li>B</li>
 					<li>C</li><li>D</li><li>E</li><li>F</li>
 					<li>G</li><li>H</li><li>J</li><li>K</li>
 					<li>L</li><li>M</li><li>N</li><li>P</li>
 					<li>Q</li><li>R</li><li>S</li><li>T</li>
-					<li>W</li><li>X</li><li>Y</li><li>Z</li>
+					<li>W</li><li>X</li><li>Y</li><li>Z</li> -->
 				</ul>
 			</div>
 		</div>

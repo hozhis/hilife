@@ -9,4 +9,6 @@ import cn.dolphinsoft.hilife.common.domain.Product;
 public interface IProductRepository extends JpaRepository<Product, Serializable> {
 
     Product findByImage(String image);
+
+    Product findByProductId(Integer productId);
 }

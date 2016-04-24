@@ -24,7 +24,7 @@
 <div class="main-wrapper">
 	<div class="header">
 		<div class="left"><a target="_top" href="${contextPath}/web/city/index?token=${token}"><span class="fui-location"><label>南通</label></span></a></div>
-		<div class="right"><span class="fui-notifications"></span></div>
+		<div class="right"><a target="_top" href="${contextPath}/web/notice/index?token=${token}"><span class="fui-notifications"></span></a></div>
 		<div class="title"><label>首页</label></div>
 	</div>
 	<div class="content">

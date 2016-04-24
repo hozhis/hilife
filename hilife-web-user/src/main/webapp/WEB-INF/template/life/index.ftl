@@ -32,19 +32,10 @@
 			<input class="search" type="text" placeholder="" id="searchbox" name="searchbox"  data-role="none">
         	<button class="search-btn" type="submit" data-role="none"><span class="fui-search"></span></button>
 		</div>
+		<!-- Bootstrap 轮播（Carousel）插件 -->
 		<div id="carousel-hilife" class="carousel slide" data-ride="carousel" data-interval="4000">
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-hilife" data-slide-to="0"></li>
-				<li data-target="#carousel-hilife" data-slide-to="1" class="active"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="item">
-					<a href="#"><img src="../../assets/img/slide1.png"></a>
-				</div>
-				<div class="item active">
-					<a href="#"><img src="../../assets/img/slide2.png"></a>
-				</div>
-			</div>
+			<ol class="carousel-indicators"></ol>
+			<div class="carousel-inner"></div>
 		</div>
 		<div class="content-body">
 			<div class="gap"></div>
@@ -52,7 +43,11 @@
 				<div id="" class="product-title">精品推荐<a href="#">更多<span class="fui-keyboard_arrow_right"></span></a></div>
 				<div class="product-item">
 					<ul>
-						<li class="item-d"><div><img src="${contextPath}/assets/img/chestnut.jpg"></div><span>板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗板栗</span></li>
+						<#list promotes as p>
+							<#if p.promoteTypeId == 1>
+							<li class="item-d"><div><img src="${p.productDto.image}"></div><span>${p.productDto.productName}</span></li>
+							</#if>
+						</#list>
 						<li class="item-d"><div><img src="${contextPath}/assets/img/jujube.jpg"></div><span>冬枣</span></li>
 						<li class="item-d"><div><img src="${contextPath}/assets/img/kiwi.jpg"></div><span>猕猴桃</span></li>
 					</ul>
@@ -64,9 +59,11 @@
 				<div id="" class="product-title">最新上市<a href="#">更多<span class="fui-keyboard_arrow_right"></span></a></div>
 				<div class="product-item">
 					<ul>
-						<li class="item-d"><div><img src="${contextPath}/assets/img/lemon.jpg"></div><span>柠檬</span></li>
-						<li class="item-d"><div><img src="${contextPath}/assets/img/mango.jpg"></div><span>芒果</span></li>
-						<li class="item-d"><div><img src="${contextPath}/assets/img/peach.jpg"></div><span>黄桃</span></li>
+						<#list promotes as p>
+							<#if p.promoteTypeId == 3>
+							<li class="item-d"><div><img src="${p.productDto.image}"></div><span>${p.productDto.productName}</span></li>
+							</#if>
+						</#list>
 					</ul>
 				</div>
 				<div class="clear"></div>
@@ -76,9 +73,11 @@
 				<div id="" class="product-title">热销好评<a href="#">更多<span class="fui-keyboard_arrow_right"></span></a></div>
 				<div class="product-item">
 					<ul>
-						<li class="item-d"><div><img src="${contextPath}/assets/img/avatar.png"></div><span>Cell Phone</span></li>
-						<li class="item-d"><div><img src="${contextPath}/assets/img/avatar.png"></div><span>Cell Phone</span></li>
-						<li class="item-d"><div><img src="${contextPath}/assets/img/avatar.png"></div><span>Cell Phone</span></li>
+						<#list promotes as p>
+							<#if p.promoteTypeId == 2>
+							<li class="item-d"><div><img src="${p.productDto.image}"></div><span>${p.productDto.productName}</span></li>
+							</#if>
+						</#list>
 					</ul>
 				</div>
 				<div class="clear"></div>

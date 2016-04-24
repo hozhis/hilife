@@ -30,71 +30,15 @@
 	<div class="content">
 		<div class="content-clsy">
 			<ul>
-				<li><div id="orderAll" class="active">全部</div></li>
-				<li><div id="ordering">进行中</div></li>
-				<li><div id="paying">待付款</div></li>
-				<li><div id="praising">待评价</div></li>
+				<li><div id="orderAll" class="active" data-id="">全部</div></li>
+				<li><div id="ordering" data-id="">进行中</div></li>
+				<li><div id="paying" data-id="">待付款</div></li>
+				<li><div id="praising" data-id="">待评价</div></li>
 			</ul>
 		</div>
 		<div class="content-body">
-			<ul>
-				<li><div class="li-title"><label>[服务]</label>日常保洁</div>
-					<div class="li-detail">
-						<div class="li-d-1">
-							<div class="pic"></div>
-							<div class="con">
-								<div class="con-1">2016-03-26 13:00</div>
-								<div class="con-2">江苏省南通市崇川区啬园路9号江苏省南通市崇川区啬园路9号</div>
-							</div>
-						</div>
-					</div>
-					<div class="li-options">
-						<button class="highlight" type="button">评价</button>
-						<button type="button">查看详情</button>
-					</div>
-				</li>
-				<li><div class="li-title"><label style="color:#4f9d9d;">[商品]</label>生活直达&nbsp;服务到家</div>
-					<div class="li-detail">
-						<div class="li-d-1">
-							<div class="pic"></div>
-							<div class="con">
-								<div class="con-3"><div>江苏省南通市崇川区啬园路9号江苏省南通市崇川区啬园路9号</div><div class="ctg">江苏省南通市崇川区啬园路9号</div></div>
-								<div class="con-4">￥ 9.80<br><label style="color:#9d9d9d;font-size:10px;">x2</label></div>
-							</div>
-						</div>
-					</div>
-					<div class="li-options">
-						<div class="li-d-2">实付款￥ 19.60元</div>
-						<button class="highlight" type="button">评价</button>
-						<button type="button">查看详情</button>
-					</div>
-				</li>
-				<li><div class="li-title"><label style="color:#4f9d9d;">[商品]</label>生活直达&nbsp;服务到家</div>
-					<div class="li-detail">
-						<div class="li-d-1">
-							<div class="pic"></div>
-							<div class="con">
-								<div class="con-3"><div>江苏省南通市崇川区啬园路9号江苏省南通市崇川区啬园路9号</div><div class="ctg">江苏省南通市崇川区啬园路9号</div></div>
-								<div class="con-4">￥ 9.80<br><label style="color:#9d9d9d;font-size:10px;">x2</label></div>
-							</div>
-						</div>
-					</div>
-					<div class="li-detail">
-						<div class="li-d-1">
-							<div class="pic"></div>
-							<div class="con">
-								<div class="con-3"><div>江苏省南通市崇川区啬园路9号江苏省南通市崇川区啬园路9号</div><div class="ctg">江苏省南通市崇川区啬园路9号</div></div>
-								<div class="con-4">￥ 9.80<br><label style="color:#9d9d9d;font-size:10px;">x2</label></div>
-							</div>
-						</div>
-					</div>
-					<div class="li-options">
-						<div class="li-d-2">实付款￥ 19.60元</div>
-						<button class="highlight" type="button">评价</button>
-						<button type="button">查看详情</button>
-					</div>
-				</li>
-			</ul>
+			<ul class="order-ul"></ul>
+			<div class="d-t">没有更多订单了</div>
 		</div>
 	</div>
 	<div class="gap2"></div>

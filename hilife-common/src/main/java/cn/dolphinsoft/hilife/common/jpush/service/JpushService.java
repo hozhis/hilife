@@ -45,7 +45,7 @@ public class JpushService implements Runnable {
 
     private static final String JPUSH_MASTERSECRET_USER = "Jpush.User.MasterSecret";
 
-    private static final String JPUSH_APPKEY_STORE = "Jpush.Store.AppKey";
+    private static final String JPUSH_APPKEY_AUNT = "Jpush.Aunt.AppKey";
 
     private static final String JPUSH_MASTERSECRET_STORE = "Jpush.Store.MasterSecret";
 
@@ -53,7 +53,7 @@ public class JpushService implements Runnable {
 
     private static JPushClient jpushUserClient;
 
-    private static JPushClient jpushStoreClient;
+    private static JPushClient jpushAuntClient;
 
     private boolean jpuhSwitch = false;
 
@@ -88,7 +88,7 @@ public class JpushService implements Runnable {
                 JPushClient jPushClient = null;
                 if (AppTypeEnum.CUSTOMER.getKey().equals(jpushBean.getAppType())) {
                     jPushClient = getCustomerJPushClient();
-                } else if (AppTypeEnum.STORE.getKey().equals(jpushBean.getAppType())) {
+                } else if (AppTypeEnum.AUNT.getKey().equals(jpushBean.getAppType())) {
                     jPushClient = getStoreJPushClient();
                 } else {
                     continue;
@@ -163,20 +163,20 @@ public class JpushService implements Runnable {
     }
 
     /**
-     * Description: 获得门店端JpushClient
+     * Description: 获得阿姨端JpushClient
      *
      * @return
      */
     private JPushClient getStoreJPushClient() {
-        if (jpushStoreClient == null) {
+        if (jpushAuntClient == null) {
             synchronized (JpushService.class) {
-                if (jpushStoreClient == null) {
-                    jpushStoreClient = new JPushClient(AppConfigUtil.getConfig(JPUSH_MASTERSECRET_STORE),
-                            AppConfigUtil.getConfig(JPUSH_APPKEY_STORE));
+                if (jpushAuntClient == null) {
+                    jpushAuntClient = new JPushClient(AppConfigUtil.getConfig(JPUSH_MASTERSECRET_STORE),
+                            AppConfigUtil.getConfig(JPUSH_APPKEY_AUNT));
                 }
             }
         }
-        return jpushStoreClient;
+        return jpushAuntClient;
     }
 
     /**

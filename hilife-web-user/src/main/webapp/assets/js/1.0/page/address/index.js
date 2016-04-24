@@ -70,6 +70,7 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 				});
 				$(".li-edit").tap(function(){
 					var id = $(this).parents().find("div.behind").siblings(".front.slide").attr("id");
+					$(".front").trigger("swiperight");
 					window.location.href = global.context + "/web/address/detail/" + id + "?token=" + global.token;
 				});
 			},

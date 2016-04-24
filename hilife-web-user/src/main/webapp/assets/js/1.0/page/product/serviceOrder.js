@@ -19,7 +19,7 @@ require([ 'jquery',
 					var m = date.getMonth() + 1;//获取当前月份的日期
 					var d = date.getDate();
 					var w = week[date.getDay()];
-					return "<label class='hide'>" + y + "/</label><span>" + m + "/" + d + "</span><span>星期" + w + "</span>"; 
+					return "<label class='hide'>" + y + "/</label><span>" + m + "/" + d + "</span><br><span>星期" + w + "</span>"; 
 				},
 				dataInit : function(){
 					var _self = this;
@@ -29,7 +29,7 @@ require([ 'jquery',
 				},
 				bindEvent : function(){
 					var _self = this;
-					$(".fui-arrow-left2").tap(function(){
+					$("#arrow-left").tap(function(){
 						//window.history.go(-1);
 						window.location.href = global.context + "/web/product/index?token=" + global.token;
 					});
@@ -86,22 +86,48 @@ require([ 'jquery',
 					});
 					$(".close").tap(function(){
 						_self.closeDatetime();
+						setTimeout(function(){$(".content").css("pointer-events","auto")},500);
 					});
-					/*$(".shape").tap(function(){
-						_self.closeDatetime();
-					});*/
 					$(".confirm").tap(function(){
 						var temp = $(".date ul>li.active").text().replace("/","-").replace("/","-") +
 									"&nbsp;" + $(".time-item.active").text();
 						$("#service-time").html(temp).css("color","#000000");
 						_self.closeDatetime();
+						setTimeout(function(){$(".content").css("pointer-events","auto")},500);
 					});
 					$("#form-time").tap(function(){
 						$(".daterpicker").removeClass("hide");
+						$(".content").css("pointer-events","none");
 					});
 					$("#form-address").tap(function(){
 						window.location.href = global.context + "/web/address/index?redirect:url=" 
 												+ window.location.href + "&token=" + global.token;
+					});
+					$("#form-item").tap(function handler(){
+						if($(".item-ul").hasClass("hide")){
+							$(".item-ul").removeClass("hide");
+							$("#form-item").siblings().css("pointer-events","none");
+						}else{
+							$(".item-ul").addClass("hide");
+							setTimeout(function(){$("#form-item").siblings().css("pointer-events","auto")},500);
+						}
+					});
+					var selectItem = function(value){
+						return function(){
+							$("#service-item").text(value).css("color","#000000");
+							setTimeout(function(){$("#service-item").siblings(".item-ul").addClass("hide")},500);
+						};
+					};
+					for(var i = 1; i <= 5; i++){
+						$(".item-ul>li[value="+i+"]").tap(selectItem($(".item-ul>li[value="+i+"]").text()));
+					}
+					$("#form-person").tap(function(){
+						$("#arrow-left").css("pointer-events","none");
+						$(".servicer").removeClass("hide servicer-right-out").addClass("servicer-right-in");
+					});
+					$("#arrow-left2").tap(function(){
+						$(".servicer").addClass("servicer-right-out").removeClass("servicer-right-in");
+						setTimeout(function(){$("#arrow-left").css("pointer-events","auto");},500);
 					});
 				},
 				closeDatetime : function(){

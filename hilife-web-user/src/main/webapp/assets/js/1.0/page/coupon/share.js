@@ -12,10 +12,13 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 					window.history.back();
 				});
 				$(".invite").tap(function(){
+					$(".shade").unbind("tap");
 					$(".share-item").removeClass("hide");
-				})
-				$(".shade").tap(function(){
-					$(".share-item").addClass("hide");
+					setTimeout(function(){
+						$(".shade").tap(function(){
+							$(".share-item").addClass("hide");
+						});
+					},500);
 				});
 			},
 			init : function(){
