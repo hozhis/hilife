@@ -6,6 +6,7 @@
 <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" >
 <meta content="telephone=no,email=no,adress=no" name="format-detection" >
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/vendor/flatui/css/flat-ui.css"/>
+<link rel="stylesheet" type="text/css" href="${contextPath}/assets/vendor/layer-mobile/css/layer.mobile-1.7.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/page/product/serviceOrder.css"/>
 <script src="${contextPath}/assets/js/1.0/require.js" type="text/javascript"></script>
@@ -36,7 +37,7 @@
 				<form id="" class="form-inline" action="">
 					<div id="form-address" class="form-group">
 						<span class="fui-location"></span>
-						<#if serviceAddress??><label class="form-control" style="color:#000000">${serviceAddress}<#else><label class="form-control">请选择您的服务地址</#if></label>
+						<#if serviceAddress??><label id="serviceAddress" class="form-control" style="color:#000000">${serviceAddress}<#else><label class="form-control">请选择您的服务地址</#if></label>
 						<span class="fui-keyboard_arrow_right"></span>
 					</div>
 					<#if flagId!=14>
@@ -48,7 +49,7 @@
 					<#if flagId==14>
 					<div id="form-item" class="form-group">
 						<span class="fui-list"></span>
-						<label id="service-item" class="form-control" style="line-height:25px;">请选择服务时长</label>
+						<label id="service-item" class="form-control" style="line-height:25px;" data-name="服务时长：">请选择服务时长</label>
 						<span class="fui-keyboard_arrow_right"></span>
 						<ul class="item-ul hide">
 							<li value="1">1&nbsp;-&nbsp;3&nbsp;个月</li>
@@ -60,7 +61,7 @@
 					<#if flagId==12>
 					<div id="form-item" class="form-group">
 						<span class="fui-list"></span>
-						<label id="service-item" class="form-control" style="line-height:25px;">请选择房间面积（单位：m<sup>2</sup>）</label>
+						<label id="service-item" class="form-control" style="line-height:25px;" data-name="房间面积：">请选择房间面积（单位：m<sup>2</sup>）</label>
 						<span class="fui-keyboard_arrow_right"></span>
 						<ul class="item-ul hide">
 							<li value="1">0&nbsp;-&nbsp;60&nbsp;m<sup>2</sup></li>
@@ -72,7 +73,7 @@
 					<#if flagId==13>
 					<div id="form-item" class="form-group">
 						<span class="fui-list"></span>
-						<label id="service-item" class="form-control" style="line-height:25px;">请选择房间面积（单位：m<sup>2</sup>）</label>
+						<label id="service-item" class="form-control" style="line-height:25px;" data-name="房间面积：">请选择房间面积（单位：m<sup>2</sup>）</label>
 						<span class="fui-keyboard_arrow_right"></span>
 						<ul class="item-ul hide">
 							<li value="1">0&nbsp;-&nbsp;60&nbsp;m<sup>2</sup></li>
@@ -84,7 +85,7 @@
 					<#if flagId==8>
 					<div id="form-item" class="form-group">
 						<span class="fui-sofa"></span>
-						<label id="service-item" class="form-control">请选择沙发座次</label>
+						<label id="service-item" class="form-control" data-name="沙发座次：">请选择沙发座次</label>
 						<span class="fui-keyboard_arrow_right"></span>
 						<ul class="item-ul hide">
 							<li value="1">1&nbsp;座次</li>
@@ -96,7 +97,7 @@
 					<#if flagId==9>
 					<div id="form-item" class="form-group">
 						<span class="fui-binxiang"></span>
-						<label id="service-item" class="form-control">请选择冰箱型号</label>
+						<label id="service-item" class="form-control" data-name="冰箱型号：">请选择冰箱型号</label>
 						<span class="fui-keyboard_arrow_right"></span>
 						<ul class="item-ul hide">
 							<li value="1">单开门冰箱</li>
@@ -108,7 +109,7 @@
 					<#if flagId==10>
 					<div id="form-item" class="form-group">
 						<span class="fui-kongtiao"></span>
-						<label id="service-item" class="form-control">请选择空调类型</label>
+						<label id="service-item" class="form-control" data-name="空调类型：">请选择空调类型</label>
 						<span class="fui-keyboard_arrow_right"></span>
 						<ul class="item-ul hide">
 							<li value="1">挂式空调</li>
@@ -119,7 +120,7 @@
 					<#if flagId==11>
 					<div id="form-item" class="form-group">
 						<span class="fui-xyj"></span>
-						<label id="service-item" class="form-control">请选择洗衣机类型</label>
+						<label id="service-item" class="form-control" data-name="洗衣机类型：">请选择洗衣机类型</label>
 						<span class="fui-keyboard_arrow_right"></span>
 						<ul class="item-ul hide">
 							<li value="1">波轮洗衣机</li>
@@ -127,22 +128,29 @@
 						</ul>
 					</div></#if>
 					<#if flagId==4>
-					<div id="form-floor" class="form-group">
+					<div id="form-item" class="form-group">
 						<span class="fui-floor"></span>
-						<input id="service-item" type="tel" class="form-control" maxlength="4" placeholder="请输入地板面积" data-role="none">（单位：m<sup>2</sup>）
+						<label id="service-item" class="form-control" style="line-height:25px;" data-name="地板面积：">请选择地板面积（单位：m<sup>2</sup>）</label>
+						<span class="fui-keyboard_arrow_right"></span>
+						<ul class="item-ul hide">
+							<li value="1">0&nbsp;-&nbsp;60&nbsp;m<sup>2</sup></li>
+							<li value="2">61&nbsp;-&nbsp;120&nbsp;m<sup>2</sup></li>
+							<li value="3">121&nbsp;-&nbsp;200&nbsp;m<sup>2</sup></li>
+							<li value="4">201&nbsp;m<sup>2</sup>以上</li>
+						</ul>
 					</div></#if>
 					<#if flagId!=2&&flagId!=6&&flagId!=5&&flagId!=14>
 					<div id="form-person" class="form-group">
 						<span class="fui-user"></span>
-						<label class="form-control">选择服务人员（默认系统自动分配）</label>
+						<label id="servicer" class="form-control" data-id="">选择服务人员（默认系统自动分配）</label>
 						<span class="fui-keyboard_arrow_right"></span>
 					</div></#if>
 					<div class="form-group">
 						<span class="fui-mail"></span>
-						<input type="tel" class="form-control" maxlength="11" placeholder="联系方式" data-role="none">
+						<input id="phone" type="tel" class="form-control" maxlength="11" placeholder="联系方式" data-role="none" value="${phone}">
 						<br><hr>
 						<span class="fui-new"></span>
-						<input type="text" class="form-control" placeholder="备注" data-role="none">
+						<input id="remark" type="text" class="form-control" placeholder="备注" data-role="none">
 					</div>
 					<div class="gap2"></div>
 					<button id="submit" type="button" class="btn btn-primary" data-role="none">提交</button>
@@ -224,7 +232,7 @@
 				<div class="t-t"><span>服务时长</span></div>
 				<div class="e-o">
 					<button type="button" class="minus" data-role="none"><span class="fui-minus"></span></button>
-					<div class="num"><label id="svs-d" class="flag">3</label></div>
+					<div class="num"><label id="svs-d" class="flag"><#if minHours??>${minHours}<#else>1</#if></label></div>
 					<button type="button" class="plus" data-role="none"><span class="fui-plus2"></span></button>
 				</div>
 				<div class="clear"></div>
@@ -241,6 +249,11 @@
 		</div>
 		<div class="content" style="margin:0;"></div>
 	你好啊啊啊啊啊</div>
+	<div class="hide">
+		<input id="productId" value="${productId}">
+		<input id="price" value="${price}">
+		
+	</div>
 </body>
 <script src="${contextPath}/assets/js/1.0/page/product/serviceOrder.js" type="text/javascript"></script>
 </html>

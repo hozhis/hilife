@@ -1,8 +1,7 @@
 require([ 'jquery',
           'global',
           'jquery.mobile',
-          'pnotify',
-          'module/localStorage'], 
+          'pnotify'], 
 		function($, global) {
 			var service = {
 				/*localStorage : function(key){
@@ -129,9 +128,53 @@ require([ 'jquery',
 						$(".servicer").addClass("servicer-right-out").removeClass("servicer-right-in");
 						setTimeout(function(){$("#arrow-left").css("pointer-events","auto");},500);
 					});
+					$("#submit").tap(function(){
+						_self.submit();
+					});
 				},
 				closeDatetime : function(){
 					$(".daterpicker").addClass("hide");
+				},
+				submit : function(){
+					var list = new Array();
+					list[0] = {
+						productId : $("#productId").val(),
+						price : $("#price").val(),
+						amount : $("#svs-d").text()
+					};
+					var data = {
+						token : global.token,
+						list : list,
+						orderType : 1,
+						totalAmount : parseInt($("#price").val()) * parseInt($("#svs-d").text()),
+						auntId : $("#servicer").attr("data-id"),
+						serviceAddress : $("#serviceAddress").text(),
+						serviceDto : {
+							paraValue1 : "服务时间：" + $("#service-time").text(),
+						    paraValue2 : $("#service-item").attr("data-name") + $("#service-item").text(),
+						    paraValue3 : "联系方式：" + $("#phone").val(),
+						    remark : "备注：" + $("#remark").val()
+						}
+					}
+					$.ajax({
+						type : "POST",
+						url : global.context + "/web/product/order/submit",
+						data : JSON.stringify(data),
+						dataType : "json",
+						contentType : "application/json; charset=utf-8",
+						success : function(msg) {
+							if(msg.code == "ACK"){
+								layer.open({
+								    content: '您的订单已提交成功！我们将尽快为你安排服务人员，请耐心等待。',
+								    btn: ['提交成功'],
+								    shadeClose: false,
+								    yes: function(){
+								        window.location.href = global.context + "/web/order/index?token=" + global.token;
+								    }
+								});
+							}
+						}
+					});
 				},
 				init : function(){
 					var _self = this;

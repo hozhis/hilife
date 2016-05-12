@@ -61,4 +61,15 @@ public class AddressController {
         model.addAttribute("custAddress", dto);
         return "address/detail";
     }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String addAddress(Model model) {
+        return "address/detail";
+    }
+
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @ResponseBody
+    public ResultDto<String> saveAddress(@RequestBody CustAddressDto dto) {
+        return addressService.saveAddress(dto);
+    }
 }

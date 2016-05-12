@@ -14,11 +14,11 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 					});
 				},
 				bindEvent : function() {
-					var width = $(".banner").width();
-					$(".banner").height(parseInt(width)/2.5);
-					var w = $(".circle").width();
-					$(".circle").height(parseInt(w));
-					$(".banner-gap").height(parseInt(w)/2.464);
+					/*var width = $(".banner").width();
+					$(".banner").height(parseInt(width)/2.5);*/
+					//var w = $(".circle").width();
+					//$(".circle").height(parseInt(w));
+					//$(".banner-gap").height(parseInt(w)/2.464);
 					$("#quit").tap(function(){
 						var data = {
 								token : global.token,

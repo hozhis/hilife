@@ -10,6 +10,7 @@ import org.springframework.util.Assert;
 
 import cn.dolphinsoft.hilife.address.dto.CustAddressDto;
 import cn.dolphinsoft.hilife.address.service.AddressService;
+import cn.dolphinsoft.hilife.common.authority.AuthorityContext;
 import cn.dolphinsoft.hilife.common.converter.ConverterService;
 import cn.dolphinsoft.hilife.common.domain.CustAddress;
 import cn.dolphinsoft.hilife.common.domain.CustUserInfo;
@@ -90,6 +91,14 @@ public class AddressServiceImpl implements AddressService {
         CustAddress custAddress = addressRepository.findByAddressId(addressId);
         Assert.notNull(custAddress);
         return ConverterService.convert(custAddress, CustAddressDto.class);
+    }
+
+    @Override
+    public ResultDto<String> saveAddress(CustAddressDto dto) {
+        dto.setUserId(AuthorityContext.getCurrentUser().getUserId());
+        CustAddress address = ConverterService.convert(dto, CustAddress.class);
+        addressRepository.save(address);
+        return ResultDtoFactory.toAck("保存成功");
     }
 
 }

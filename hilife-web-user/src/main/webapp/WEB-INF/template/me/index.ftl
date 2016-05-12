@@ -31,7 +31,7 @@
 	<div class="content">
 		<div>
 			<div class="banner">
-				<div class="circle"><img src="${custImage}"></div>
+				<div class="circle"><#if custImage??><img src="${custImage}"><#else><img src="${contextPath}/assets/img/ico-default.jpg"></#if></div>
 			</div>
 			<div class="banner-gap"></div>
 		</div>

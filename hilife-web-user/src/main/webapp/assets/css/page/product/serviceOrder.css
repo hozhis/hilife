@@ -117,6 +117,7 @@
 
 .fui-location::before {
 	font-size: 18px;
+	margin-left: 10px;
 }
 
 .fui-list:before {

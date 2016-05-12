@@ -1,0 +1,144 @@
+.title input {
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+	font-size: 15px;
+	height: 28px;
+	line-height: 20px;
+	padding: 0 30px 0 10px;
+	width: 100%;
+	background-color: #f0f0f0;
+}
+
+.title input:focus {
+	background-color: #ffffff;
+}
+
+.title span.icon-search {
+	color: #8e8e8e;
+	font-size: 22px;
+	line-height: 50px;
+	position: absolute;
+	right: 45px;
+	top: 0;
+}
+
+.title:focus {
+	color: #000000;
+}
+
+.content {
+	padding: 50px 0 0;
+}
+
+.content-title {
+	background-color: #ffffff;
+	border-bottom: 1px solid #e0e0e0;
+	height: 40px;
+	line-height: 40px;
+	position: fixed;
+	width: 100%;
+	z-index: 299;
+}
+
+.content-title li {
+	float: left;
+	font-size: 16px;
+	text-align: center;
+	width: 25%;
+	height: 40px;
+}
+
+.content-title li.active {
+	border-bottom: 2px solid #ea0000;
+	color: #ea0000;
+}
+
+.content-body {
+	padding-top: 40px;
+}
+
+.content-body ul li {
+	float: left;
+	padding-right: 10px;
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.product-item {
+	background-color: #ffffff;
+}
+
+.item-image img {
+	width: 100%;
+}
+
+.content-body ul {
+	padding-left: 10px;
+	overflow: hidden;
+}
+
+.item-desc>span {
+	display: block;
+	line-height: 18px;
+	color: #000000;
+	position: relative;
+}
+
+.item-desc label {
+    color: #bebebe;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+
+.item-desc {
+	padding: 0 5px 5px;
+}
+
+.item-desc>span:first-child {
+	color: #ea0000;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.item-desc>span:last-child {
+	font-size: 12px;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	/* height: 32px; */
+}
+
+.fui-triangle-up-small {
+	position: absolute;
+	top: -6px;
+}
+
+.fui-triangle-down-small {
+	bottom: -5px;
+	position: absolute;
+}
+
+.fui-triangle-up-small:before {
+	content: "\e602";
+	color: #bebebe;
+	font-size: 13px;
+}
+
+.fui-triangle-down-small:before {
+	content: "\e603";
+	font-size: 13px;
+	color: #bebebe;
+}
+
+.fui-triangle-up-small.active::before {
+	color: #ea0000;
+}
+
+.fui-triangle-down-small.active::before {
+	color: #ea0000;
+}

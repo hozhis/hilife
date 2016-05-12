@@ -14,6 +14,14 @@ ol, ul, li, br, img, input {
 	list-style: none;
 }
 
+input,button{
+	outline: none;
+}
+
+h1,h2,label,span{
+	letter-spacing: 0.5px;
+}
+
 a, li, div, label, span {
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
@@ -74,7 +82,7 @@ label {
 }
 
 .fui-location::before {
-	margin-left: 10px;
+	/* margin-left: 10px; */
 	font-size: 20px;
 }
 
@@ -355,10 +363,11 @@ input[placeholder] {
 .layermbox0 .layermchild {
     max-width: 70%;
     min-width: 70%;
+    border-radius: 10px;
 }
 
 .layermcont {
-    text-align: left;
+    /* text-align: left; */
     padding: 20px;
 }
 
@@ -370,7 +379,79 @@ input[placeholder] {
     font-size: 16px;
 }
 
+.layermbtn span:first-child {
+    border-radius: 0 0 0 10px;
+}
+
 .layermbtn span:last-child {
 	color: #ea0000;
 	font-weight: bold;
+}
+
+.animate-spin {
+  -moz-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  display: inline-block;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.progress {
+    background-color: transparent;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.fui-spin5:before {
+	content: "\e801";
+	color: #ea0000;
 }

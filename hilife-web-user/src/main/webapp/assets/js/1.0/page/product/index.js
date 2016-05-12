@@ -27,15 +27,10 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 						}
 					}
 				},
-				length : function(){
-					var w = $(".service-clsfy").width();
-					$(".service-clsfy").height(w);
-				},
 				init : function() {
 					var _self = this;
 					_self.bindEvent();
 					_self.banner();
-					_self.length();
 				}
 			};
 			me.init();

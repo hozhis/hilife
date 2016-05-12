@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 
 import cn.dolphinsoft.hilife.common.pool.ftpPool.FtpClientPoolFactory;
 
-
 /**
  * Class Name: FtpUtil
  * 
@@ -30,7 +29,7 @@ public class FtpUtil {
      * @param image
      * @param imagePath
      */
-    public static void upLoad(String fileName, InputStream input, String image, String imagePath) {
+    public static void upload(String fileName, InputStream input, String image, String imagePath) {
         FtpClientPoolFactory pool = ApplicationContextUtil.getBean(FtpClientPoolFactory.class);
         FTPClient ftpClient = pool.getConnection();
         try {

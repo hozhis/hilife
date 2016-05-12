@@ -190,3 +190,69 @@
     width: 20%;
     color: #ea0000;
 }
+
+#upload {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+}
+
+#upload ul{
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    border: 0;
+}
+
+#upload ul>li{
+	border-top: 1px solid #e0e0e0; 
+	border-bottom: 0;
+}
+	
+#upload .u-shade{
+	height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000000;
+    opacity: 0.5;
+}
+
+input[type="file"] {
+    bottom: 0;
+    height: 45px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.file {
+    width: auto;
+    margin-right: 15px;
+}
+
+.layermcont {
+	/* padding: 0; */
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	display: table;
+	text-align: center;
+	display: table;
+}
+
+.layermcont span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.layermcont img {
+	width: 100%;
+}

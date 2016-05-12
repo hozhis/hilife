@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.dolphinsoft.hilife.address.service.AddressService;
 import cn.dolphinsoft.hilife.common.authority.AuthorityContext;
 import cn.dolphinsoft.hilife.common.dto.ResultDto;
-import cn.dolphinsoft.hilife.common.dto.ResultDtoFactory;
 import cn.dolphinsoft.hilife.common.util.HiLifeUtil;
+import cn.dolphinsoft.hilife.order.dto.CustOrderDto;
+import cn.dolphinsoft.hilife.order.service.CustOrderService;
 import cn.dolphinsoft.hilife.product.dto.ProductDto;
 import cn.dolphinsoft.hilife.product.service.ProductService;
 
@@ -27,12 +28,15 @@ public class ProductController {
     @Autowired
     private AddressService addressService;
 
-    @RequestMapping(value = "/index")
+    @Autowired
+    private CustOrderService custOrderService;
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String home(Model model) {
         return "product/index";
     }
 
-    @RequestMapping(value = "/service/{serviceId}")
+    @RequestMapping(value = "/service/{serviceId}", method = RequestMethod.GET)
     public String serviceOrder(@PathVariable("serviceId") String id, Model model) {
         ProductDto dto = producrService.getProductDetail(id);
         if (dto != null) {
@@ -42,9 +46,11 @@ public class ProductController {
             model.addAttribute("detail", dto.getIntroduction());
             model.addAttribute("remark", dto.getRemark());
             model.addAttribute("logo", dto.getImage());
-            model.addAttribute("serviceId", id);
-            model.addAttribute("flagId",dto.getFlagId());
+            model.addAttribute("flagId", dto.getFlagId());
+            model.addAttribute("productId", dto.getProductId());
         }
+        model.addAttribute("serviceId", id);
+        model.addAttribute("phone", AuthorityContext.getCurrentUser().getLoginId());
         String serviceAddress = addressService.getServiceAddress(AuthorityContext.getCurrentToken());
         if (!HiLifeUtil.isEmpty(serviceAddress)) {
             model.addAttribute("serviceAddress", serviceAddress);
@@ -54,7 +60,7 @@ public class ProductController {
 
     @RequestMapping(value = "/order/submit", method = RequestMethod.POST)
     @ResponseBody
-    public ResultDto<String> serviceSubmit(@RequestBody ProductDto dto) {
-        return ResultDtoFactory.toAck("");
+    public ResultDto<String> serviceSubmit(@RequestBody CustOrderDto dto) {
+        return custOrderService.submitOrder(dto);
     }
 }

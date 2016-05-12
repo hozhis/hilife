@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.dolphinsoft.hilife.common.dto.BasicParaDto;
@@ -27,24 +26,11 @@ public class LifeController {
     public String home(Model model) {
         List<ProductPromoteDto> dtos = lifeservice.getPromoteProduct();
         model.addAttribute("promotes", dtos);
+        List<BasicParaDto> carousels = lifeservice.getCarouselPictures();
+        model.addAttribute("carousels", carousels);
         return "life/index";
     }
 
-    @RequestMapping(value = "/goods/index", method = RequestMethod.GET)
-    public String goodsIndex(@RequestParam Integer onsaleType, Model model) {
-        return "goods/index";
-    }
-
-    @RequestMapping(value = "/goods/detail", method = RequestMethod.GET)
-    public String goodsDetail(@RequestParam Integer productId, Model model) {
-        return "goods/detail";
-    }
-
-    @RequestMapping(value = "/goods/shopcart", method = RequestMethod.GET)
-    public String shopcart(Model model) {
-        return "goods/shopcart";
-    }
-    
     @RequestMapping(value = "/getCarouselPictures", method = RequestMethod.GET)
     @ResponseBody
     public ResultDto<List<BasicParaDto>> getCarouselPictures() {

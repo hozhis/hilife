@@ -1,12 +1,14 @@
 package cn.dolphinsoft.hilife.order.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,8 +24,13 @@ import cn.dolphinsoft.hilife.common.authority.AuthorityContext;
 import cn.dolphinsoft.hilife.common.converter.ConverterService;
 import cn.dolphinsoft.hilife.common.domain.CustOrder;
 import cn.dolphinsoft.hilife.common.domain.CustOrderDetail;
+import cn.dolphinsoft.hilife.common.dto.ResultDto;
+import cn.dolphinsoft.hilife.common.dto.ResultDtoFactory;
+import cn.dolphinsoft.hilife.common.enumeration.BaseStatus;
+import cn.dolphinsoft.hilife.common.enumeration.OrderStatus;
 import cn.dolphinsoft.hilife.common.repository.ICustOrderDetailRepository;
 import cn.dolphinsoft.hilife.common.repository.ICustOrderRepository;
+import cn.dolphinsoft.hilife.common.repository.ICustOrderServiceRepository;
 import cn.dolphinsoft.hilife.common.repository.IProductRepository;
 import cn.dolphinsoft.hilife.order.dto.CustOrderDetailDto;
 import cn.dolphinsoft.hilife.order.dto.CustOrderDto;
@@ -41,12 +48,15 @@ public class CustOrderServiceImpl implements CustOrderService {
     private ICustOrderDetailRepository orderDetailRepository;
 
     @Autowired
+    private ICustOrderServiceRepository orderServiceRepository;
+
+    @Autowired
     private IProductRepository productRepository;
 
     @Override
     public void searchCustOrder(final CustOrderSearchDto dto) {
         Pageable pageable = new PageRequest(dto.getCurrentPage() - 1, dto.getPageSize(),
-                new Sort(Direction.ASC, "createDate"));
+                new Sort(Direction.DESC, "createDate"));
         Page<CustOrder> page = orderRepository.findAll(new Specification<CustOrder>() {
 
             @Override
@@ -88,6 +98,42 @@ public class CustOrderServiceImpl implements CustOrderService {
             orderDtos.add(dto);
         }
         return orderDtos;
+    }
+
+    @Override
+    public ResultDto<String> submitOrder(CustOrderDto dto) {
+        if (dto.getOrderType().equals(1)) {// 服务订单
+            CustOrder order = new CustOrder();
+            order.setUserId(AuthorityContext.getCurrentUser().getUserId());
+            order.setCreateDate(new Date());
+            order.setOrderType(dto.getOrderType());
+            order.setTotalAmount(dto.getTotalAmount());
+            order.setAuntId(dto.getOrderId());
+            order.setOrderStatus(OrderStatus.RECEIVE.getKey());
+            order.setServiceAddress(dto.getServiceAddress());
+            order.setStatus(BaseStatus.EFFECT.getKey());
+            orderRepository.save(order);
+            CustOrderDetail detail = new CustOrderDetail();
+            detail.setOrderId(order.getOrderId());// TODO 有问题？？？
+            detail.setProductId(dto.getList().get(0).getProductId());
+            detail.setPrice(dto.getList().get(0).getPrice());
+            detail.setAmount(dto.getList().get(0).getAmount());
+            orderDetailRepository.save(detail);
+            cn.dolphinsoft.hilife.common.domain.CustOrderService orderService = ConverterService
+                    .convert(dto.getServiceDto(), cn.dolphinsoft.hilife.common.domain.CustOrderService.class);
+            orderService.setOrderId(order.getOrderId());
+            orderServiceRepository.save(orderService);
+            return ResultDtoFactory.toAck("提交成功");
+        } else if (dto.getOrderType().equals(0)) {// 商品订单
+
+        }
+        return ResultDtoFactory.toNack("提交失败");
+    }
+
+    @Transactional
+    @Override
+    public void cancelOrder(Integer orderId) {
+        orderRepository.cancelOrder(orderId, OrderStatus.CANCEL.getKey(), new Date());
     }
 
 }

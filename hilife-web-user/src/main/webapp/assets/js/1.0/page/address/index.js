@@ -5,6 +5,9 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 				$(".fui-arrow-left2").tap(function(){
 					window.history.go(-1);
 				});
+				$("#btn-add").tap(function(){
+					window.location.replace(global.context + "/web/address/add?token=" + global.token);
+				});
 			},
 			swipe : function(){
 				var _self = this;
@@ -71,7 +74,7 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 				$(".li-edit").tap(function(){
 					var id = $(this).parents().find("div.behind").siblings(".front.slide").attr("id");
 					$(".front").trigger("swiperight");
-					window.location.href = global.context + "/web/address/detail/" + id + "?token=" + global.token;
+					window.location.replace(global.context + "/web/address/detail/" + id + "?token=" + global.token);
 				});
 			},
 			setServiceAddress : function(addressId, url){

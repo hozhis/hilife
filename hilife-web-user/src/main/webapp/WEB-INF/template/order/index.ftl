@@ -6,6 +6,7 @@
 <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" >
 <meta content="telephone=no,email=no,adress=no" name="format-detection" >
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/vendor/flatui/css/flat-ui.css"/>
+<link rel="stylesheet" type="text/css" href="${contextPath}/assets/vendor/layer-mobile/css/layer.mobile-1.7.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/page/order/index.css"/>
 <script src="${contextPath}/assets/js/1.0/require.js" type="text/javascript"></script>
@@ -30,16 +31,17 @@
 	<div class="content">
 		<div class="content-clsy">
 			<ul>
-				<li><div id="orderAll" class="active" data-id="">全部</div></li>
-				<li><div id="ordering" data-id="">进行中</div></li>
-				<li><div id="paying" data-id="">待付款</div></li>
-				<li><div id="praising" data-id="">待评价</div></li>
+				<li id="orderAll" class="active" data-id="">全部</li>
+				<li id="ordering" data-id="">进行中</li>
+				<li id="paying" data-id="">待付款</li>
+				<li id="praising" data-id="">待评价</li>
 			</ul>
 		</div>
 		<div class="content-body">
 			<ul class="order-ul"></ul>
 			<div class="d-t">没有更多订单了</div>
 		</div>
+		<div class="progress"><span class="fui-spin5 animate-spin"></span></div>
 	</div>
 	<div class="gap2"></div>
 	<div class="footer">

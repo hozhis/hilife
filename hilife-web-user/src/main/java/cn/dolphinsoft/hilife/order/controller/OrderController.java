@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.dolphinsoft.hilife.common.dto.ResultDto;
+import cn.dolphinsoft.hilife.common.dto.ResultDtoFactory;
 import cn.dolphinsoft.hilife.order.dto.CustOrderSearchDto;
 import cn.dolphinsoft.hilife.order.service.CustOrderService;
 
@@ -39,5 +41,12 @@ public class OrderController {
     public CustOrderSearchDto searchByOrderStatus(@RequestBody CustOrderSearchDto dto) {
         custOrderService.searchCustOrder(dto);
         return dto;
+    }
+
+    @RequestMapping(value = "/cancel", method = RequestMethod.POST)
+    @ResponseBody
+    public ResultDto<String> cancelOrder(@RequestParam Integer orderId) {
+        custOrderService.cancelOrder(orderId);
+        return ResultDtoFactory.toAck("取消成功");
     }
 }

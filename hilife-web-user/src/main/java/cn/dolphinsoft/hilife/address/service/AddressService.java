@@ -68,4 +68,13 @@ public interface AddressService {
      * @return
      */
     CustAddressDto getAddressDetail(Integer addressId);
+
+    /**
+     * 
+     * Description: 保存地址
+     *
+     * @param dto
+     * @return
+     */
+    ResultDto<String> saveAddress(CustAddressDto dto);
 }

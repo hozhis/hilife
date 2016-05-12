@@ -1,8 +1,6 @@
 require([ 'jquery', 'global', 'jquery.mobile'],
 		function($, global) {
-		var order = {
-			sizeInit : function(){
-			},
+		var coupon = {
 			bindEvent : function(){
 				var _self = this;
 				$(".fui-arrow-left2").tap(function(){
@@ -71,9 +69,8 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 			init : function(){
 				var _self = this;
 				_self.bindEvent();
-				_self.sizeInit();
 				_self.getCouponList();
 			}
 		};
-		order.init();
+		coupon.init();
 });

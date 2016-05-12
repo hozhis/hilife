@@ -42,6 +42,26 @@ public class ProductDto implements Serializable {
 
     private Integer flagId;
 
+    private Integer saleAmount;
+
+    private Integer reviews;
+
+    public Integer getSaleAmount() {
+        return saleAmount;
+    }
+
+    public void setSaleAmount(Integer saleAmount) {
+        this.saleAmount = saleAmount;
+    }
+
+    public Integer getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Integer reviews) {
+        this.reviews = reviews;
+    }
+
     public Integer getBrandId() {
         return brandId;
     }

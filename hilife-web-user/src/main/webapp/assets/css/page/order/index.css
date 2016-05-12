@@ -57,41 +57,29 @@ to {
 
 .content-clsy {
 	background-color: #ffffff;
-	left: 0;
-	position: fixed;
-	top: 50px;
-	width: 100%;
-	height: 43px;
-	z-index: 100;
-}
-
-.content-clsy>ul {
-	overflow: hidden;
 	border-bottom: 1px solid #e0e0e0;
-	height: 43px;
-}
-
-.content-body {
-	padding-top: 43px;
+	height: 40px;
+	line-height: 40px;
+	position: fixed;
+	width: 100%;
+	z-index: 299;
 }
 
 .content-clsy li {
-	display: block;
 	float: left;
-	font-size: 15px;
-	height: 43px;
-	line-height: 43px;
+	font-size: 16px;
 	text-align: center;
 	width: 25%;
+	height: 40px;
 }
 
-.content-clsy div {
-	display: inline;
-	padding-bottom: 10px;
-}
-
-.content-clsy div.active {
+.content-clsy li.active {
 	border-bottom: 2px solid #ea0000;
+	color: #ea0000;
+}
+
+.content-body {
+	padding-top: 40px;
 }
 
 .content-body li {
@@ -162,7 +150,7 @@ to {
 
 .con-3 {
 	float: left;
-	width: 75%;
+	width: 80%;
 	line-height: 15px;
 }
 

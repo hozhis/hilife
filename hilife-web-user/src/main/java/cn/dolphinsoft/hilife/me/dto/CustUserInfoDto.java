@@ -18,13 +18,23 @@ public class CustUserInfoDto extends RequestDto {
 
     private String inviteCode;
 
-    private String sex = "0"; //0 默认为 0--男
+    private String sex = "0"; // 0 默认为 0--男
 
     private Integer regionId;
+
+    private String region;
 
     private Integer addressId;
 
     private String username;
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
 
     public String getUsername() {
         return username;

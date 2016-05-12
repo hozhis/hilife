@@ -1,8 +1,6 @@
-require([ 'jquery', 'global', 'jquery.mobile', 'bootstrap'],
+require([ 'jquery', 'global', 'jquery.mobile', 'bootstrap','pnotify'],
 		function($, global) {
 			var me = {
-				sizeInit : function(){
-				},
 				slider : function() {
 					$.ajax({
 						type : "GET",
@@ -19,10 +17,6 @@ require([ 'jquery', 'global', 'jquery.mobile', 'bootstrap'],
 								}
 								$(".carousel-indicators").html(_ols);
 								$(".carousel-inner").html(_ods);
-								var w = $(".carousel").width();
-								$(".carousel").height(w/2.2);
-								$(".carousel-inner").height(w/2.2);
-								$(".carousel-inner img").height(w/2);
 								$("#carousel-hilife").carousel();
 								$("#carousel-hilife").swipeleft(function(){
 									$(this).carousel("next");
@@ -35,12 +29,35 @@ require([ 'jquery', 'global', 'jquery.mobile', 'bootstrap'],
 					});
 				},
 				bindEvent : function() {
+					$(".fui-shopping_cart").tap(function(){
+						window.location.href = global.context + "/web/goods/shopcart?token=" + global.token;
+					});
+					$("#searchbox").blur(function(){
+						$(window).scrollTop(0);
+					});
+					$(".search-btn").tap(function(){
+						if($("#searchbox").val() != "" ){
+							window.location.href = global.context + "/web/goods/index?searchStr=" +
+										encodeURI(encodeURI($("#searchbox").val())) + "&token=" + global.token;
+						}else{
+							layer.open({
+							    content: '搜索条件不能为空！',
+							    btn: ['重新输入','取消'],
+							    shadeClose: false,
+							    yes: function(){
+							    	layer.closeAll();
+							    	$("#searchbox").focus();
+							    }, no: function(){
+							    }
+							});
+						}
+					});
 				},
 				init : function() {
 					var _self = this;
 					_self.bindEvent();
 					_self.slider();
-					//_self.sizeInit();
+					//$("#carousel-hilife").carousel();
 				}
 			};
 			me.init();

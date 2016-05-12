@@ -12,7 +12,7 @@ public interface ICustCouponRepository extends JpaRepository<CustCoupon, Integer
     @Query("from CustCoupon where userId = ?1 and couponId = ?2 and expireDate >= curdate()")
     List<CustCoupon> findByUserIdAndCouponId(Integer userId, Integer couponId);
     
-    @Query("select count(*) from CustCoupon where userId = ?1 and datediff(expireDate,curdate()) <= 7")
+    @Query("select count(*) from CustCoupon where userId = ?1 and datediff(expireDate,curdate()) <= 7 and expireDate >= curdate()")
     Integer getExpCount(Integer userId);
 
 }

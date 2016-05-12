@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 
 import cn.dolphinsoft.hilife.common.constant.BasicTypeConstant;
 import cn.dolphinsoft.hilife.common.converter.ConverterService;
@@ -13,6 +12,7 @@ import cn.dolphinsoft.hilife.common.domain.BasicPara;
 import cn.dolphinsoft.hilife.common.domain.Product;
 import cn.dolphinsoft.hilife.common.domain.ProductPromote;
 import cn.dolphinsoft.hilife.common.dto.BasicParaDto;
+import cn.dolphinsoft.hilife.common.enumeration.BaseStatus;
 import cn.dolphinsoft.hilife.common.repository.IBasicParaRepository;
 import cn.dolphinsoft.hilife.common.repository.IProductPromoteRepository;
 import cn.dolphinsoft.hilife.common.repository.IProductRepository;
@@ -53,11 +53,14 @@ public class LifeServiceImpl implements LifeService {
         if (promotes != null) {
             Product product;
             for (ProductPromote promote : promotes) {
-                product = productRepository.findByProductId(promote.getProductId());
-                Assert.notNull(product);
-                ProductPromoteDto dto = ConverterService.convert(promote, ProductPromoteDto.class);
-                dto.setProductDto(ConverterService.convert(product, ProductDto.class));
-                dtos.add(dto);
+                product = productRepository.findByProductIdAndStatus(promote.getProductId(),
+                        BaseStatus.EFFECT.getKey());
+                // Assert.notNull(product);
+                if (product != null) {
+                    ProductPromoteDto dto = ConverterService.convert(promote, ProductPromoteDto.class);
+                    dto.setProductDto(ConverterService.convert(product, ProductDto.class));
+                    dtos.add(dto);
+                }
             }
         }
         return dtos;

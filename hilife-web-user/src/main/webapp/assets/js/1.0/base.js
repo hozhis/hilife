@@ -13,7 +13,11 @@ require(['global'],function(global){
 			'requirejs/domready' : '../../vendor/requirejs/plugins/domready',
 			'requirejs/i18n' : '../../vendor/requirejs/plugins/i18n',
 			'requirejs/text' : '../../vendor/requirejs/plugins/text',
-			'pnotify' : '../../vendor/layer-mobile/layer.mobile-1.7'
+			'pnotify' : '../../vendor/layer-mobile/layer.mobile-1.7',
+			'ajaxfileupload':'../../vendor/fileupload/ajaxfileupload',
+			'ajaxfileupload.multi':'../../vendor/fileupload/ajaxfileupload.multi',
+			'fileupload':'../../vendor/fileupload/jquery.fileupload',
+			'iframe':'../../vendor/fileupload/jquery.iframe'
 		},
 		// Remember: only use shim config for non-AMD scripts,
 		// scripts that do not already call define(). The shim
@@ -27,11 +31,20 @@ require(['global'],function(global){
 				// jquery mobile modual
 				deps : ['jquery']
 			},
-		'bootstrap' : {
-			// This script dependency should be loaded before loading
-			// jquery mobile modual
-			deps : ['jquery']
-		}
+			'bootstrap' : {
+				// This script dependency should be loaded before loading
+				// jquery mobile modual
+				deps : ['jquery']
+			},
+			'ajaxfileupload':{
+            	deps : [ 'jquery' ]
+            },
+            'ajaxfileupload.multi':{
+            	deps : [ 'jquery','ajaxfileupload' ],
+            },
+            'fileupload':{
+            	deps : [ 'jquery' ]
+            }
 		}
 	});
 });

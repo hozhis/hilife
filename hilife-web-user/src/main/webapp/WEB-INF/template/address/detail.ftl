@@ -5,6 +5,7 @@
 <meta charset="utf-8" >
 <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" >
 <meta content="telephone=no,email=no,adress=no" name="format-detection" >
+<link rel="stylesheet" type="text/css" href="${contextPath}/assets/vendor/layer-mobile/css/layer.mobile-1.7.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/vendor/flatui/css/flat-ui.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/page/address/detail.css"/>
@@ -30,16 +31,17 @@
 		</div>
 		<div class="content">
 			<div class="nav">
-				<ul>
-					<li class="nav-li"><div class="nav-content">预约人</div><div class="nav-detail"><input type="text" value="${custAddress.consignee}"></div></li>
-					<li class="nav-li"><div class="nav-content">联系电话</div><div class="nav-detail"><input type="tel" value="${custAddress.phone}" maxlength="11"></div></li>
-					<li class="nav-li" style="height:80px;line-height:40px;"><div class="nav-content">服务地址</div><div class="nav-detail address">${custAddress.addressName}</div></li>
+				<ul data-id="${custAddress.addressId}">
+					<li class="nav-li"><div class="nav-content">预约人</div><div class="nav-detail"><input id="consignee" type="text" value="${custAddress.consignee}"></div></li>
+					<li class="nav-li"><div class="nav-content">联系电话</div><div class="nav-detail"><input id="phone" type="tel" value="${custAddress.phone}" maxlength="11"></div></li>
+					<li class="nav-li" style="height:auto;overflow:hidden;"><div class="nav-content">服务地址</div><div id="addressName" class="nav-detail address">${custAddress.addressName}</div></li>
 				</ul>
 			</div>
-			<div class="add"><button>保存修改</button></div>
+			<div id="save" class="add"><button>保存修改</button></div>
 		</div>
 	</div>
-	<div class="map-module">
+	<!-- 地图 -->
+	<div class="map-module hide">
 		<div class="content-search" data-role="none">
 			<input class="search" type="text" placeholder="请输入小区名" id="searchbox" name="searchbox"  data-role="none">
         	<button class="search-btn" type="button" data-role="none"><span class="fui-search"></span></button>
@@ -47,7 +49,7 @@
 		<div class="result-list" id="result-list"></div>
 		<div class="map" id="allmap"></div>
 		<i class="marker"></i><i class="marker-shadow"></i>
-		<div class="shade hide"><span class="fui-spin4 animate-spin"></span></div>
+		<div class="progress hide"><span class="fui-spin5 animate-spin"></span></div>
 	</div>
 </body>
 <script src="${contextPath}/assets/js/1.0/page/address/detail.js" type="text/javascript"></script>

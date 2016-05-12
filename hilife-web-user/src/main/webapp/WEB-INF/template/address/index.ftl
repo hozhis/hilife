@@ -56,7 +56,7 @@
 					</li> -->
 				</ul>
 				<div class="gap2"></div>
-				<div class="add"><button>添加新地址</button></div>
+				<div class="add"><button id="btn-add">添加新地址</button></div>
 			</div>
 		</div>
 	</div>

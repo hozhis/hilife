@@ -1,11 +1,13 @@
 package cn.dolphinsoft.hilife.order.dto;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CustOrderDto implements Serializable {
+import cn.dolphinsoft.hilife.common.dto.RequestDto;
+import cn.dolphinsoft.hilife.product.dto.CustOrderServiceDto;
+
+public class CustOrderDto extends RequestDto {
 
     private static final long serialVersionUID = 4893263013430815107L;
 
@@ -46,6 +48,16 @@ public class CustOrderDto implements Serializable {
     private Date finishTime;
 
     private String status;
+
+    private CustOrderServiceDto serviceDto = new CustOrderServiceDto();
+
+    public CustOrderServiceDto getServiceDto() {
+        return serviceDto;
+    }
+
+    public void setServiceDto(CustOrderServiceDto serviceDto) {
+        this.serviceDto = serviceDto;
+    }
 
     public Date getPayTime() {
         return payTime;

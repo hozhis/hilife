@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PRODUCT")
-public class Product{
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +45,7 @@ public class Product{
     @Column(name = "PRICE")
     private Integer price;
 
-    @Column(name = "MOUNT")
+    @Column(name = "AMOUNT")
     private Integer mount;
 
     @Column(name = "CREATE_DATE")
@@ -62,6 +62,28 @@ public class Product{
 
     @Column(name = "FLAG_ID")
     private Integer flagId;
+
+    @Column(name = "SALE_AMOUNT")
+    private Integer saleAmount;
+
+    @Column(name = "RIVIEWS")
+    private Integer reviews;
+
+    public Integer getSaleAmount() {
+        return saleAmount;
+    }
+
+    public void setSaleAmount(Integer saleAmount) {
+        this.saleAmount = saleAmount;
+    }
+
+    public Integer getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Integer reviews) {
+        this.reviews = reviews;
+    }
 
     public String getImage() {
         return image;

@@ -25,4 +25,12 @@ public interface ICustUserInfoRepository
     void saveServiceAddress(String token, Integer addressId);
 
     CustUserInfo findByInviteCode(String inviteCode);
+
+    @Query("update CustUserInfo c set c.username = ?1, c.sex = ?2, c.regionId = ?3 where c.token = ?4")
+    @Modifying
+    void saveUserinfo(String username, String sex, Integer regionId, String token);
+
+    @Query("update CustUserInfo c set c.custImage = ?1 where c.token = ?2")
+    @Modifying
+    void updateImage(String custImage, String token);
 }

@@ -10,4 +10,10 @@ public interface IRegionRepository extends JpaRepository<Region, Integer> {
 
     List<Region> findByCityPy(String cityPy);
 
+    Region findByRegionId(Integer regionId);
+
+    List<Region> findByLevel(Integer level);
+
+    List<Region> findByParentId(Integer parentId);
+
 }
