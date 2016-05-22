@@ -31,11 +31,9 @@
 			<div class="div-search"><input type="text" placeholder="搜索"></div>
 			<div class="fb-title" style="background:#ff2d2d;color: #ffffff;"><div style="border-left: 4px solid #ffffff;">热点问题</div></div>
 			<ul class="fb-ul">
-				<li><div><label>关于智慧生活服务平台</label><span class="fui-keyboard_arrow_right"></span></div></li>
-				<li><div><label>阿姨服务期间屋内的财产安全如何保证?</label><span class="fui-keyboard_arrow_right"></span></div></li>
-				<li><div><label>关于家政服务的服务范围?</label><span class="fui-keyboard_arrow_right"></span></div></li>
-				<li><div><label>下单时的服务时长和服务人员如何确定?</label><span class="fui-keyboard_arrow_right"></span></div></li>
-				<li><div><label>关于智慧生活服务平台测试超过长度后的显示问题</label><span class="fui-keyboard_arrow_right"></span></div></li>
+				<#list feedbacks as f>
+				<li data-id="${f.fbId}"><a href="${contextPath}/web/feedback/detail/${f.fbId}?token=${token}" target="_top"><div><label>${f.fbTitle}</label><span class="fui-keyboard_arrow_right"></span></div></a></li>
+				</#list>
 				<div style="height:20px;"></div>
 			</ul>
 			<div class="gap"></div>

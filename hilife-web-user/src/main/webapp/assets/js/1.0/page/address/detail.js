@@ -21,7 +21,11 @@ require([ 'jquery', 'global', 'jquery.mobile','pnotify' ], function($, global) {
 				_self.mapInit();
 			});
 			$("#save").tap(function(){
-				_self.save();
+				if($("#addressName").text() != "" && $("#consignee").val() != "" && $("#phone").val() != ""){
+					_self.save(); 
+				}else{
+					layer.open({content: '关键信息不能为空', time: 1});
+				}
 			});
 		},
 		mapInit : function() {

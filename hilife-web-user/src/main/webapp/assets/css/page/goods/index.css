@@ -142,3 +142,8 @@
 .fui-triangle-down-small.active::before {
 	color: #ea0000;
 }
+
+.item-image {
+    height: 0;
+    padding-bottom: 100%;
+}

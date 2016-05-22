@@ -1,0 +1,13 @@
+.header {
+	height: 45%;
+}
+
+.left {
+	height: 80px;
+	width: 80%;
+}
+
+.right {
+	height: 80px;
+	width: 20%;
+}

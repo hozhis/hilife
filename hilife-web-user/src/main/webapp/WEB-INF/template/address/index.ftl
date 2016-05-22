@@ -6,6 +6,7 @@
 <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" >
 <meta content="telephone=no,email=no,adress=no" name="format-detection" >
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/vendor/flatui/css/flat-ui.css"/>
+<link rel="stylesheet" type="text/css" href="${contextPath}/assets/vendor/layer-mobile/css/layer.mobile-1.7.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="${contextPath}/assets/css/page/address/index.css"/>
 <script src="${contextPath}/assets/js/1.0/require.js" type="text/javascript"></script>

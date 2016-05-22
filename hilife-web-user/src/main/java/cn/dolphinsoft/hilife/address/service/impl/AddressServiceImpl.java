@@ -48,15 +48,16 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public String getServiceAddress(String token) {
+    public String[] getServiceAddress(String token) {
         CustUserInfo userInfo = userInfoRepository.findByToken(token);
         Assert.notNull(userInfo);
         CustAddress custAddress = addressRepository.findByAddressId(userInfo.getAddressId());
+        String[] list = { "", "" };
         if (custAddress != null) {
-            return custAddress.getAddressName();
-        } else {
-            return "";
+            list[0] = custAddress.getConsignee();
+            list[1] = custAddress.getAddressName();
         }
+        return list;
     }
 
     @Transactional
@@ -95,8 +96,11 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public ResultDto<String> saveAddress(CustAddressDto dto) {
-        dto.setUserId(AuthorityContext.getCurrentUser().getUserId());
+        if (dto.getConsignee().equals("") || dto.getPhone().equals("") || dto.getAddressName().equals("")) {
+            return ResultDtoFactory.toNack("不能为空");
+        }
         CustAddress address = ConverterService.convert(dto, CustAddress.class);
+        address.setUserId(AuthorityContext.getCurrentUser().getUserId());
         addressRepository.save(address);
         return ResultDtoFactory.toAck("保存成功");
     }

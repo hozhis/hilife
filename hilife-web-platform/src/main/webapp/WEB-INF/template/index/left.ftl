@@ -96,19 +96,39 @@ define('global',{
 			<div style="display:none;">
 				<ul>
 					<li><a href="${contextPath}/web/product/index?token=${token}">商品管理</a></li>
-					<li><a href="${contextPath}/?token=${token}">消息模板管理</a></li>
-					<li><a href="${contextPath}/?token=${token}">APP版本管理</a></li>
+					<li><a href="${contextPath}/?token=${token}">家政服务管理</a></li>
 				</ul>
 			</div>
-	        <h3 data-id="1"><i class="icon_l app"></i>APP配置</h3>
+			<h3 data-id="1"><i class="icon_l om"></i>订单管理</h3>
+			<div style="display:none;">
+				<ul>
+					<li><a href="${contextPath}/web/order/index?token=${token}">未分配订单</a></li>
+					<li><a href="${contextPath}/web/order/index?token=${token}">已分配订单</a></li>
+				</ul>
+			</div>
+	        <h3 data-id="2"><i class="icon_l app"></i>活动管理</h3>
+			<div style="display:none;">
+				<ul>
+					<li><a href="${contextPath}/?token=${token}">首页广告栏配置</a></li>
+					<li><a href="${contextPath}/?token=${token}">生活专区轮播图配置</a></li>
+					<li><a href="${contextPath}/?token=${token}">促销活动</a></li>
+				</ul>
+			</div>
+         	<h3 data-id="3"><i class="icon_l app"></i>基础数据配置</h3>
 			<div style="display:none;">
 				<ul>
 					<li><a href="${contextPath}/?token=${token}">参数设置</a></li>
 					<li><a href="${contextPath}/?token=${token}">消息模板管理</a></li>
-					<li><a href="${contextPath}/?token=${token}">APP版本管理</a></li>
 				</ul>
 			</div>
-         
+			<h3 data-id="4"><i class="icon_l app"></i>售后管理</h3>
+			<div style="display:none;">
+				<ul>
+					<li><a href="${contextPath}/?token=${token}">售后管理</a></li>
+					<li><a href="${contextPath}/?token=${token}">生活专区轮播图配置</a></li>
+					<li><a href="${contextPath}/?token=${token}">促销活动</a></li>
+				</ul>
+			</div>
 		</div><!-- acccodin end -->
 	   		
    		</div>

@@ -131,6 +131,7 @@ function($, global) {
 				_self.uploadImage();
 			});
 			$("#see-big-pic").tap(function(){
+				$("#upload").parents().siblings().css("pointer-events","none");
 				$("#upload").addClass("hide");
 				var html = "<span><img src='" + $("#upload-img").attr("src") +"'></span>";
 				var pageii = layer.open({
@@ -141,6 +142,7 @@ function($, global) {
 				setTimeout(function(){
 					$(".layermcont").tap(function(){
 						layer.closeAll();
+						$("#upload").parents().siblings().css("pointer-events","auto");
 					});
 				},500);
 			});

@@ -154,7 +154,9 @@ require([ 'jquery',
 						    paraValue2 : $("#service-item").attr("data-name") + $("#service-item").text(),
 						    paraValue3 : "联系方式：" + $("#phone").val(),
 						    remark : "备注：" + $("#remark").val()
-						}
+						},
+						phone : $("#phone").val(),
+						custName : $("#consignee").val()
 					}
 					$.ajax({
 						type : "POST",

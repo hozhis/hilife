@@ -252,7 +252,7 @@
 	<div class="hide">
 		<input id="productId" value="${productId}">
 		<input id="price" value="${price}">
-		
+		<input id="consignee" value="${consignee}">
 	</div>
 </body>
 <script src="${contextPath}/assets/js/1.0/page/product/serviceOrder.js" type="text/javascript"></script>

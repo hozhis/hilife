@@ -36,7 +36,7 @@
 				<h2>由 好生活平台 发货并提供售后服务</h2>
 				<div class="price">
 					<div class="price-left">零售价</div>
-					<div class="price-middle">￥<strong>${product.price/100}</strong></div>
+					<div class="price-middle">￥<strong>${(product.price/100)?string('0.00')}</strong></div>
 					<div class="price-right">已售：${product.saleAmount}</div>
 				</div>
 				<div class=""></div>

@@ -16,7 +16,6 @@
 		locale : 'zh_CN',
 		static_url : '${contextPath}',
 		token : '${token}',
-		product : '${product}'
 	})
 </script>
 <script src="${contextPath}/assets/js/1.0/base.js" type="text/javascript"></script>
@@ -45,25 +44,14 @@
 				<div class="gap"></div>
 				<ul class="product-ul">
 					<#list product as p>
-						<#if onsaleType??>
-							<li data-id="${p.productId}">
-								<a href="${contextPath}/web/goods/detail/${p.productId}?token=${token}" target="_top">
-									<div class="product-item">
-										<div class="item-image"><img src="${p.productDto.image}"></div>
-										<div class="item-desc"><span>￥${p.productDto.price/100}<label>已售：${p.productDto.saleAmount}</label></span><span>${p.productDto.productName}</span></div>
-									</div>
-								</a>
-							</li>
-						<#else>
-							<li data-id="${p.productId}">
-								<a href="${contextPath}/web/goods/detail/${p.productId}?token=${token}" target="_top">
-									<div class="product-item">
-										<div class="item-image"><img src="${p.image}"></div>
-										<div class="item-desc"><span>￥${p.price/100}<label>已售：${p.saleAmount}</label></span><span>${p.productName}</span></div>
-									</div>
-								</a>
-							</li>
-						</#if>
+						<li data-id="${p.productId}">
+							<a href="${contextPath}/web/goods/detail/${p.productId}?token=${token}" target="_top">
+								<div class="product-item">
+									<div class="item-image"><img src="${p.image}"></div>
+									<div class="item-desc"><span>￥${(p.price/100)?string('0.00')}<label>已售：${p.saleAmount}</label></span><span>${p.productName}</span></div>
+								</div>
+							</a>
+						</li>
 					</#list>
 				</ul>
 				<div class="progress hide"><span class="fui-spin5 animate-spin"></span></div>

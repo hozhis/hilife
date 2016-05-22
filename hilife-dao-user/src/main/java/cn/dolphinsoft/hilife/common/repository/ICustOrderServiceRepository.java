@@ -6,4 +6,6 @@ import cn.dolphinsoft.hilife.common.domain.CustOrderService;
 
 public interface ICustOrderServiceRepository extends JpaRepository<CustOrderService, Integer> {
 
+    CustOrderService findByOrderId(Integer orderId);
+
 }

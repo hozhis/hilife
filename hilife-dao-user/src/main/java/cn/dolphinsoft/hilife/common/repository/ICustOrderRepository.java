@@ -15,4 +15,9 @@ public interface ICustOrderRepository extends JpaRepository<CustOrder, Integer>,
     @Modifying
     void cancelOrder(Integer orderId, Integer orderStatus, Date date);
 
+    CustOrder findByOrderId(Integer orderId);
+
+    @Query(value = "update CustOrder c set c.status = 0 where c.orderId = ?1")
+    @Modifying
+    void deleteByOrderId(Integer orderId);
 }

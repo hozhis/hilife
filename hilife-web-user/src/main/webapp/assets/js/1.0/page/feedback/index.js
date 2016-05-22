@@ -1,11 +1,11 @@
 require([ 'jquery', 'global', 'jquery.mobile'],
 		function($, global) {
-		var order = {
+		var feedback = {
 			sizeInit : function(){
 			},
 			bindEvent : function(){
 				$(".fui-arrow-left2").tap(function(){
-					window.history.back();
+					window.location.replace(global.context + "/web/me/index?token=" + global.token);
 				});
 			},
 			init : function(){
@@ -14,5 +14,5 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 				_self.sizeInit();
 			}
 		};
-		order.init();
+		feedback.init();
 });

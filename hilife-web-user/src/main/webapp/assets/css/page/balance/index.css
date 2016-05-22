@@ -136,3 +136,11 @@ body {
 .d-money.deposit {
 	color: #02c874;
 }
+
+.d-none{
+	color: #5b5b5b;
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}

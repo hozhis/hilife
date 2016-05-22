@@ -48,6 +48,12 @@ public class CustOrder {
     @Column(name = "SERVICE_ADDRESS")
     private String serviceAddress;
 
+    @Column(name = "PHONE")
+    private String phone;
+
+    @Column(name = "CUST_NAME")
+    private String custName;
+
     @Column(name = "EVALUATE_STAR")
     private Integer evaluateStar;
 
@@ -77,6 +83,22 @@ public class CustOrder {
 
     @Column(name = "STATUS")
     private String status;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getCustName() {
+        return custName;
+    }
+
+    public void setCustName(String custName) {
+        this.custName = custName;
+    }
 
     public Date getPayTime() {
         return payTime;

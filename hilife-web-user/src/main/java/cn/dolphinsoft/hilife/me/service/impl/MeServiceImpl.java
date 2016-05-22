@@ -55,7 +55,9 @@ public class MeServiceImpl implements MeService {
         if (basicParas != null && basicParas.size() > 0) {
             ftpSettingPlatform = basicParas.get(0).getParaValue1();
         }
-        dto.setCustImage(ftpSettingPlatform + dto.getCustImage());
+        if (dto.getCustImage() != null) {
+            dto.setCustImage(ftpSettingPlatform + dto.getCustImage());
+        }
         Region region = regionRepository.findByRegionId(custUserInfo.getRegionId());
         if (region != null) {
             Integer parentId = region.getParentId();

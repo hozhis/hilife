@@ -1,9 +1,15 @@
-require([ 'jquery', 'global', 'jquery.mobile'], 
+require([ 'jquery', 'global', 'jquery.mobile','pnotify'], 
 		function($, global) {
 		var address = {
 			bindEvent : function(){
 				$(".fui-arrow-left2").tap(function(){
-					window.history.go(-1);
+					var parseUrl = window.location.search.split("?")[1];
+					var redirectUrl = parseUrl.split("&")[0].split("=")[0];
+					if(redirectUrl == "redirect:url"){
+						window.history.go(-1);
+					}else{
+						window.location.replace(global.context + "/web/me/index?token=" + global.token);
+					}
 				});
 				$("#btn-add").tap(function(){
 					window.location.replace(global.context + "/web/address/add?token=" + global.token);
@@ -43,8 +49,8 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 						contentType : "application/json; charset=utf-8",
 						success : function(msg) {
 							if (msg.code == "ACK") {
-								alert("success");
-								window.location.reload();
+								layer.open({content: '设置成功', time: 1});
+								setTimeout(function(){window.location.reload();},500);
 							}
 						}
 					});
@@ -65,8 +71,8 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 						contentType : "application/json; charset=utf-8",
 						success : function(msg) {
 							if (msg.code == "ACK") {
-								alert("success");
-								window.location.reload();
+								layer.open({content: '删除成功', time: 1});
+								setTimeout(function(){window.location.reload();},500);
 							}
 						}
 					});

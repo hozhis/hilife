@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.dolphinsoft.hilife.address.service.AddressService;
 import cn.dolphinsoft.hilife.common.authority.AuthorityContext;
 import cn.dolphinsoft.hilife.common.dto.ResultDto;
-import cn.dolphinsoft.hilife.common.util.HiLifeUtil;
 import cn.dolphinsoft.hilife.order.dto.CustOrderDto;
 import cn.dolphinsoft.hilife.order.service.CustOrderService;
 import cn.dolphinsoft.hilife.product.dto.ProductDto;
@@ -51,9 +50,12 @@ public class ProductController {
         }
         model.addAttribute("serviceId", id);
         model.addAttribute("phone", AuthorityContext.getCurrentUser().getLoginId());
-        String serviceAddress = addressService.getServiceAddress(AuthorityContext.getCurrentToken());
-        if (!HiLifeUtil.isEmpty(serviceAddress)) {
-            model.addAttribute("serviceAddress", serviceAddress);
+        String[] strings = addressService.getServiceAddress(AuthorityContext.getCurrentToken());
+        if (!strings[0].equals("")) {
+            model.addAttribute("consignee", strings[0]);
+        }
+        if (!strings[1].equals("")) {
+            model.addAttribute("serviceAddress", strings[1]);
         }
         return "product/serviceOrder";
     }

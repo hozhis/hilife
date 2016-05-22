@@ -4,7 +4,7 @@ require([ 'jquery', 'global', 'jquery.mobile'],
 			bindEvent : function(){
 				var _self = this;
 				$(".fui-arrow-left2").tap(function(){
-					window.history.back();
+					window.location.replace(global.context + "/web/me/index?token=" + global.token);
 				});
 				$(".fui-arrow-left3").tap(function(){
 					$(".exchangeCoupon").addClass("hide");

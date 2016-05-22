@@ -29,7 +29,7 @@
 		</div>
 		<div class="content">
 			<div class="icon_balance"></div>
-			<label>￥5.20</label>
+			<label>￥${(balance/100)?string('0.00')}</label>
 			<button class="default">充值</button><button>提现</button>
 		</div>
 	</div>

@@ -29,6 +29,10 @@ public class CustOrderDto extends RequestDto {
 
     private String serviceAddress;
 
+    private String phone;
+
+    private String custName;
+
     private Integer evaluateStar;
 
     private String evaluateContent;
@@ -50,6 +54,22 @@ public class CustOrderDto extends RequestDto {
     private String status;
 
     private CustOrderServiceDto serviceDto = new CustOrderServiceDto();
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getCustName() {
+        return custName;
+    }
+
+    public void setCustName(String custName) {
+        this.custName = custName;
+    }
 
     public CustOrderServiceDto getServiceDto() {
         return serviceDto;

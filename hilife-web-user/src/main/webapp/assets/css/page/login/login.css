@@ -31,6 +31,7 @@ body{
 
 #pageone, #pagetwo {
     height: 75%;
+    background: #ffffff;
 }
 
 .page {
@@ -46,7 +47,7 @@ body{
 .login-body label {
 	font-size: 12px;
 	letter-spacing: 0.5px;
-	color: #ffffff;
+	color: transparent;
 	position: absolute;
 }
 

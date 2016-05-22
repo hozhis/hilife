@@ -138,3 +138,15 @@
 	border: 1px solid #ea0000;
 	color: #ea0000;
 }
+
+.o-option > label {
+    color: #7b7b7b;
+    float: right;
+}
+
+.order-status {
+    color: #ea0000;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    text-align: left;
+}

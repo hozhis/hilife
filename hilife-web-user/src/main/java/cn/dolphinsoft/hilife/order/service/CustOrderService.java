@@ -11,4 +11,8 @@ public interface CustOrderService {
     ResultDto<String> submitOrder(CustOrderDto dto);
 
     void cancelOrder(Integer orderId);
+
+    CustOrderDto showOrderDetail(Integer orderId);
+
+    void deleteOrder(Integer orderId);
 }

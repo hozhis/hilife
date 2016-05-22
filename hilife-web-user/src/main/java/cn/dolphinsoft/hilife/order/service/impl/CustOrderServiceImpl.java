@@ -18,12 +18,14 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
 import cn.dolphinsoft.hilife.common.authority.AuthorityContext;
 import cn.dolphinsoft.hilife.common.converter.ConverterService;
 import cn.dolphinsoft.hilife.common.domain.CustOrder;
 import cn.dolphinsoft.hilife.common.domain.CustOrderDetail;
+import cn.dolphinsoft.hilife.common.domain.Product;
 import cn.dolphinsoft.hilife.common.dto.ResultDto;
 import cn.dolphinsoft.hilife.common.dto.ResultDtoFactory;
 import cn.dolphinsoft.hilife.common.enumeration.BaseStatus;
@@ -36,6 +38,7 @@ import cn.dolphinsoft.hilife.order.dto.CustOrderDetailDto;
 import cn.dolphinsoft.hilife.order.dto.CustOrderDto;
 import cn.dolphinsoft.hilife.order.dto.CustOrderSearchDto;
 import cn.dolphinsoft.hilife.order.service.CustOrderService;
+import cn.dolphinsoft.hilife.product.dto.CustOrderServiceDto;
 import cn.dolphinsoft.hilife.product.dto.ProductDto;
 
 @Service
@@ -68,6 +71,8 @@ public class CustOrderServiceImpl implements CustOrderService {
                 }
                 Predicate predicate = cb.equal(root.<Integer> get("userId"),
                         AuthorityContext.getCurrentUser().getUserId());
+                predicates.add(predicate);
+                predicate = cb.equal(root.<String> get("status"), BaseStatus.EFFECT.getKey());
                 predicates.add(predicate);
                 predicate = cb.and(predicates.toArray(new Predicate[predicates.size()]));
                 query.where(predicate);
@@ -108,13 +113,15 @@ public class CustOrderServiceImpl implements CustOrderService {
             order.setCreateDate(new Date());
             order.setOrderType(dto.getOrderType());
             order.setTotalAmount(dto.getTotalAmount());
-            order.setAuntId(dto.getOrderId());
+            order.setAuntId(dto.getAuntId());
             order.setOrderStatus(OrderStatus.RECEIVE.getKey());
             order.setServiceAddress(dto.getServiceAddress());
+            order.setPhone(dto.getPhone());
+            order.setCustName(dto.getCustName());
             order.setStatus(BaseStatus.EFFECT.getKey());
             orderRepository.save(order);
             CustOrderDetail detail = new CustOrderDetail();
-            detail.setOrderId(order.getOrderId());// TODO 有问题？？？
+            detail.setOrderId(order.getOrderId());
             detail.setProductId(dto.getList().get(0).getProductId());
             detail.setPrice(dto.getList().get(0).getPrice());
             detail.setAmount(dto.getList().get(0).getAmount());
@@ -134,6 +141,35 @@ public class CustOrderServiceImpl implements CustOrderService {
     @Override
     public void cancelOrder(Integer orderId) {
         orderRepository.cancelOrder(orderId, OrderStatus.CANCEL.getKey(), new Date());
+    }
+
+    @Override
+    public CustOrderDto showOrderDetail(Integer orderId) {
+        CustOrder order = orderRepository.findByOrderId(orderId);
+        Assert.notNull(order);
+        CustOrderDto dto = ConverterService.convert(order, CustOrderDto.class);
+        List<CustOrderDetail> details = orderDetailRepository.findByOrderId(orderId);
+        Assert.notEmpty(details);
+        List<CustOrderDetailDto> list = new ArrayList<>();
+        for (CustOrderDetail detail : details) {
+            CustOrderDetailDto orderDetailDto = ConverterService.convert(detail, CustOrderDetailDto.class);
+            Product product = productRepository.findByProductId(detail.getProductId());
+            ProductDto dto2 = ConverterService.convert(product, ProductDto.class);
+            orderDetailDto.setProductDto(dto2);
+            list.add(orderDetailDto);
+        }
+        dto.setList(list);
+        cn.dolphinsoft.hilife.common.domain.CustOrderService service = orderServiceRepository.findByOrderId(orderId);
+        if (service != null) {
+            dto.setServiceDto(ConverterService.convert(service, CustOrderServiceDto.class));
+        }
+        return dto;
+    }
+
+    @Transactional
+    @Override
+    public void deleteOrder(Integer orderId) {
+        orderRepository.deleteByOrderId(orderId);
     }
 
 }

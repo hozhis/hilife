@@ -30,9 +30,9 @@ public interface AddressService {
      * Description: 获取用户下单选择地址
      *
      * @param token
-     * @return
+     * @return [0] consignee,[1]addressName
      */
-    String getServiceAddress(String token);
+    String[] getServiceAddress(String token);
 
     /**
      * 
