@@ -93,7 +93,13 @@ label {
 
 .fui-notifications {
 	float: right;
-	margin-right: 10px;
+	margin-right: 15px;
+}
+
+.fui-timer{
+	content: "\e425";
+	font-size: 14px;
+	margin: 0 5px;
 }
 
 .left {
@@ -138,7 +144,7 @@ input[placeholder] {
 }
 
 .main-wrapper {
-	background: #f0f0f0;
+	height: 100%;
 }
 
 .header {
@@ -223,8 +229,10 @@ input[placeholder] {
 	content: "\e541";
 }
 
-.dns:before {
+.fui-dns:before {
 	content: "\e875";
+	margin: 0 5px;
+	font-size: 14px;
 }
 
 .person:before {

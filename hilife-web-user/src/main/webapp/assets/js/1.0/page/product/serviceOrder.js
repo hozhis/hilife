@@ -151,7 +151,7 @@ require([ 'jquery',
 						serviceAddress : $("#serviceAddress").text(),
 						serviceDto : {
 							paraValue1 : "服务时间：" + $("#service-time").text(),
-						    paraValue2 : $("#service-item").attr("data-name") + $("#service-item").text(),
+						    paraValue2 : $("#service-item").attr("data-name") + $("#service-item").html(),
 						    paraValue3 : "联系方式：" + $("#phone").val(),
 						    remark : "备注：" + $("#remark").val()
 						},

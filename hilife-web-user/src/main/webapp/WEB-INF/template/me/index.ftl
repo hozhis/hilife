@@ -50,7 +50,7 @@
 			</ul>
 			<div class="gap"></div>
 			<ul>
-				<li><div><a id="quit" target="_top" href=""><span class="fui-exit"></span><label>退出此账号</label></a></div></li>
+				<li><div><a id="quit" target="_top" href="#"><span class="fui-exit"></span><label>退出此账号</label></a></div></li>
 			</ul>
 		</div>
 	</div>

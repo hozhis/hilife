@@ -14,7 +14,7 @@ public interface IAuntUserInfoRepository
 
     AuntUserInfo findByLoginId(String loginId);
 
-    AuntUserInfo findOne(Integer custId);
+    AuntUserInfo findOne(Integer userId);
 
     @Query("update AuntUserInfo a set a.token = null where a.token = ?1")
     @Modifying

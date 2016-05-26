@@ -17,8 +17,8 @@ public class AuntUserInfo extends UserInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "AUNT_ID")
-    private Integer auntId;
+    @Column(name = "USER_ID")
+    private Integer userId;
 
     @Column(name = "LOGIN_ID")
     private String loginId;
@@ -35,12 +35,12 @@ public class AuntUserInfo extends UserInfo {
     @Column(name = "SEX")
     private String sex = "0";
 
-    public Integer getAuntId() {
-        return auntId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setAuntId(Integer auntId) {
-        this.auntId = auntId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getLoginId() {

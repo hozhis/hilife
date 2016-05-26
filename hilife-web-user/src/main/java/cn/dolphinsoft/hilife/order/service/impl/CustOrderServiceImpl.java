@@ -113,8 +113,8 @@ public class CustOrderServiceImpl implements CustOrderService {
             order.setCreateDate(new Date());
             order.setOrderType(dto.getOrderType());
             order.setTotalAmount(dto.getTotalAmount());
-            order.setAuntId(dto.getAuntId());
-            order.setOrderStatus(OrderStatus.RECEIVE.getKey());
+            order.setAuntId(1);// TODO 阿姨应该可供选择
+            order.setOrderStatus(OrderStatus.DISPATCH.getKey());
             order.setServiceAddress(dto.getServiceAddress());
             order.setPhone(dto.getPhone());
             order.setCustName(dto.getCustName());

@@ -2,5 +2,63 @@
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	position: absolute;
+	background: transparent;
+}
+
+body {
+	background-image: url("../../../img/background.jpg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	height: 100%;
+	width: 100%;
+}
+
+#loginId {
+	width: 100%;
+}
+
+#password {
+	width: 50%;
+}
+
+#captcha {
+	background: #455a64 none repeat scroll 0 0;
+	border: 1px solid #455a64;
+	color: #ffffff;
+	float: left;
+	height: 30px;
+	text-align: center;
+	width: 50%;
+}
+
+.content div {
+	height: 50px;
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+form {
+	padding-top: 50%;
+}
+
+input {
+	background-color: #607D8B;
+	border: 1px solid #455a64;
+	height: 30px;
+	padding: 0 10px;
+	float: left;
+	border-radius: 0;
+}
+
+#btn-login {
+	background: #455a64 none repeat scroll 0 0;
+	border: 1px solid #455a64;
+	color: #ffffff;
+	font-size: 16px;
+	height: 30px;
+	letter-spacing: 2px;
+	outline: medium none;
+	width: 100%;
 }

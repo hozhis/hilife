@@ -1,13 +1,145 @@
 .header {
-	height: 45%;
+	min-height: 45%;
+	/* position: relative; */
 }
 
 .left {
 	height: 80px;
 	width: 80%;
+	padding: 15px;
+}
+
+.left img {
+	height: 50px;
+	width: 50px;
+	float: left;
+	border-radius: 5px;
+}
+
+.left>div {
+	display: inline-block;
+	float: left;
+	height: 50px;
+	margin-left: 5px;
+}
+
+.left div label {
+	color: #ffffff;
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
 }
 
 .right {
 	height: 80px;
 	width: 20%;
+	line-height: 79px;
+}
+
+.header-main {
+	float: left;
+	height: 50px;
+	width: 100%;
+	padding-left: 15px;
+	color: #ffffff;
+	font-size: 16px;
+}
+
+.header-body {
+	bottom: 0;
+	height: 70px;
+	position: absolute;
+	width: 100%;
+	padding-left: 15px;
+}
+
+.header-body>div {
+	height: 30px;
+}
+
+.header-body div div {
+	background: #455a64;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 14px;
+	width: 105px;
+}
+
+.header-body div label {
+	display: inline-block;
+	position: absolute;
+	right: 15px;
+	color: #ffffff;
+}
+
+.content {
+	bottom: 0;
+	max-height: 55%;
+	overflow-y: scroll;
+	padding: 0;
+	position: fixed;
+}
+
+.order-on-service {
+	background-color: #455a64;
+	color: #ffffff;
+	font-size: 15px;
+	font-weight: 300;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	z-index: 999;
+}
+
+.order-on-service font {
+	text-decoration: underline;
+	color: #CFD8DC
+}
+
+.orders {
+	margin-top: 30px;
+	padding: 0 15px;
+}
+
+.orders li {
+	height: 80px;
+	padding: 5px 0;
+	border-bottom: 1px solid #b6b6b6;
+}
+
+.orders li:last-child {
+	border-bottom: 0;
+}
+
+.orders li img {
+	display: inline-block;
+	float: left;
+	height: 70px;
+	width: 70px;
+}
+
+.orders div label {
+	display: block;
+	margin-left: 75px;
+}
+
+.orders div label:first-child {
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.orders div label:last-child {
+	height: 40px;
+	line-height: 20px;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+.order-on-service>a {
+	color: #ffffff;
 }

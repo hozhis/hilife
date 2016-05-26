@@ -38,11 +38,11 @@ public class MySpringSwaggerConfig extends SpringSwaggerConfig {
     @Bean
     public SwaggerSpringMvcPlugin customImplementation() {
         return new SwaggerSpringMvcPlugin(this).apiInfo(apiInfo()).includePatterns(".*").apiVersion("0.0.1")
-                .swaggerGroup("user");
+                .swaggerGroup("aunt");
     }
 
     private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo("智慧生活API", "用户端  后台API文档", "index.html", "hozhis@vip.qq.com", "My License", "");
+        ApiInfo apiInfo = new ApiInfo("智慧生活API", "服务人员端 后台API文档", "index.html", "hozhis@vip.qq.com", "My License", "");
         return apiInfo;
     }
 
